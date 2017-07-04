@@ -11,10 +11,6 @@
 |
 */
 
-<<<<<<< HEAD
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
 
 
@@ -59,8 +55,3 @@ Route::get('/admin/logout','Admin\LoginController@logout');
 
 // 验证码路由
 Route::get('kit/captcha/{tmp}', 'Admin\KitController@captcha');
-=======
-Route::get('/', function () {
-    return view('welcome');
-});
->>>>>>> dea069a55b4b8a8ae93aa2315a059c77316bf974

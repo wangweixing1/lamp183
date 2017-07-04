@@ -12,11 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-<<<<<<< HEAD
     'name' => env('APP_NAME', 'php183电影购票'),
-=======
-    'name' => env('APP_NAME', 'Laravel'),
->>>>>>> dea069a55b4b8a8ae93aa2315a059c77316bf974
 
     /*
     |--------------------------------------------------------------------------
