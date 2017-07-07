@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
-##项目使用文档
-###1.安装
-	composer install
-###2.拷贝 .env
-	cp .env.example .env
-###3.生成key
-	php artisan key:generate
-<<<<<<< HEAD
-=======
-=======
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
