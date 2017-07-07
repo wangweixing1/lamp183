@@ -395,14 +395,26 @@
         </li>
         <li class="treeview">
           <a href="#">
+<<<<<<< HEAD
             <i class="fa fa-pie-chart"></i><span>友情链接</span>
+=======
+            <i class="fa fa-pie-chart"></i>
+            <span>Charts</span>
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
+<<<<<<< HEAD
             <li><a href="{{ url('/admin/frinedship/add') }}"><i class="fa fa-circle-o"></i>添加链接</a></li>
             <li><a href="{{ url('/admin/frinedship/index') }}"><i class="fa fa-circle-o"></i> 浏览链接</a></li>
+=======
+            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
+            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
           </ul>
         </li>
         <li class="treeview">

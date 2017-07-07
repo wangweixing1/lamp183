@@ -4,7 +4,15 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "322269fbeb0286ef7b4253afe41ebbf7",
+=======
+<<<<<<< HEAD
+    "content-hash": "322269fbeb0286ef7b4253afe41ebbf7",
+=======
+    "content-hash": "96098e473b028cdb2529580554a1ae3e",
+>>>>>>> dea069a55b4b8a8ae93aa2315a059c77316bf974
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -149,6 +157,10 @@
             "time": "2017-03-29T16:04:15+00:00"
         },
         {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
             "name": "gregwar/captcha",
             "version": "v1.1.2",
             "source": {
@@ -197,6 +209,11 @@
             "time": "2017-04-19T08:10:55+00:00"
         },
         {
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> dea069a55b4b8a8ae93aa2315a059c77316bf974
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -285,6 +302,10 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
+            "version": "v5.4.28",
+=======
+<<<<<<< HEAD
             "version": "v5.4.28",
             "source": {
                 "type": "git",
@@ -295,6 +316,24 @@
                 "type": "zip",
                 "url": "https://files.phpcomposer.com/files/laravel/framework/442511fc62121085d184355e4f964c88942bbecb.zip",
                 "reference": "442511fc62121085d184355e4f964c88942bbecb",
+=======
+            "version": "v5.4.27",
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "442511fc62121085d184355e4f964c88942bbecb"
+            },
+            "dist": {
+                "type": "zip",
+<<<<<<< HEAD
+                "url": "https://files.phpcomposer.com/files/laravel/framework/442511fc62121085d184355e4f964c88942bbecb.zip",
+                "reference": "442511fc62121085d184355e4f964c88942bbecb",
+=======
+                "url": "https://files.phpcomposer.com/files/laravel/framework/66f5e1b37cbd66e730ea18850ded6dc0ad570404.zip",
+                "reference": "66f5e1b37cbd66e730ea18850ded6dc0ad570404",
+>>>>>>> dea069a55b4b8a8ae93aa2315a059c77316bf974
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
                 "shasum": ""
             },
             "require": {
@@ -410,7 +449,15 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
             "time": "2017-06-30T13:43:07+00:00"
+=======
+<<<<<<< HEAD
+            "time": "2017-06-30T13:43:07+00:00"
+=======
+            "time": "2017-06-15T19:08:25+00:00"
+>>>>>>> dea069a55b4b8a8ae93aa2315a059c77316bf974
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
         },
         {
             "name": "laravel/tinker",
@@ -2731,6 +2778,10 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
+<<<<<<< HEAD
+            "version": "3.4.4",
+=======
+<<<<<<< HEAD
             "version": "3.4.4",
             "source": {
                 "type": "git",
@@ -2741,6 +2792,24 @@
                 "type": "zip",
                 "url": "https://files.phpcomposer.com/files/sebastianbergmann/phpunit-mock-objects/a23b761686d50a560cc56233b9ecf49597cc9118.zip",
                 "reference": "a23b761686d50a560cc56233b9ecf49597cc9118",
+=======
+            "version": "3.4.3",
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
+                "reference": "a23b761686d50a560cc56233b9ecf49597cc9118"
+            },
+            "dist": {
+                "type": "zip",
+<<<<<<< HEAD
+                "url": "https://files.phpcomposer.com/files/sebastianbergmann/phpunit-mock-objects/a23b761686d50a560cc56233b9ecf49597cc9118.zip",
+                "reference": "a23b761686d50a560cc56233b9ecf49597cc9118",
+=======
+                "url": "https://files.phpcomposer.com/files/sebastianbergmann/phpunit-mock-objects/3ab72b65b39b491e0c011e2e09bb2206c2aa8e24.zip",
+                "reference": "3ab72b65b39b491e0c011e2e09bb2206c2aa8e24",
+>>>>>>> dea069a55b4b8a8ae93aa2315a059c77316bf974
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
                 "shasum": ""
             },
             "require": {
@@ -2786,7 +2855,15 @@
                 "mock",
                 "xunit"
             ],
+<<<<<<< HEAD
             "time": "2017-06-30T09:13:00+00:00"
+=======
+<<<<<<< HEAD
+            "time": "2017-06-30T09:13:00+00:00"
+=======
+            "time": "2016-12-08T20:27:08+00:00"
+>>>>>>> dea069a55b4b8a8ae93aa2315a059c77316bf974
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

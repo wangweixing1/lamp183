@@ -129,11 +129,19 @@ class CategoryController extends Controller
 		// 处理数据
 		foreach($allData as $key => $val)
 		{
+<<<<<<< HEAD
 					// 函数substr_count用来查询某字符串里的某个字符的个数
 					$num = substr_count($val -> path,','); 
 					
 					// 重复空格字符串 并追加到name 字段里
 					$allData[$key] -> name = str_repeat('|---', $num).$allData[$key] -> name;
+=======
+			// 函数substr_count用来查询某字符串里的某个字符的个数
+			$num = substr_count($val -> path,','); 
+			
+			// 重复空格字符串 并追加到name 字段里
+			$allData[$key] -> name = str_repeat('|---', $num).$allData[$key] -> name;
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
 		}
 
 		// echo $id;

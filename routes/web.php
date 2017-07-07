@@ -11,9 +11,12 @@
 |
 */
 
+<<<<<<< HEAD
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+=======
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
 
 
 
@@ -46,6 +49,7 @@ Route::group(['middleware' => 'adminlogin'],function()
 
 	// 递归查询所有子分类
 	Route::get('/admin/getallcategory','Admin\CategoryController@get');
+<<<<<<< HEAD
 
 	// 添加友情链接
 	Route::get('/admin/frinedship/add','Admin\FrinedshipController@add');
@@ -66,6 +70,11 @@ Route::group(['middleware' => 'adminlogin'],function()
 
 
 
+=======
+});
+
+
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
 // 登录路由
 Route::get('/admin/login','Admin\LoginController@login');
 Route::post('/admin/dologin','Admin\LoginController@doLogin');
@@ -74,4 +83,8 @@ Route::post('/admin/dologin','Admin\LoginController@doLogin');
 Route::get('/admin/logout','Admin\LoginController@logout');
 
 // 验证码路由
+<<<<<<< HEAD
 Route::get('kit/captcha/{tmp}', 'Admin\KitController@captcha');
+=======
+Route::get('kit/captcha/{tmp}', 'Admin\KitController@captcha');
+>>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
