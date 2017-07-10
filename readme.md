@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+##项目使用文档
+###1.安装
+	composer install
+###2.拷贝 .env
+	cp .env.example .env
+###3.生成key
+	php artisan key:generate
+=======
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
@@ -51,3 +60,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
 >>>>>>> dea069a55b4b8a8ae93aa2315a059c77316bf974
 >>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
+>>>>>>> da8f16f4cd22dd0b521a3c68bbaac5b25a537c9b

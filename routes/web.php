@@ -11,9 +11,11 @@
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-
-// 跌幅群组(中间件)
+// 跌幅群组
 Route::group(['middleware' => 'adminlogin'],function()
 {
 
@@ -43,6 +45,10 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 递归查询所有子分类
 	Route::get('/admin/getallcategory','Admin\CategoryController@get');
 
+	// 网站配置
+	Route::get('/admin/config/config','Admin\ConfigController@config');
+    Route::post('/admin/config/insert','Admin\ConfigController@insert');
+
 	// 添加友情链接
 	Route::get('/admin/frinedship/add','Admin\FrinedshipController@add');
 	Route::post('/admin/frinedship/insert','Admin\FrinedshipController@insert');
@@ -58,8 +64,11 @@ Route::group(['middleware' => 'adminlogin'],function()
 	Route::get('/admin/frinedship/delete/{id}','Admin\FrinedshipController@delete');
 
 	
+
 });
 
+	//前台主页
+	Route::get('/home/index','home\IndexController@index');
 
 	// 登录路由
 	Route::get('/admin/login','Admin\LoginController@login');

@@ -44,7 +44,7 @@
       top: auto;
       bottom: auto;
       right: auto;
-      left: 200px;
+      left: auto;
       display: block;
       z-index: 1;
     }
@@ -321,7 +321,7 @@
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
-    <section class="sidebar"style="height:20px;">
+    <section class="sidebar">
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
@@ -373,6 +373,7 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
+
             <span>订单管理</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -423,9 +424,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> 网站统计</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> 网站配置</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> 网站关闭</a></li>
+            <li><a href="{{ url('/admin/config/config') }}"><i class="fa fa-circle-o"></i> 网站配置</a></li>
           </ul>
         </li>
 
@@ -439,22 +438,12 @@
             </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="{{ url('/admin/frinedship/add') }}"><i class="fa fa-circle-o"></i> 添加链接</a></li>          
             <li><a href="{{ url('/admin/frinedship/index') }}"><i class="fa fa-circle-o"></i> 浏览链接</a></li>
-            <li><a href="{{ url('/admin/frinedship/add') }}"><i class="fa fa-circle-o"></i> 添加链接</a></li>
           </ul>
         </li>
 
-    
-        <li>
-          <a href="{{ url('/admin/calender') }}">
-            <i class="fa fa-calendar"></i> <span>日历</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-red">3</small>
-              <small class="label pull-right bg-blue">17</small>
-            </span>
-          </a>
-        </li>
-       
+           
     </section>
     <!-- /.sidebar -->
   </aside>

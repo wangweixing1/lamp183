@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     //
     public function index()
-    {
-    	return view('home.index.index');
-    }
+		{
+			return view('home.index.index',['title' => '前台首页']);
+		}
 }

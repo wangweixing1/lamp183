@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>电影列表页</title>
+<link href="css/default.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="css/jquery.js"></script>
+<link href="css/sub.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="header">
+  <div class="top_img">
+    <div class="logo"><a href="#"><img src="images/bbt.jpg" width="300" height="80" /></a></div>
+    <div class="rx"><img src="images/topad.gif" width="500" height="100" /></div>
+    <div class="top_nav">
+      <p><a href="#"> 登录 </a> </p>
+      <p><a href="#"> 注册 </a></p>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="menu">
+    <ul>
+      <li id="a1"><a href="index.html">首　页</a></li>
+      <li id="a2"> <a href="case.html">热门影片</a></li>
+      <li id="a3"><a href="case.html">正在热映</a></li>
+      <li id="a4"><a href="case.html">即将上映</a></li>
+      <li id="a5"><a href="case.html">经典回味</a></li>
+      <li id="a6"><a href="case.html">全球首映</a></li>
+      <li id="a7"><a href="#">热门活动</a></li>
+      <li id="a8"><a href="#">优惠专区</a></li>
+      <li id="a9"><a href="#">放映时刻表</a></li>
+    </ul>
+  </div>
+</div>
+<div class="contenter">
+    <div class="left">
+        <div class="left_1">
+            <h2>帮助中心</h2>
+            <div class="left_1_con">
+                <ul class="left_nav">
+
+                    <li id="sel"><a href="#" >新手上路</a></li>
+                    <li><a href="#">购票指南</a></li>
+                    <li><a href="#">在线帮助</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="ad01"></div>
+        <div class="left_2 top20px">
+            <h2>开发</h2>
+<div class="left_2_con">
+                <ul class="sub_list">
+                    <li><a href="#">lamp183开发小组</a></li>
+                    <li><a href="#">崔志磊 </a></li>
+                    <li><a href="#">王宇飞</a></li>
+                    <li><a href="#">王伟星 </a></li>                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="right">
+ <div class="pbanner"><script language='javascript'>
+				linkarr = new Array();
+				picarr = new Array();
+				textarr = new Array();
+				var swf_width=728;
+				var swf_height=190;
+				var files = "";
+				var links = "";
+				var texts = "";
+				
+				//这里设置调用标记
+				linkarr[1] = "http://www.baidu.com";
+				picarr[1]  = "images/b02.jpg";
+				textarr[1] = "";
+				linkarr[2] = "http://www.baidu.com";
+				picarr[2]  = "images/b01.jpg";
+				textarr[2] = "";
+					linkarr[3] = "http://www.baidu.com";
+				picarr[3]  = "images/b03.jpg";
+				textarr[3] = "";
+			
+				
+				for(i=1;i<picarr.length;i++){
+				  if(files=="") files = picarr[i];
+				  else files += "|"+picarr[i];
+				}
+				for(i=1;i<linkarr.length;i++){
+				  if(links=="") links = linkarr[i];
+				  else links += "|"+linkarr[i];
+				}
+				for(i=1;i<textarr.length;i++){
+				  if(texts=="") texts = textarr[i];
+				  else texts += "|"+textarr[i];
+				}
+				document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ swf_width +'" height="'+ swf_height +'">');
+				document.write('<param name="movie" value="images/bcastr3.swf"><param name="quality" value="high">');
+				document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
+				document.write('<param name="FlashVars" value="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'">');	
+				</script></div>
+     <div class="right_con">
+     <div class="curry">当前位置：<a href="#">首页</a>&nbsp;&nbsp;--&nbsp;&nbsp;<a href="#">正在热映</a></div>   
+     <div class="right_content">
+   <dl class="anli_list">
+          <dt><a href="#"><img src="images/al1.jpg" width="150" height="100" /></a></dt>
+          <dd><a href="#">大武当之天地密码 </a>
+            <p style="font-weight:bold;">07月12日</p>
+            <p>杨幂赵文卓展夺宝情缘</p>
+            <p>主演：杨幂 赵文卓 樊 ...</p>
+            <p>
+              <input name="" type="button" class="dgbg012" value="马上购票" />
+            </p>
+          </dd>
+        </dl>                           
+                      <dl class="anli_list">
+          <dt><a href="#"><img src="images/al4.jpg" width="150" height="100" /></a></dt>
+          <dd><a href="#">色熊称霸舞男争雄 </a>
+            <p style="font-weight:bold;">07月12日</p>
+            <p>杨幂赵文卓展夺宝情缘</p>
+            <p>主演：杨幂 赵文卓 樊 ...</p>
+            <p>
+              <input name="" type="button" class="dgbg012" value="马上购票" />
+            </p>
+          </dd>
+        </dl>
+        <dl class="anli_list">
+          <dt><a href="#"><img src="images/al1.jpg" width="150" height="100" /></a></dt>
+          <dd><a href="#">大武当之天地密码 </a>
+            <p style="font-weight:bold;">07月15日</p>
+            <p>杨幂赵文卓展夺宝情缘</p>
+            <p>主演：杨幂 赵文卓 樊 ...</p>
+            <p>
+              <input name="" type="button" class="dgbg012" value="马上购票" />
+            </p>
+          </dd>
+        </dl>
+        <dl class="anli_list">
+          <dt><a href="#"><img src="images/al2.jpg" width="150" height="100" /></a></dt>
+          <dd><a href="#">十二生肖：成龙秀特技 </a>
+            <p style="font-weight:bold;">07月12日</p>
+            <p>杨幂赵文卓展夺宝情缘</p>
+            <p>主演：成龙 赵文卓 樊 ...</p>
+            <p>
+              <input name="" type="button" class="dgbg012" value="马上购票" />
+            </p>
+          </dd>
+        </dl>
+        <dl class="anli_list">
+          <dt><a href="#"><img src="images/al3.jpg" width="150" height="100" /></a></dt>
+          <dd><a href="#">狂暴飞车3D </a>
+            <p style="font-weight:bold;">08月09日</p>
+            <p>杨幂赵文卓展夺宝情缘</p>
+            <p>主演：杨幂 赵文卓 樊 ...</p>
+            <p>
+              <input name="" type="button" class="dgbg012" value="马上购票" />
+            </p>
+          </dd>
+        </dl>
+        <dl class="anli_list">
+          <dt><a href="#"><img src="images/al1.jpg" width="150" height="100" /></a></dt>
+          <dd><a href="#">吴彦祖限制级影片 </a>
+            <p style="font-weight:bold;">07月19日</p>
+            <p>杨幂赵文卓展夺宝情缘</p>
+            <p>主演：杨幂 赵文卓 樊 ...</p>
+            <p>
+              <input name="" type="button" class="dgbg012" value="马上购票" />
+            </p>
+          </dd>
+        </dl>
+        <dl class="anli_list">
+          <dt><a href="#"><img src="images/al4.jpg" width="150" height="100" /></a></dt>
+          <dd><a href="#">周星驰精彩剪辑 </a>
+            <p style="font-weight:bold;">07月25日</p>
+            <p>杨幂赵文卓展夺宝情缘</p>
+            <p>主演：杨幂 赵文卓 樊 ...</p>
+            <p>
+              <input name="" type="button" class="dgbg012" value="马上购票" />
+            </p>
+          </dd>
+        </dl>
+        <dl class="anli_list">
+          <dt><a href="#"><img src="images/al2.jpg" width="150" height="100" /></a></dt>
+          <dd><a href="#">大武当之天地密码 </a>
+            <p style="font-weight:bold;">07月12日</p>
+            <p>杨幂赵文卓展夺宝情缘</p>
+            <p>主演：杨幂 赵文卓 樊 ...</p>
+            <p>
+              <input name="" type="button" class="dgbg012" value="马上购票" />
+            </p>
+          </dd>
+        </dl>
+                              <dl class="anli_list">
+          <dt><a href="#"><img src="images/al4.jpg" width="150" height="100" /></a></dt>
+          <dd><a href="#">色熊称霸舞男争雄 </a>
+            <p style="font-weight:bold;">07月12日</p>
+            <p>杨幂赵文卓展夺宝情缘</p>
+            <p>主演：杨幂 赵文卓 樊 ...</p>
+            <p>
+              <input name="" type="button" class="dgbg012" value="马上购票" />
+            </p>
+          </dd>
+        </dl>
+        <dl class="anli_list">
+          <dt><a href="#"><img src="images/al1.jpg" width="150" height="100" /></a></dt>
+          <dd><a href="#">大武当之天地密码 </a>
+            <p style="font-weight:bold;">07月15日</p>
+            <p>杨幂赵文卓展夺宝情缘</p>
+            <p>主演：杨幂 赵文卓 樊 ...</p>
+            <p>
+              <input name="" type="button" class="dgbg012" value="马上购票" />
+            </p>
+          </dd>
+        </dl>
+        <dl class="anli_list">
+          <dt><a href="#"><img src="images/al2.jpg" width="150" height="100" /></a></dt>
+          <dd><a href="#">十二生肖：成龙秀特技 </a>
+            <p style="font-weight:bold;">07月12日</p>
+            <p>杨幂赵文卓展夺宝情缘</p>
+            <p>主演：成龙 赵文卓 樊 ...</p>
+            <p>
+              <input name="" type="button" class="dgbg012" value="马上购票" />
+            </p>
+          </dd>
+        </dl>
+        <dl class="anli_list">
+          <dt><a href="#"><img src="images/al2.jpg" width="150" height="100" /></a></dt>
+          <dd><a href="#">十二生肖：成龙秀特技 </a>
+            <p style="font-weight:bold;">07月12日</p>
+            <p>杨幂赵文卓展夺宝情缘</p>
+            <p>主演：成龙 赵文卓 樊 ...</p>
+            <p>
+              <input name="" type="button" class="dgbg012" value="马上购票" />
+            </p>
+          </dd>
+        </dl>
+      
+
+<div class="clear"></div>
+<div class="list_page" style="padding-right:18px;">
+       		<a href="#" class="page_a">首页</a> <a href="#" class="page_a">上一页</a> <a href="#" class="list_page_hover">1</a> <a href="#" class="list_page_num">2</a> <a href="#" class="list_page_num">3</a> <a href="#" class="list_page_num">4</a> <a href="#" class="list_page_num">5</a> <a href="#" class="page_a">下一页</a> <a href="#" class="page_a">尾页</a> <span class="t_ccc">共10页20条</span>
+        </div>
+     </div>
+     </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="footer">
+  <div class="footer_nav">领悟科技旗下：电影售票系统&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">热门影片</a> | <a href="#">正在热映</a> | <a href="#">即将上映</a> | <a href="#">经典回味</a> | <a href="#">全球首映</a> | <a href="#">热门活动</a> | <a href="#">优惠专区</a> | <a href="#">放映时刻表</a> | <a href="#">公司新闻</a> | <a href="#">领悟科技</a> </div>
+  <p>您是305818 位访客  欢迎您的光临！<br />
+    海南领悟科技 版权所有 豫ICP备01025000148号 <br />
+    广告部：0371-6699999 / 668888 业务部：0371-6677777 / 66555577 / 66665555 / 155998899  </p>
+</div>
+</body>
+</html>
