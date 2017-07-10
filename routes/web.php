@@ -15,6 +15,9 @@
 //     return view('welcome');
 // });
 
+// 前台登录
+Route::get('/home/login','Home\LoginController@login');
+
 // 跌幅群组
 Route::group(['middleware' => 'adminlogin'],function()
 {
