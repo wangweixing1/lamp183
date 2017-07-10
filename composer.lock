@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "96098e473b028cdb2529580554a1ae3e",
+    "content-hash": "322269fbeb0286ef7b4253afe41ebbf7",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -149,6 +149,54 @@
             "time": "2017-03-29T16:04:15+00:00"
         },
         {
+            "name": "gregwar/captcha",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Gregwar/Captcha.git",
+                "reference": "2f704c8bc3f1bb5f58994af2729e77ac4e3172e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/Gregwar/Captcha/2f704c8bc3f1bb5f58994af2729e77ac4e3172e6.zip",
+                "reference": "2f704c8bc3f1bb5f58994af2729e77ac4e3172e6",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=5.3.0"
+            },
+            "type": "captcha",
+            "autoload": {
+                "psr-4": {
+                    "Gregwar\\Captcha\\": "/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grégoire Passault",
+                    "email": "g.passault@gmail.com",
+                    "homepage": "http://www.gregwar.com/"
+                },
+                {
+                    "name": "Jeremy Livingston",
+                    "email": "jeremy.j.livingston@gmail.com"
+                }
+            ],
+            "description": "Captcha generator",
+            "homepage": "https://github.com/Gregwar/Captcha",
+            "keywords": [
+                "bot",
+                "captcha",
+                "spam"
+            ],
+            "time": "2017-04-19T08:10:55+00:00"
+        },
+        {
             "name": "jakub-onderka/php-console-color",
             "version": "0.1",
             "source": {
@@ -237,16 +285,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.4.27",
+            "version": "v5.4.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "66f5e1b37cbd66e730ea18850ded6dc0ad570404"
+                "reference": "442511fc62121085d184355e4f964c88942bbecb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/laravel/framework/66f5e1b37cbd66e730ea18850ded6dc0ad570404.zip",
-                "reference": "66f5e1b37cbd66e730ea18850ded6dc0ad570404",
+                "url": "https://files.phpcomposer.com/files/laravel/framework/442511fc62121085d184355e4f964c88942bbecb.zip",
+                "reference": "442511fc62121085d184355e4f964c88942bbecb",
                 "shasum": ""
             },
             "require": {
@@ -362,7 +410,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-06-15T19:08:25+00:00"
+            "time": "2017-06-30T13:43:07+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -687,16 +735,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v3.0.5",
+            "version": "v3.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "2b9e2f71b722f7c53918ab0c25f7646c2013f17d"
+                "reference": "0808939f81c1347a3c8a82a5925385a08074b0f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/nikic/PHP-Parser/2b9e2f71b722f7c53918ab0c25f7646c2013f17d.zip",
-                "reference": "2b9e2f71b722f7c53918ab0c25f7646c2013f17d",
+                "url": "https://files.phpcomposer.com/files/nikic/PHP-Parser/0808939f81c1347a3c8a82a5925385a08074b0f1.zip",
+                "reference": "0808939f81c1347a3c8a82a5925385a08074b0f1",
                 "shasum": ""
             },
             "require": {
@@ -734,7 +782,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2017-03-05T18:23:57+00:00"
+            "time": "2017-06-28T20:53:48+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -2683,16 +2731,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "3.4.3",
+            "version": "3.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "3ab72b65b39b491e0c011e2e09bb2206c2aa8e24"
+                "reference": "a23b761686d50a560cc56233b9ecf49597cc9118"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://files.phpcomposer.com/files/sebastianbergmann/phpunit-mock-objects/3ab72b65b39b491e0c011e2e09bb2206c2aa8e24.zip",
-                "reference": "3ab72b65b39b491e0c011e2e09bb2206c2aa8e24",
+                "url": "https://files.phpcomposer.com/files/sebastianbergmann/phpunit-mock-objects/a23b761686d50a560cc56233b9ecf49597cc9118.zip",
+                "reference": "a23b761686d50a560cc56233b9ecf49597cc9118",
                 "shasum": ""
             },
             "require": {
@@ -2738,7 +2786,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2016-12-08T20:27:08+00:00"
+            "time": "2017-06-30T09:13:00+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",

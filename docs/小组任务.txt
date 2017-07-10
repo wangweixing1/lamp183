@@ -1,0 +1,5 @@
+崔志磊：movie电影表   property电影属性表、属性值表  type电影类型表
+
+王宇飞：config网站配置表  comment 评论表 
+
+王伟星：area地区表  indent订单表  carousel轮播表
