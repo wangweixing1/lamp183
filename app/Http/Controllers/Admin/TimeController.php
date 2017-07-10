@@ -24,12 +24,12 @@ class TimeController extends Controller
 		
 		// 判断
 		if($data)
-	{
+		{
 				
-				 $data['status'] = 1;
-				 $data['path'] = 0;
+			 $data['status'] = 1;
+			 $data['path'] = 0;
 					   
-	}
+		}
 
 		// 执行添加
 		$res = \DB::table('time') -> insert($data);
@@ -86,28 +86,27 @@ class TimeController extends Controller
 		// 获取id
 		$id = $request->input('id');
 
-		// // // 判断
-		// if($data)
-		// {
-		            
-		//              $data['status'] = 1;
-		//              $data['pid'] = 0;
-		//              $data['path'] = 0;
-		                   
-		// }
+		// 判断
+		if($data)
+		{
+				
+			$data['status'] = 1;
+			$data['path'] = 0;
+					   
+		}
 
-		// // 执行修改
-		// $res = \DB::table('date') -> where('id',$id) -> update($data);
-		// // dd($res);
+		// 执行修改
+		$res = \DB::table('time') -> where('id',$id) -> update($data);
+		// dd($res);
 
-		// // 判断
-		// if($res)
-		// {
-		// 	return redirect('/admin/date/index') -> with(['info' => '修改成功']);
-		// }else
-		// {
-		// 	return back() -> with(['info' => '修改失败']);
-		// }
+		// 判断
+		if($res)
+		{
+			return redirect('/admin/time/index') -> with(['info' => '修改成功']);
+		}else
+		{
+			return back() -> with(['info' => '修改失败']);
+		}
 
 	}
 
