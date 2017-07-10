@@ -85,6 +85,7 @@
 		</div>
 		<!-- ./col -->
 	  </div>
+
 	  <!-- /.row -->
 	  <!-- Main row -->
 	  <div class="row">
@@ -512,6 +513,7 @@
 		</section>
 		<!-- right col -->
 	  </div>
+
 	  <!-- /.row (main row) -->
 
 	</section>
