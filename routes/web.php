@@ -12,7 +12,17 @@
 */
 
 
+<<<<<<< HEAD
 // 跌幅群组(中间件)
+=======
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+
+// 跌幅群组
+>>>>>>> e0b7fd7498668141a737f23dcd1a3f57fcad14ac
 Route::group(['middleware' => 'adminlogin'],function()
 {
 
@@ -42,16 +52,34 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 递归查询所有子分类
 	Route::get('/admin/getallcategory','Admin\CategoryController@get');
 
+<<<<<<< HEAD
 	
+=======
+	// 添加友情链接
+	Route::get('/admin/frinedship/add','Admin\FrinedshipController@add');
+	Route::post('/admin/frinedship/insert','Admin\FrinedshipController@insert');
+
+	// 友情链接列表
+	Route::get('/admin/frinedship/index','Admin\FrinedshipController@index');
+
+     // 执行友情链接编辑
+    Route::post('/admin/frinedship/update','Admin\FrinedshipController@update');
+
+	// 编辑操作
+	Route::get('/admin/frinedship/edit/{id}','Admin\FrinedshipController@edit');
+	Route::get('/admin/frinedship/delete/{id}','Admin\FrinedshipController@delete');
+
+>>>>>>> e0b7fd7498668141a737f23dcd1a3f57fcad14ac
 });
 
 
-// 登录路由
-Route::get('/admin/login','Admin\LoginController@login');
-Route::post('/admin/dologin','Admin\LoginController@doLogin');
+	// 登录路由
+	Route::get('/admin/login','Admin\LoginController@login');
+	Route::post('/admin/dologin','Admin\LoginController@doLogin');
 
-// 退出路由
-Route::get('/admin/logout','Admin\LoginController@logout');
+	// 退出路由
+	Route::get('/admin/logout','Admin\LoginController@logout');
 
-// 验证码路由
-Route::get('kit/captcha/{tmp}', 'Admin\KitController@captcha');
+	// 验证码路由
+	Route::get('kit/captcha/{tmp}', 'Admin\KitController@captcha');
+
