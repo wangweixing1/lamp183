@@ -7,17 +7,8 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.4.*",
-<<<<<<< HEAD
         "laravel/tinker": "~1.0",
         "gregwar/captcha":"1.1.2"
-=======
-<<<<<<< HEAD
-        "laravel/tinker": "~1.0",
-        "gregwar/captcha":"1.1.2"
-=======
-        "laravel/tinker": "~1.0"
->>>>>>> dea069a55b4b8a8ae93aa2315a059c77316bf974
->>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
