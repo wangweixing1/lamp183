@@ -17,6 +17,7 @@
 
 
 
+
 // 跌幅群组
 Route::group(['middleware' => 'adminlogin'],function()
 {
@@ -38,7 +39,7 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 执行编辑
 	Route::post('/admin/user/update','Admin\UserController@update');
 
-	// ajax 操作
+	// ajax 操作修改用户名
 	Route::post('/admin/user/ajaxrename','Admin\UserController@ajaxRename');
 
 	// 分类管理 资源路由
@@ -87,7 +88,28 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 展示日历路由
 	// Route::get('/admin/calendar','Admin\CalendarController@calendar');
 
+	// 网站配置
+	Route::get('/admin/config/config','Admin\ConfigController@config');
+    	Route::post('/admin/config/insert','Admin\ConfigController@insert');
+
+
+	// 添加友情链接
+	Route::get('/admin/frinedship/add','Admin\FrinedshipController@add');
+	Route::post('/admin/frinedship/insert','Admin\FrinedshipController@insert');
+
+	// 友情链接列表
+	Route::get('/admin/frinedship/index','Admin\FrinedshipController@index');
+
+     	// 执行友情链接编辑
+   	 Route::post('/admin/frinedship/update','Admin\FrinedshipController@update');
+
+	// 编辑操作
+	Route::get('/admin/frinedship/edit/{id}','Admin\FrinedshipController@edit');
+	Route::get('/admin/frinedship/delete/{id}','Admin\FrinedshipController@delete');
+
+
 });
+
 
 
 // 登录路由
@@ -102,3 +124,4 @@ Route::get('kit/captcha/{tmp}', 'Admin\KitController@captcha');
 
 // 发送邮件
 Route::get('/send','Admin\MailController@send');
+

@@ -129,11 +129,13 @@ class CategoryController extends Controller
 		// 处理数据
 		foreach($allData as $key => $val)
 		{
+
 			// 函数substr_count用来查询某字符串里的某个字符的个数
 			$num = substr_count($val -> path,','); 
 			
 			// 重复空格字符串 并追加到name 字段里
 			$allData[$key] -> name = str_repeat('|---', $num).$allData[$key] -> name;
+
 		}
 
 		// echo $id;
@@ -197,6 +199,7 @@ class CategoryController extends Controller
 		// dd($id);
 		// 查询一条数据
 		$res = \DB::table('category') -> where('pid', $id) -> first();
+
 		// dd($res);
 		
 		// 判断
@@ -204,6 +207,7 @@ class CategoryController extends Controller
 		{
 			return back() -> with(['info' => '有子分类，不允许删除']);
 		}
+
 
 		// 判断分类下是否有电影
 		if($movie = \DB::table('movie') -> where('tid',$id) -> first())
