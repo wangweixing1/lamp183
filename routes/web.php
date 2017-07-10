@@ -12,17 +12,8 @@
 */
 
 
-<<<<<<< HEAD
+
 // 跌幅群组(中间件)
-=======
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-
-
-// 跌幅群组
->>>>>>> e0b7fd7498668141a737f23dcd1a3f57fcad14ac
 Route::group(['middleware' => 'adminlogin'],function()
 {
 
@@ -52,9 +43,6 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 递归查询所有子分类
 	Route::get('/admin/getallcategory','Admin\CategoryController@get');
 
-<<<<<<< HEAD
-	
-=======
 	// 添加友情链接
 	Route::get('/admin/frinedship/add','Admin\FrinedshipController@add');
 	Route::post('/admin/frinedship/insert','Admin\FrinedshipController@insert');
@@ -69,7 +57,7 @@ Route::group(['middleware' => 'adminlogin'],function()
 	Route::get('/admin/frinedship/edit/{id}','Admin\FrinedshipController@edit');
 	Route::get('/admin/frinedship/delete/{id}','Admin\FrinedshipController@delete');
 
->>>>>>> e0b7fd7498668141a737f23dcd1a3f57fcad14ac
+	
 });
 
 
