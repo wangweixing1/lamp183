@@ -12,9 +12,7 @@
 */
 
 
-
-
-// 跌幅群组
+// 跌幅群组(中间件)
 Route::group(['middleware' => 'adminlogin'],function()
 {
 
@@ -35,7 +33,7 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 执行编辑
 	Route::post('/admin/user/update','Admin\UserController@update');
 
-	// ajax 操作
+	// ajax 操作修改用户名
 	Route::post('/admin/user/ajaxrename','Admin\UserController@ajaxRename');
 
 	// 分类管理 资源路由
@@ -43,6 +41,8 @@ Route::group(['middleware' => 'adminlogin'],function()
 
 	// 递归查询所有子分类
 	Route::get('/admin/getallcategory','Admin\CategoryController@get');
+
+	
 });
 
 
