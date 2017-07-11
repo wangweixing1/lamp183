@@ -9,7 +9,15 @@ class IndexController extends Controller
 {
     //
     public function index()
-		{
-			return view('home.index.index',['title' => '前台首页']);
-		}
+	{
+		$data = \DB::table('movie') -> get();
+		// dd($data);
+		$res = \DB::table('date') ->get();
+		// dd($res);
+
+		return view('home.index.index',['title' => '前台首页','data'=> $data,'res'=>$res]);
+	}
+
+
+
 }

@@ -29,7 +29,7 @@
 
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form" method="post" action="{{ url('/admin/user/insert') }}" enctype="multipart/form-data" >
+                        <form role="form" method="post" action="{{ url('/admin/indent/insert') }}" enctype="multipart/form-data" >
                             {{ csrf_field() }}
                             <div class="box-body">
 
@@ -49,27 +49,31 @@
                                     </div>
                                 @endif
                                 <div class="form-group">
-                                    <label for="exampleInputName">用户名</label>
-                                    <input type="text" value="{{ old('name') }}" name="name" class="form-control" id="exampleInputName" placeholder="请输入用户名">
+                                    <label for="exampleInputName">订单编号</label>
+                                    <input type="text" value="{{ old('name') }}" name="name" class="form-control" id="exampleInputName" placeholder="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">邮箱</label>
-                                    <input type="email" value="{{ old('email') }}" name="email" class="form-control" id="exampleInputEmail1" placeholder="请输入邮箱">
+                                    <label for="exampleInputName">影片编号</label>
+                                    <input type="text" value="{{ old('name') }}" name="name" class="form-control" id="exampleInputName" placeholder="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1">密码</label>
-                                    <input type="password"  value="{{ old('password') }}" name="password" class="form-control" id="exampleInputPassword1" placeholder="请输入密码">
+                                    <label for="exampleInputName">用户编号</label>
+                                    <input type="text" value="{{ old('name') }}" name="name" class="form-control" id="exampleInputName" placeholder="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword2">确认密码</label>
-                                    <input type="password"  value="{{ old('re_password') }}" name="re_password" class="form-control" id="exampleInputPassword2" placeholder="请输入确认密码">
+                                    <label for="exampleInputName">订票张数</label>
+                                    <input type="text" value="{{ old('name') }}" name="name" class="form-control" id="exampleInputName" placeholder="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputFile">头像</label>
-                                    <input type="file" name="avatar" id="exampleInputFile">
+                                    <label for="exampleInputName">订购日期</label>
+                                    <input type="text" value="{{ old('name') }}" name="name" class="form-control" id="exampleInputName" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputName">订单状态</label>
+                                    <input type="text" value="{{ old('name') }}" name="name" class="form-control" id="exampleInputName" placeholder="">
+                                </div>
 
-                                    <p class="help-block">请选择你的大头贴</p>
-                                </div>           
+                                
                             </div>
                             <!-- /.box-body -->
 

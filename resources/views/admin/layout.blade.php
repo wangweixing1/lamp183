@@ -416,8 +416,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{{ url('/admin/movie/create') }}"><i class="fa fa-hand-peace-o"></i> 日期添加</a></li>
-            <li><a href="{{ url('/admin/movie') }}"><i class="fa fa-industry"></i> 日期列表</a></li>
+            <li class="active"><a href="{{ url('/admin/cinema/add') }}"><i class="fa fa-hand-peace-o"></i> 添加影院</a></li>
+            <li><a href="{{ url('/admin/movie') }}"><i class="fa fa-industry"></i> 影院列表</a></li>
+             <li class="active"><a href="{{ url('/admin/hall/add') }}"><i class="fa fa-hand-peace-o"></i> 添加影厅</a></li>
+             <li><a href="{{ url('/admin/hall/index') }}"><i class="fa fa-industry"></i> 影厅列表</a></li>
           </ul>
         </li>
 
@@ -429,8 +431,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="{{ url('/admin/movie/create') }}"><i class="fa fa-hand-peace-o"></i> 电影添加</a></li>
-            <li><a href="{{ url('/admin/movie') }}"><i class="fa fa-industry"></i> 电影列表</a></li>
+            <li class="active"><a href="{{ url('/admin/project/add') }}"><i class="fa fa-hand-peace-o"></i> 放映添加</a></li>
+            <li><a href="{{ url('/admin/project/index') }}"><i class="fa fa-industry"></i> 放映列表</a></li>
           </ul>
         </li>
 

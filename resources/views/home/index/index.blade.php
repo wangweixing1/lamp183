@@ -1,8 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" >
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>电影售票系统-首页</title>
+<title>电影售票系统-{{ $title }}</title>
 <link href="homelte/css/default.css" rel="stylesheet" type="text/css" />
 <link href="homelte/css/index.css" rel="stylesheet" type="text/css" />
 <script type="homelte/text/javascript" src="css/jquery.js"></script>
@@ -62,7 +62,7 @@ window.onload = function(){
   </div>
   <div class="menu">
     <ul>
-      <li id="a1"><a href="index.html">首　页</a></li>
+      <li id="a1"><a href="{{ url('/home/movie') }}">首　页</a></li>
       <li id="a2"> <a href="homelte/case.html">热门影片</a></li>
       <li id="a3"><a href="case.html">正在热映</a></li>
       <li id="a4"><a href="case.html">即将上映</a></li>
@@ -102,32 +102,18 @@ window.onload = function(){
           <div class="scrolldoorFrame">
             <ul class="scrollUl">
               <li class="sd01" id="m01"><a href="#">
+
+              @foreach($data as $key => $val)
                 <dl class="hd_list">
-                  <dt><img src="homelte/images/hd01.jpg" width="81" height="35" /></dt>
-                  <dd>【青春期3】</dd>
+                  <dt><img src="/uploads/movie_img/{{ $val -> movie_img }}" width="81" height="35" /></dt>
+                  <dd>【{{ $val -> movie_name }}】</dd>
                   <dd>7月13日上映>></dd>
                 </dl>
                 </a></li>
               <li class="sd02" id="m02"><a href="#">
-                <dl class="hd_list">
-                  <dt><img src="homelte/images/hd03.jpg" width="81" height="35" /></dt>
-                  <dd>【重来电影】</dd>
-                  <dd>剧情 爱情>></dd>
-                </dl>
-                </a></li>
-              <li class="sd02" id="m03"><a href="#">
-                <dl class="hd_list">
-                  <dt><img src="homelte/images/hd02.jpg" width="81" height="35" /></dt>
-                  <dd>【青春期3】</dd>
-                  <dd>7月6日首播>></dd>
-                </dl>
-                </a></li>
-              <li class="sd02" id="m04"><a href="#">
-                <dl class="hd_list">
-                  <dt><img src="homelte/images/hd04.jpg" width="81" height="35" /></dt>
-                  <dd>【浮出水面】</dd>
-                  <dd>7月12日播>></dd>
-                </dl>
+              @endforeach  
+
+               
                 </a></li>
             </ul>
             <div class="cont">
@@ -159,54 +145,30 @@ window.onload = function(){
         <div class="clear"></div>
       </div>
     </div>
+
+
+
     <div class="left_4 top10px" style="height:auto;">
       <h2><a href="#">正在热播电影</a><span> ---- 半边天帮助您快速购票、享受便捷网络购票体验 </span></h2>
       <div class="inner">
+
+      
+      @foreach($data as $key => $val)
         <dl class="anli_list">
-          <dt><a href="#"><img src="homelte/images/al1.jpg" width="150" height="100" /></a></dt>
-          <dd><a href="#">大武当之天地密码 </a>
-            <p style="font-weight:bold;">07月12日</p>
-            <p>杨幂赵文卓展夺宝情缘</p>
-            <p>主演：杨幂 赵文卓 樊 ...</p>
-            <p>
-              <input name="" type="button" class="dgbg02" value="马上购票" />
-            </p>
+          <dt><a href="{{ url('/home/movie') }}"><img src="/uploads/movie_img/{{ $val -> movie_img }}" width="150" height="100" /></a></dt>
+          <dd><a href="{{ url('/home/movie') }}">{{ $val -> movie_name }} </a>
+            @foreach($res as $k => $v)
+             <p style="font-weight:bold;">{{ $v -> date_name }}</p>
+            @endforeach
+            <p>{{ $val -> depict }}</p>
+          
+            <a href="{{ url('/home/indent') }}">
+              <input type="submit"  name="" class="dgbg02" value="马上购票" />
+            </a>
           </dd>
         </dl>
-        <dl class="anli_list">
-          <dt><a href="#"><img src="homelte/images/al4.jpg" width="150" height="100" /></a></dt>
-          <dd><a href="#">色熊称霸舞男争雄 </a>
-            <p style="font-weight:bold;">07月12日</p>
-            <p>杨幂赵文卓展夺宝情缘</p>
-            <p>主演：杨幂 赵文卓 樊 ...</p>
-            <p>
-              <input name="" type="button" class="dgbg02" value="马上购票" />
-            </p>
-          </dd>
-        </dl>
-        <dl class="anli_list">
-          <dt><a href="#"><img src="homelte/images/al1.jpg" width="150" height="100" /></a></dt>
-          <dd><a href="#">大武当之天地密码 </a>
-            <p style="font-weight:bold;">07月15日</p>
-            <p>杨幂赵文卓展夺宝情缘</p>
-            <p>主演：杨幂 赵文卓 樊 ...</p>
-            <p>
-              <input name="" type="button" class="dgbg02" value="马上购票" />
-            </p>
-          </dd>
-        </dl>
-        <dl class="anli_list">
-          <dt><a href="#"><img src="homelte/images/al2.jpg" width="150" height="100" /></a></dt>
-          <dd><a href="#">十二生肖：成龙秀特技 </a>
-            <p style="font-weight:bold;">07月12日</p>
-            <p>杨幂赵文卓展夺宝情缘</p>
-            <p>主演：成龙 赵文卓 樊 ...</p>
-            <p>
-              <input name="" type="button" class="dgbg02" value="马上购票" />
-            </p>
-          </dd>
-        </dl>
-       
+      @endforeach
+
         <div class="clear"></div>
       </div>
     </div>
