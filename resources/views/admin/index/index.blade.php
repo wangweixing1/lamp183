@@ -513,7 +513,6 @@
 		</section>
 		<!-- right col -->
 	  </div>
-
 	  <!-- /.row (main row) -->
 
 	</section>
