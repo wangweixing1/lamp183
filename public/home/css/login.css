@@ -126,11 +126,11 @@
 		
 		/*==========大盒子的css样式===========*/
 			#big{
-				width:950px;
+				width:500px;
 				margin:0 auto;
 			}
 			.btfont{
-				width:930px;
+				width:700px;
 				height:50px;
 				float:left;
 				line-height:50px;
@@ -142,7 +142,7 @@
 				border-bottom:1px solid #ccc;
 			}
 			.biaodan{
-				width:800px;
+				width:600px;
 				height:400px;
 				float:left;
 				background-color:white;
@@ -181,7 +181,7 @@
 			}
 			.butdl{
 				width:149px;
-				height:400px;
+				height:300px;
 				float:left;
 				border-radius:5px;
 				background-color:white;

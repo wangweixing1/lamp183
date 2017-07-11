@@ -12,5 +12,7 @@ use App\Http\Controllers\Controller;
 		{
 			// echo 'niduiwo zongshi zheyang lengdan ';
 			return view('admin.index.index',['title' => '后台主页']);
-		}
-	}
+
+		}    
+	}       
+

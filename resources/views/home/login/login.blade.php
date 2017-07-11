@@ -1,71 +1,109 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>电影登录</title>
-        <link rel="stylesheet" href="{{ asset ('/home/css/login.css') }}">
-    </head>
-    <body>
-        <div id="big">
-            <div class="btfont">
-                <h3>登录</h3>
-            </div>
-            <div class="biaodan">
-                <form action="./index.php?c=login&a=doLogin" method="post">
-                    <table width="380" border="0" cellspacing="15">
-                        <tr>
-                            <td class="you">用户名<span> *</span></td>
-                            <td class="zuo"><input type="text" name="userName"/></td>
-                        </tr>
-                        <tr>
-                            <td class="you">密  码<span> *</span></td>
-                            <td class="zuo"><input type="password" name="password"/></td>
-                        </tr>
-                        <tr>
-                            <td class="you">验证码<span> *</span></td>
-                            <td class="zuo">
-                            <input type="text" name="code" style="width:110px;height:30px;" placeholder="验证码">
-                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                            <a onclick="javascript:re_captcha();" >
-                                <img src="{{ URL('kit/captcha/1') }}"  alt="验证码" title="刷新图片" width="100" height="30" id="c2c98f0de5a04167a9e427d883690ff6" border="0">
-                            </a>
-                            </td>
-                        <tr style="text-align:center;">
-                            <td class="btn" colspan="2">
-                                <input type="submit" value="登陆"/>
-                                <input type="reset" value="重置"/>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-            <div class="butdl">
-                <h3>还没有账号？</h3>
-                <a href="./index.php?c=register&a=index"><button>去注册</button></a>
-            </div>
+<head>
+<title>半边天影院登录</title> 
+<meta content="text/html; charset=utf-8">
+<script type="text/javascript" src="{{ asset ('/home/js/jquery-1.9.0.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset ('/home/js/login.js') }}"></script>
+<link href="{{ asset ('/home/css/login2.css') }}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<h1>登录注册</h1>
+
+<div class="login" style="margin-top:50px;">
+    
+    <div class="header">
+        <div class="switch" id="switch"><a class="switch_btn_focus" id="switch_qlogin" href="javascript:void(0);" tabindex="7">快速登录</a>
+            <a class="switch_btn" id="switch_login" href="javascript:void(0);" tabindex="8">快速注册</a><div class="switch_bottom" id="switch_bottom" style="position: absolute; width: 64px; left: 0px;"></div>
         </div>
-        <div id="clear"></div>
-        <script>
-            $(function () {
-                $('input').iCheck({
-                    checkboxClass: 'icheckbox_square-blue',
-                    radioClass: 'iradio_square-blue',
-                    increaseArea: '20%' // optional
-                });
-            });
+    </div>    
+  
+    
+    <div class="web_qr_login" id="web_qr_login" style="display: block; height: 235px;">    
 
-            // 点击生成新的验证码
-            function re_captcha()
-            {   
-                // 生成路由路径
-                $url = "{{ URL('kit/captcha') }}";
+            <!--登录-->
+            <div class="web_login" id="web_login">
+               
+               
+               <div class="login-box">
+    
+            
+            <div class="login_form">
+                <form action="/admin/dologin" name="loginform" accept-charset="utf-8" id="login_form" class="loginForm" method="post"><input type="hidden" name="did" value="0"/>
+               <input type="hidden" name="to" value="log"/>
+                <div class="uinArea" id="uinArea">
+                <label class="input-tips" for="u">帐号：</label>
+                <div class="inputOuter" id="uArea">
+                    
+                    <input type="text" id="u" name="username" class="inputstyle"/>
+                </div>
+                </div>
+                <div class="pwdArea" id="pwdArea">
+               <label class="input-tips" for="p">密码：</label> 
+               <div class="inputOuter" id="pArea">
+                    
+                    <input type="password" id="p" name="p" class="inputstyle"/>
+                </div>
+                </div>
+               
+                <div style="padding-left:50px;margin-top:20px;"><input type="submit" value="登 录" style="width:150px;" class="button_blue"/></div>
+              </form>
+           </div>
+           
+                </div>
+               
+            </div>
+            <!--登录end-->
+  </div>
 
-                // 追加随机数
-                $url = $url + "/" + Math.random();
-
-                // 获取id
-                document.getElementById('c2c98f0de5a04167a9e427d883690ff6').src=$url;
-            }
-        </script>
-    </body>
+  <!--注册-->
+    <div class="qlogin" id="qlogin" style="display: none; ">
+   
+    <div class="web_login"><form name="form2" id="regUser" accept-charset="utf-8"  action="/admin/register" method="post">
+          <input type="hidden" name="to" value="reg"/>
+                           <input type="hidden" name="did" value="0"/>
+        <ul class="reg_form" id="reg-ul">
+                <div id="userCue" class="cue">快速注册请注意格式</div>
+                <li>
+                    
+                    <label for="user"  class="input-tips2">用户名：</label>
+                    <div class="inputOuter2">
+                        <input type="text" id="user" name="user" maxlength="16" class="inputstyle2"/>
+                    </div>
+                    
+                </li>
+                
+                <li>
+                <label for="passwd" class="input-tips2">密码：</label>
+                    <div class="inputOuter2">
+                        <input type="password" id="passwd"  name="passwd" maxlength="16" class="inputstyle2"/>
+                    </div>
+                    
+                </li>
+                <li>
+                <label for="passwd2" class="input-tips2">确认密码：</label>
+                    <div class="inputOuter2">
+                        <input type="password" id="passwd2" name="" maxlength="16" class="inputstyle2" />
+                    </div>
+                    
+                </li>
+                
+                <li>
+                 <label for="qq" class="input-tips2">邮箱：</label>
+                    <div class="inputOuter2">
+                       
+                        <input type="text" id="qq" name="qq" maxlength="10" class="inputstyle2"/>
+                    </div>
+                </li>
+                <li>
+                    <div class="inputArea">
+                        <input type="button" id="reg"  style="margin-top:10px;margin-left:85px;" class="button_blue" value="注册"/>
+                    </div>
+                </li><div class="cl"></div>
+            </ul>
+        </form>
+    </div>
+    </div>
+    <!--注册end-->
+</div>
+</body>
 </html>

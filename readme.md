@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 67edc232c18e3132b0548e0a56c482293fb51cdd
 ##项目使用文档
 ###1.安装
 	composer install
@@ -6,6 +9,8 @@
 	cp .env.example .env
 ###3.生成key
 	php artisan key:generate
+<<<<<<< HEAD
+=======
 =======
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
@@ -61,3 +66,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 >>>>>>> dea069a55b4b8a8ae93aa2315a059c77316bf974
 >>>>>>> b9f1c2f1beb338599a37b4f9eb293ab08885f997
 >>>>>>> da8f16f4cd22dd0b521a3c68bbaac5b25a537c9b
+>>>>>>> 67edc232c18e3132b0548e0a56c482293fb51cdd

@@ -200,11 +200,21 @@ class CategoryController extends Controller
 		// 查询一条数据
 		$res = \DB::table('category') -> where('pid', $id) -> first();
 
+		// dd($res);
+		
 		// 判断
 		if($res)
 		{
 			return back() -> with(['info' => '有子分类，不允许删除']);
 		}
+
+
+		// 判断分类下是否有电影
+		if($movie = \DB::table('movie') -> where('tid',$id) -> first())
+		{
+			return back() -> with(['info' => '该分类下存有电影，请先删除电影']);
+		}
+		// dd($movie);
 
 		// 执行删除
 		$res = \DB::table('category') -> delete($id);

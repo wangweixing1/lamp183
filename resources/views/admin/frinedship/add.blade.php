@@ -31,7 +31,7 @@
 						<!-- form start -->
 						<form role="form" method="post" action="{{ url('/admin/frinedship/insert') }}" enctype="multipart/form-data" >
 							{{ csrf_field() }}
-							
+							<div class="box-body">
 								<!-- 显示验证错误 配合验证规则使用--> 
 								@if (count($errors) > 0)
 									<div class="alert alert-danger">

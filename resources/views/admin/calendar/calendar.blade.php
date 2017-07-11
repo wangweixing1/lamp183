@@ -1,3 +1,8 @@
+
+@extends('admin.layout')
+
+@section('content')
+=======
 <!DOCTYPE html>
 <html>
 <head>
@@ -491,6 +496,7 @@
     </section>
     <!-- /.sidebar -->
   </aside>
+>>>>>>> 67edc232c18e3132b0548e0a56c482293fb51cdd
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -588,6 +594,9 @@
   </div>
   <!-- /.content-wrapper -->
 
+<<<<<<< HEAD
+  @endsection
+=======
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.8
@@ -595,6 +604,7 @@
     <strong>Copyright &copy; 2014-2016 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
     reserved.
   </footer>
+>>>>>>> 67edc232c18e3132b0548e0a56c482293fb51cdd
 
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
@@ -793,6 +803,27 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
+<<<<<<< HEAD
+<script src="{{ asset('/admin/adminlte/plugins/jQuery/jquery-2.2.3.min.js') }}"></script>
+<!-- Bootstrap 3.3.6 -->
+    <script src="{{ asset('/admin/adminlte/bootstrap/js/bootstrap.min.js') }}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{{ asset('/admin/adminlte/bootstrap/js/jquery-ui.min.js') }}"></script>
+<!-- Slimscroll -->
+<script src="{{ asset('/admin/adminlte/plugins/slimScroll/jquery.slimscroll.min.js') }}"></script>
+<!-- FastClick -->
+<script src="{{ asset('/admin/adminlte/plugins/fastclick/fastclick.js') }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('/admin/adminlte/dist/js/app.min.js') }}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ asset('/admin/adminlte/dist/js/demo.js') }}"></script>
+<!-- fullCalendar 2.2.5 -->
+    <script src="{{ asset('/admin/adminlte/bootstrap/js/moment.min.js') }}"></script>
+<script src="{{ asset('/admin/adminlte/plugins/fullcalendar/fullcalendar.min.js') }}"></script>
+<!-- Page specific script -->
+
+
+=======
 <script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -810,13 +841,18 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
 <script src="../plugins/fullcalendar/fullcalendar.min.js"></script>
 <!-- Page specific script -->
+>>>>>>> 67edc232c18e3132b0548e0a56c482293fb51cdd
 <script>
   $(function () {
 
     /* initialize the external events
      -----------------------------------------------------------------*/
     function ini_events(ele) {
+<<<<<<< HEAD
+      ele.each(function () {    
+=======
       ele.each(function () {
+>>>>>>> 67edc232c18e3132b0548e0a56c482293fb51cdd
 
         // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
         // it doesn't need to have a start or end

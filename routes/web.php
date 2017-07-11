@@ -15,6 +15,7 @@
 //     return view('welcome');
 // });
 
+
 // 前台登录
 Route::get('/home/login','Home\LoginController@login');
 
@@ -48,9 +49,49 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 递归查询所有子分类
 	Route::get('/admin/getallcategory','Admin\CategoryController@get');
 
+	// 电影管理
+	Route::resource('/admin/movie','Admin\MovieController');
+
+	// 日期管理-日期
+	Route::get('/admin/date/add','Admin\DateController@add');
+	Route::post('/admin/date/insert','Admin\DateController@insert');
+
+	// 日期列表
+	Route::get('/admin/date/index','Admin\DateController@index');
+
+	// 操作编辑
+	Route::get('/admin/date/edit/{id}','Admin\DateController@edit');
+
+	// 执行编辑
+	Route::post('/admin/date/update','Admin\DateController@update');
+
+	// 删除
+	Route::get('/admin/date/delete/{id}','Admin\DateController@delete');
+
+	// 日期管理-放映时间
+	Route::get('/admin/time/add','Admin\TimeController@add');
+
+	// 添加
+	Route::post('/admin/time/insert','Admin\TimeController@insert');
+
+	// 列表
+	Route::get('/admin/time/index','Admin\TimeController@index');
+
+	// 删除
+	Route::get('/admin/time/delete/{id}','Admin\TimeController@delete');
+
+	// 操作编辑
+	Route::get('/admin/time/edit/{id}','Admin\TimeController@edit');
+
+	// 执行编辑
+	Route::post('/admin/time/update','Admin\TimeController@update');
+
+	// 展示日历路由
+	// Route::get('/admin/calendar','Admin\CalendarController@calendar');
+
 	// 网站配置
 	Route::get('/admin/config/config','Admin\ConfigController@config');
-    Route::post('/admin/config/insert','Admin\ConfigController@insert');
+    	Route::post('/admin/config/insert','Admin\ConfigController@insert');
 
 
 	// 添加友情链接
@@ -60,15 +101,14 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 友情链接列表
 	Route::get('/admin/frinedship/index','Admin\FrinedshipController@index');
 
-     // 执行友情链接编辑
-    Route::post('/admin/frinedship/update','Admin\FrinedshipController@update');
+     	// 执行友情链接编辑
+   	 Route::post('/admin/frinedship/update','Admin\FrinedshipController@update');
 
 	// 编辑操作
 	Route::get('/admin/frinedship/edit/{id}','Admin\FrinedshipController@edit');
 	Route::get('/admin/frinedship/delete/{id}','Admin\FrinedshipController@delete');
 
 });
-
 
 	// 登录路由
 	Route::get('/admin/login','Admin\LoginController@login');
@@ -79,4 +119,7 @@ Route::group(['middleware' => 'adminlogin'],function()
 
 	// 验证码路由
 	Route::get('kit/captcha/{tmp}', 'Admin\KitController@captcha');
+
+	// 发送邮件
+	Route::get('/send','Admin\MailController@send');
 
