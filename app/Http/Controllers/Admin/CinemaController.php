@@ -5,48 +5,46 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class TimeController extends Controller
+class CinemaController extends Controller
 {
-	
-	//
+	// 加载添加页面
 	public function add()
 	{
-		// 查询所属日期
-		$data = \DB::table('date') -> get();
-
-		// 加载添加页面并发送数据
-		return view('admin.time.add',['title' => '时间添加','data' => $data]);
+		return view('admin.cinema.add',['title' => '影院添加']);
 	}
 
 	public function insert(Request $request)
-	{
-		// 获取表单所提交的数据
+	{	
+		// 获取表单提交的数据
 		$data = $request -> except('_token');
-		
+		// dd($data);
+
 		// 判断
 		if($data)
 		{
 				
 			 $data['status'] = 1;
-			 $data['path'] = 0;
+			 $data['path'] = 0; 
+			 $data['pid'] = 0;
 					   
 		}
 
 		// 执行添加
-		$res = \DB::table('time') -> insert($data);
+		$res = \DB::table('cinema') -> insert($data);
 
 		// 判断
 		if($res)
 		{
-			return redirect('/admin/time/index') -> with(['info' => '添加成功']);
+			return redirect('/admin/cinema/index') -> with(['info' => '添加成功']);
 		}else
 		{
 			return back() -> with(['info' =>'添加失败' ]);
 		}
 
-
+		
 	}
 
+	// 加载影院列表
 	public function index(Request $request)
 	{
 		// 获取值
@@ -55,27 +53,22 @@ class TimeController extends Controller
 
 		// return '用户列表';
 		// 查询值数据库
-		$data = \DB::table('time') ->where('time_name','like','%'.$keywords.'%') -> paginate($num); 
-
-		// 查询日期表数据
-		$res = \DB::table('date') -> get();
-		// dd($res);
+		$data = \DB::table('cinema') ->where('cinema_name','like','%'.$keywords.'%') -> paginate($num); 
 
 		// 加载页面并发送数据
-		return view('admin.time.index',['request' => $request ->all(),'title' => '时间列表','data' => $data,'res' => $res]);
+		return view('admin.cinema.index',['request' => $request ->all(),'title' => '影院列表','data' => $data]);
 	}
 
-	// 放映时间编辑页面
+
+	// 影院编辑页面
 	public function edit($id)
 	{
 		// 查询
-		$data = \DB::table('time') -> where('id', $id) -> first();
+		$data = \DB::table('cinema') -> where('id', $id) -> first();
 		// dd($data);
 
-		$res = \DB::table('date') -> get();
-
 		// 发送数据
-		return view('admin.time.edit',['title' => '放映时间编辑','data' => $data,'res' => $res]);
+		return view('admin.cinema.edit',['title' => '放映时间编辑','data' => $data]);
 	}
 
 	// 修改数据
@@ -93,17 +86,18 @@ class TimeController extends Controller
 				
 			$data['status'] = 1;
 			$data['path'] = 0;
+			$data['pid'] = 0;
 					   
 		}
 
 		// 执行修改
-		$res = \DB::table('time') -> where('id',$id) -> update($data);
+		$res = \DB::table('cinema') -> where('id',$id) -> update($data);
 		// dd($res);
 
 		// 判断
 		if($res)
 		{
-			return redirect('/admin/time/index') -> with(['info' => '修改成功']);
+			return redirect('/admin/cinema/index') -> with(['info' => '修改成功']);
 		}else
 		{
 			return back() -> with(['info' => '修改失败']);
@@ -111,19 +105,19 @@ class TimeController extends Controller
 
 	}
 
+	// 执行删除
 	public function delete($id)
 	{
-		$res = \DB::table('time') -> delete($id);
+		$res = \DB::table('cinema') -> delete($id);
 
 		// 判断
 		if($res)
 		{
-			return redirect('/admin/time/index') -> with(['info' => '删除成功']);
+			return redirect('/admin/cinema/index') -> with(['info' => '删除成功']);
 		}else
 		{
 			return back() -> with(['info' => '删除失败']);
 		}
 	}
-
 
 }
