@@ -25,7 +25,7 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 后台主页
 	Route::get('/admin/index','Admin\IndexController@index');
 	
-	// 用户管理
+	// 用户管理---start
 	Route::get('/admin/user/add','Admin\UserController@add');
 	Route::post('/admin/user/insert','Admin\UserController@insert');
 
@@ -41,6 +41,7 @@ Route::group(['middleware' => 'adminlogin'],function()
 
 	// ajax 操作修改用户名
 	Route::post('/admin/user/ajaxrename','Admin\UserController@ajaxRename');
+	// 用户管理---over
 
 	// 分类管理 资源路由
 	Route::resource('/admin/category','Admin\CategoryController');
@@ -51,7 +52,7 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 电影管理
 	Route::resource('/admin/movie','Admin\MovieController');
 
-	// 日期管理-日期
+	// 日期管理-日期--------start
 	Route::get('/admin/date/add','Admin\DateController@add');
 	Route::post('/admin/date/insert','Admin\DateController@insert');
 
@@ -84,6 +85,68 @@ Route::group(['middleware' => 'adminlogin'],function()
 
 	// 执行编辑
 	Route::post('/admin/time/update','Admin\TimeController@update');
+	// 日期管理---over
+
+	// 影院管理--影院----start
+	// 加载添加页面
+	Route::get('/admin/cinema/add','Admin\CinemaController@add');
+
+	// 添加
+	Route::post('/admin/cinema/insert','Admin\CinemaController@insert');
+
+	// 加载影院列表
+	Route::get('/admin/cinema/index','Admin\CinemaController@index');
+
+	// 删除
+	Route::get('/admin/cinema/delete/{id}','Admin\CinemaController@delete');
+
+	// 操作编辑
+	Route::get('/admin/cinema/edit/{id}','Admin\CinemaController@edit');
+
+	// 执行编辑
+	Route::post('/admin/cinema/update','Admin\CinemaController@update');
+	// 影院---over
+
+	// 影厅---start
+	Route::get('/admin/hall/add','Admin\HallController@add');
+
+	// 添加
+	Route::post('/admin/hall/insert','Admin\HallController@insert');
+
+	// 加载影厅列表
+	Route::get('/admin/hall/index','Admin\HallController@index');
+
+	// 删除
+	Route::get('/admin/hall/delete/{id}','Admin\HallController@delete');
+
+	// 操作编辑
+	Route::get('/admin/hall/edit/{id}','Admin\HallController@edit');
+
+	// 执行编辑
+	Route::post('/admin/hall/update','Admin\HallController@update');
+	// 影厅---over
+	// 影院管理----over
+
+	// 放映管理--start
+	Route::get('/admin/project/add','Admin\ProjectController@add');
+
+	// 添加
+	Route::post('/admin/project/insert','Admin\ProjectController@insert');
+
+	// 加载影厅列表
+	Route::get('/admin/project/index','Admin\ProjectController@index');
+
+	// 删除
+	Route::get('/admin/project/delete/{id}','Admin\ProjectController@delete');
+
+	// 操作编辑
+	Route::get('/admin/project/edit/{id}','Admin\ProjectController@edit');
+
+	// 执行编辑
+	Route::post('/admin/project/update','Admin\ProjectController@update');
+
+
+
 
 	// 展示日历路由
 	// Route::get('/admin/calendar','Admin\CalendarController@calendar');
