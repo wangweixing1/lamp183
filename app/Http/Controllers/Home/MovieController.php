@@ -7,8 +7,13 @@ use App\Http\Controllers\Controller;
 
 class MovieController extends Controller
 {
-    public function movie()
-	{
-		return view('home.movie.movie',['title' => '电影详情',]);
+    // 电影介绍
+     public function index()
+	{	
+		$movie = \DB::table('movie') -> get();
+		// dd($movie);	
+		$frinedship = \DB::table('frinedship') -> get();
+		// dd($frinedship);
+		return view('home.movie.index',['title' => '电影详情','movie'=>$movie,'frinedship'=>$frinedship]);
 	}
 }

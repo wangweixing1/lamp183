@@ -29,7 +29,7 @@
 
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form role="form" method="post" action="{{ url('/admin/indent/insert') }}" enctype="multipart/form-data" >
+                        <form role="form" method="post" action="{{ url('/admin/order/insert') }}" enctype="multipart/form-data" >
                             {{ csrf_field() }}
                             <div class="box-body">
 
@@ -48,29 +48,51 @@
                                         </ul>
                                     </div>
                                 @endif
+                                
                                 <div class="form-group">
-                                    <label for="exampleInputName">订单编号</label>
-                                    <input type="text" value="{{ old('name') }}" name="name" class="form-control" id="exampleInputName" placeholder="">
+                                    <label for="exampleInputName">影片名称</label>
+                                    <select name="movie_name" class="form-control">
+                                        <option value="0">请选择影片</option>
+                                            @foreach($movie as $key => $val)
+                                                <option value="{{ $val -> movie_name }}">{{ $val -> movie_name }}</option>
+                                            @endforeach             
+                                    </select>
+                                </div>                             
+
+                                 <div class="form-group">
+                                <label for="exampleInputName">用户名称</label>
+                                <input type="text" name="user_name" value="" class="form-control" id="exampleInputName" placeholder="请输入你的用户名称">
                                 </div>
+
+
                                 <div class="form-group">
-                                    <label for="exampleInputName">影片编号</label>
-                                    <input type="text" value="{{ old('name') }}" name="name" class="form-control" id="exampleInputName" placeholder="">
+                                    <label for="exampleInputName">放映时间</label>
+                                    <select name="time" class="form-control">
+                                        <option value="0">选择合适时间</option>
+                                            @foreach($time as $key => $val)
+                                                <option value="{{ $val -> time_name }}">{{ $val -> time_name }}</option>
+                                            @endforeach             
+                                    </select>
                                 </div>
-                                <div class="form-group">
-                                    <label for="exampleInputName">用户编号</label>
-                                    <input type="text" value="{{ old('name') }}" name="name" class="form-control" id="exampleInputName" placeholder="">
+
+                               <div class="form-group">
+                                    <label for="exampleInputName">影厅</label>
+                                    <select name="hall" class="form-control">
+                                        <option value="0">选择</option>
+                                            @foreach($hall as $key => $val)
+                                                <option value="{{ $val -> hall_name }}">{{ $val -> hall_name }}</option>                        
+                                            @endforeach         
+                                    </select>
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="exampleInputName">订票张数</label>
-                                    <input type="text" value="{{ old('name') }}" name="name" class="form-control" id="exampleInputName" placeholder="">
+                                <label for="exampleInputName">单张票价</label>
+                                <input type="text" name="price" value="" class="form-control" id="exampleInputName" placeholder="请输入价格">
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="exampleInputName">订购日期</label>
-                                    <input type="text" value="{{ old('name') }}" name="name" class="form-control" id="exampleInputName" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputName">订单状态</label>
-                                    <input type="text" value="{{ old('name') }}" name="name" class="form-control" id="exampleInputName" placeholder="">
+                                <label for="exampleInputName">票数</label>
+                                <input type="text" name="poll" value="" class="form-control" id="exampleInputName" placeholder="请输入想买几张">
                                 </div>
 
                                 

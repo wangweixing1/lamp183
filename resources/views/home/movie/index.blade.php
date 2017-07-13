@@ -1,10 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" >
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>电影简介</title>
-<link href="homelte/css/default.css" rel="stylesheet" type="text/css" />
-<link href="homelte/css/sub.css" rel="stylesheet" type="text/css" />
+<title>电影简介-{{ $title }}</title>
+<link href="{{ asset ('/home/homelte/css/default.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset ('/home/homelte/css/sub.css') }}" rel="stylesheet" type="text/css" />
 <style type="text/css">
 #nav_content table{ margin:0 auto;  border: 1px solid #ccc; border-collapse: collapse;}
 #nav_content th,#nav_content td {border: 1px solid #ccc; height: 42px; line-height: 42px; text-align:center;}
@@ -72,8 +72,8 @@ window.onload=function(){
 <body>
 <div class="header">
   <div class="top_img">
-    <div class="logo"><a href="#"><img src="homelte/images/bbt.jpg" width="300" height="80" /></a></div>
-    <div class="rx"><img src="homelte/images/topad.gif" width="500" height="100" /></div>
+    <div class="logo"><a href="#"><img src="{{ asset ('/home/homelte/images/bbt.jpg') }}" width="300" height="80" /></a></div>
+    <div class="rx"><img src="{{ asset ('/home/homelte/images/topad.gif') }}" width="500" height="100" /></div>
     <div class="top_nav">
       <p><a href="#"> 登录 </a> </p>
       <p><a href="#"> 注册 </a></p>
@@ -82,7 +82,7 @@ window.onload=function(){
   </div>
   <div class="menu">
     <ul>
-      <li id="a1"><a href="homelte/index.html">首　页</a></li>
+      <li id="a1"><a href="index.html">首　页</a></li>
       <li id="a2"> <a href="websj.html">热门影片</a></li>
       <li id="a3"><a href="case.html">正在热映</a></li>
       <li id="a4"><a href="product.html">即将上映</a></li>
@@ -102,22 +102,22 @@ window.onload=function(){
         <table width="100%" cellspacing="0" cellpadding="0" border="0">
           <tbody>
             <tr>
-              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="homelte/images/index_r_03_seo.gif"></a></td>
+              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="{{ asset ('/home/homelte/images/index_r_03_seo.gif') }}"></a></td>
               <td><a href="#">超凡蜘蛛侠</a>
                 <p>主演:成龙、谢霆锋</p></td>
             </tr>
             <tr>
-              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="homelte/images/index_r_03_seo2.gif"></a></td>
+              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="{{ asset ('/home/homelte/images/index_r_03_seo2.gif') }}"></a></td>
               <td><a href="#">复仇者联盟</a>
                 <p>主演:周星驰、梁朝伟</p></td>
             </tr>
             <tr>
-              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="homelte/images/index_r_03_seo3.gif"></a></td>
+              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="{{ asset ('/home/homelte/images/index_r_03_seo3.gif') }}"></a></td>
               <td><a href="#">枕边凶灵</a>
                 <p>主演:安德鲁·加菲尔德</p></td>
             </tr>
             <tr>
-              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="homelte/images/index_r_03_seo4.gif"></a></td>
+              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="{{ asset ('/home/homelte/images/index_r_03_seo4.gif') }}"></a></td>
               <td><a href="#">疯魔美女2</a>
                 <p>主演:张静初·李冰冰</p></td>
             </tr>
@@ -134,7 +134,7 @@ window.onload=function(){
       <div class="right_content">
         <div class="product_info">
           <div class="product_info_xx">
-            <div class="product_info_img" align="center"> <img src="homelte/images/220.jpg"  /> </div>
+            <div class="product_info_img" align="center"> <img src="{{ asset ('/home/homelte/images/220.jpg') }}"  /> </div>
             <div class="lineh_255" style="padding-left:10px;">
             <div class="t_14">蝙蝠侠前传3</div>
               <p><span>导演：</span>克里斯托弗·诺兰</p>
@@ -161,8 +161,7 @@ window.onload=function(){
             <tr>
                 <th width="15%">放映时间</th>
                 <th width="15%">影厅空位</th>
-                <th width="15%">语言</th>
-                <th width="15%">版本</th>
+                <th width="15%">语言</th>            
                 <th width="15%">票价</th>
                 <th width="25%">购票</th>
             </tr>
@@ -170,85 +169,30 @@ window.onload=function(){
               <td>11:20</td>
                 <td>余98/128总</td>
                 <td>国语</td>
-                <td>3D</td>
+                
                 <td>50元</td>
-                <td><a href="{{ url('/home/indent') }}"><input name="" type="submit" class="dgbg02" value="马上购票" /></td></a>
+                <td><input name="" type="button" class="dgbg02" value="马上购票" /></td>
             </tr>
             <tr>
               <td>11:20</td>
                 <td>余98/128总</td>
                 <td>国语</td>
-                <td>3D</td>
+              
                 <td>50元</td>
-                <td><a href="{{ url('/home/indent') }}"><input name="" type="submit" class="dgbg02" value="马上购票" /></td></a>
+                <td><input name="" type="button" class="dgbg02" value="马上购票" /></td>
             </tr>
             <tr>
               <td>11:20</td>
                 <td>余98/128总</td>
-                <td>国语</td>
-                <td>3D</td>
+              <td>国语</td>
                 <td>50元</td>
-                <td><a href="{{ url('/home/indent') }}"><input name="" type="submit" class="dgbg02" value="马上购票" /></td></a>
+                <td><input name="" type="button" class="dgbg02" value="马上购票" /></td>
             </tr>
-            <tr>
-              <td>11:20</td>
-                <td>余98/128总</td>
-                <td>国语</td>
-                <td>3D</td>
-                <td>50元</td>
-                <td><a href="{{ url('/home/indent') }}"><input name="" type="submit" class="dgbg02" value="马上购票" /></td></a>
-            </tr>
-            <tr>
-              <td>11:20</td>
-                <td>余98/128总</td>
-                <td>国语</td>
-                <td>3D</td>
-                <td>50元</td>
-                <td><a href="{{ url('/home/indent') }}"><input name="" type="submit" class="dgbg02" value="马上购票" /></td></a>
-            </tr>
-            <tr>
-              <td>11:20</td>
-                <td>余98/128总</td>
-                <td>国语</td>
-                <td>3D</td>
-                <td>50元</td>
-                <td><a href="{{ url('/home/indent') }}"><input name="" type="submit" class="dgbg02" value="马上购票" /></td></a>
-            </tr>
-            <tr>
-              <td>11:20</td>
-                <td>余98/128总</td>
-                <td>国语</td>
-                <td>3D</td>
-                <td>50元</td>
-                <td><a href="{{ url('/home/indent') }}"><input name="" type="submit" class="dgbg02" value="马上购票" /></td></a>
-            </tr>
-            <tr>
-              <td>11:20</td>
-                <td>余98/128总</td>
-                <td>国语</td>
-                <td>3D</td>
-                <td>50元</td>
-                <td><a href="{{ url('/home/indent') }}"><input name="" type="submit" class="dgbg02" value="马上购票" /></td></a>
-            </tr>
-            <tr>
-              <td>11:20</td>
-                <td>余98/128总</td>
-                <td>国语</td>
-                <td>3D</td>
-                <td>50元</td>
-                <td><a href="{{ url('/home/indent') }}"><input name="" type="submit" class="dgbg02" value="马上购票" /></td></a>
-            </tr>
-            <tr>
-              <td>11:20</td>
-                <td>余98/128总</td>
-                <td>国语</td>
-                <td>3D</td>
-                <td>50元</td>
-                <td><a href="{{ url('/home/indent') }}"><input name="" type="submit" class="dgbg02" value="马上购票" /></td></a>
-            </tr>
+            
+            
         </tbody>
     </table></div>
-  <div style="display:none"><img src="homelte/images/bfx.jpg" width="650" height="436" /></div>
+  <div style="display:none"><img src="{{ asset ('/home/homelte/images/bfx.jpg') }}" width="650" height="436" /></div>
     <div style="display:none">从他对第三部的定性中，我们也能感受到这种情绪："我们正在弄完整个故事，
 
 这不是什么翻拍，也不是什么'重启'，我们是在收尾，要跟前面已经完成的保

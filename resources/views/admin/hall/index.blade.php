@@ -7,13 +7,13 @@
 		<!-- Content Header (Page header) -->
 		<section class="content-header">
 			<h1>
-				日期管理
+				影院管理
 				<small>列表</small>
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-				<li><a href="#">日期管理</a></li>
-				<li class="active">时间列表</li>
+				<li><a href="#">影院管理</a></li>
+				<li class="active">影院列表</li>
 			</ol>
 		</section>
 

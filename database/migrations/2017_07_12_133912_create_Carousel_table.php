@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIndentTable extends Migration
+class CreateCarouselTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,11 @@ class CreateIndentTable extends Migration
      */
     public function up()
     {
-        // 书写订单结构
-        Schema::create('indent', function (Blueprint $table) {
+         // 书写轮播表结构
+        Schema::create('carousel', function (Blueprint $table) {
             $table -> increments('id'); // 自增
-            $table -> string('movie_id'); 
-            $table -> string('user_id'); 
-            $table -> string('poll');
-            $table -> string('date');
-            $table -> string('state');
-            
+            $table -> string('movie_name');            
+            $table -> string('movie_img');            
            });
     }
 

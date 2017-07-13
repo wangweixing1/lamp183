@@ -1,12 +1,12 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" >
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>电影售票系统-{{ $title }}</title>
+<title>电影售票系统 - {{ $title }}</title>
 <link href="homelte/css/default.css" rel="stylesheet" type="text/css" />
 <link href="homelte/css/index.css" rel="stylesheet" type="text/css" />
-<script type="homelte/text/javascript" src="css/jquery.js"></script>
-<script language="javascript" type="text/javascript" src="css/yao.js"></script>
+<script type="text/javascript" src="homelte/css/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="homelte/css/yao.js"></script>
 
 <!-- 滑动门 -->
 <script  type="text/javascript">   
@@ -14,37 +14,37 @@
 function scrollDoor(){
 }
 scrollDoor.prototype = {
-  sd : function(menus,divs,openClass,closeClass){
-    var _this = this;
-    if(menus.length != divs.length)
-    {
-      alert("菜单层数量和内容层数量不一样!");
-      return false;
-    }       
-    for(var i = 0 ; i < menus.length ; i++)
-    { 
-      _this.$(menus[i]).value = i;        
-      _this.$(menus[i]).onmouseover = function(){
-          
-        for(var j = 0 ; j < menus.length ; j++)
-        {           
-          _this.$(menus[j]).className = closeClass;
-          _this.$(divs[j]).style.display = "none";
-        }
-        _this.$(menus[this.value]).className = openClass; 
-        _this.$(divs[this.value]).style.display = "block";        
-      }
-    }
-    },
-  $ : function(oid){
-    if(typeof(oid) == "string")
-    return document.getElementById(oid);
-    return oid;
-  }
+	sd : function(menus,divs,openClass,closeClass){
+		var _this = this;
+		if(menus.length != divs.length)
+		{
+			alert("菜单层数量和内容层数量不一样!");
+			return false;
+		}				
+		for(var i = 0 ; i < menus.length ; i++)
+		{	
+			_this.$(menus[i]).value = i;				
+			_this.$(menus[i]).onmouseover = function(){
+					
+				for(var j = 0 ; j < menus.length ; j++)
+				{						
+					_this.$(menus[j]).className = closeClass;
+					_this.$(divs[j]).style.display = "none";
+				}
+				_this.$(menus[this.value]).className = openClass;	
+				_this.$(divs[this.value]).style.display = "block";				
+			}
+		}
+		},
+	$ : function(oid){
+		if(typeof(oid) == "string")
+		return document.getElementById(oid);
+		return oid;
+	}
 }
 window.onload = function(){
-  var SDmodel = new scrollDoor();
-  SDmodel.sd(["m01","m02","m03","m04"],["c01","c02","c03","c04"],"sd01","sd02");
+	var SDmodel = new scrollDoor();
+	SDmodel.sd(["m01","m02","m03","m04"],["c01","c02","c03","c04"],"sd01","sd02");
 
 }
 </script>
@@ -62,15 +62,12 @@ window.onload = function(){
   </div>
   <div class="menu">
     <ul>
-      <li id="a1"><a href="{{ url('/home/movie') }}">首　页</a></li>
-      <li id="a2"> <a href="homelte/case.html">热门影片</a></li>
+      <li id="a1"><a href="index.html">首　页</a></li>
+      <li id="a2"> <a href="websj.html">热门影片</a></li>
       <li id="a3"><a href="case.html">正在热映</a></li>
-      <li id="a4"><a href="case.html">即将上映</a></li>
-      <li id="a5"><a href="case.html">经典回味</a></li>
-      <li id="a6"><a href="case.html">全球首映</a></li>
-      <li id="a7"><a href="#">热门活动</a></li>
-      <li id="a8"><a href="#">优惠专区</a></li>
-      <li id="a9"><a href="#">放映时刻表</a></li>
+      <li id="a4"><a href="product.html">即将上映</a></li>
+      <li id="a8"><a href="sub.html">优惠专区</a></li>
+      <li id="a9"><a href="contact.html">放映时刻表</a></li>
     </ul>
   </div>
 </div>
@@ -83,13 +80,13 @@ window.onload = function(){
   </div>
   <script language="javascript" type="text/javascript">
 <!--
-  YAO.YTabs({
-    tabs: YAO.getEl('YSamples').getElementsByTagName('img'),
-    contents: YAO.getEl('YPhotos').getElementsByTagName('img'),
-    auto: true,
-    scroll: true,
-    scrollId: 'YPhotos'
-  });
+	YAO.YTabs({
+		tabs: YAO.getEl('YSamples').getElementsByTagName('img'),
+		contents: YAO.getEl('YPhotos').getElementsByTagName('img'),
+		auto: true,
+		scroll: true,
+		scrollId: 'YPhotos'
+	});
 //-->
 </script> 
 </div>
@@ -100,26 +97,44 @@ window.onload = function(){
       <div class="left_1_con">
         <div class="left_1_l">
           <div class="scrolldoorFrame">
-            <ul class="scrollUl">
-              <li class="sd01" id="m01"><a href="#">
-
-              @foreach($data as $key => $val)
+            <ul class="scrollUl">			
+              <li class="sd01" id="m01">
+              	<a href="{{ url('/home/movie/index') }}">
+	                <dl class="hd_list">
+	                  <dt><img src="homelte/images/hd02.jpg" width="81" height="35" /></dt>
+	                  <dd>【青春期3】</dd>
+	                  <dd>7月13日上映>></dd>
+	                </dl>
+	            </a>
+	          </li>
+			
+			
+              <li class="sd02" id="m02"><a href="{{ url('/home/movie/index') }}">
                 <dl class="hd_list">
-                  <dt><img src="/uploads/movie_img/{{ $val -> movie_img }}" width="81" height="35" /></dt>
-                  <dd>【{{ $val -> movie_name }}】</dd>
-                  <dd>7月13日上映>></dd>
+                  <dt><img src="homelte/images/hd03.jpg" width="81" height="35" /></dt>
+                  <dd>【重来电影】</dd>
+                  <dd>剧情 爱情>></dd>
                 </dl>
                 </a></li>
-              <li class="sd02" id="m02"><a href="#">
-              @endforeach  
-
-               
+              <li class="sd02" id="m03"><a href="{{ url('/home/movie/index') }}">
+                <dl class="hd_list">
+                  <dt><img src="homelte/images/hd02.jpg" width="81" height="35" /></dt>
+                  <dd>【青春期3】</dd>
+                  <dd>7月6日首播>></dd>
+                </dl>
+                </a></li>
+              <li class="sd02" id="m04"><a href="{{ url('/home/movie/index') }}">
+                <dl class="hd_list">
+                  <dt><img src="homelte/images/hd04.jpg" width="81" height="35" /></dt>
+                  <dd>【浮出水面】</dd>
+                  <dd>7月12日播>></dd>
+                </dl>
                 </a></li>
             </ul>
             <div class="cont">
               <div id="c01"><img src="homelte/images/hd1.jpg" width="449" height="193" /></div>
               <div id="c02" class="hidden"><img src="homelte/images/hd3.jpg" width="449" height="193" /></div>
-              <div id="c03" class="hidden"><img src="/homelte/images/hd2.jpg" width="449" height="193" /></div>
+              <div id="c03" class="hidden"><img src="homelte/images/hd2.jpg" width="449" height="193" /></div>
               <div id="c04" class="hidden"><img src="homelte/images/hd4.jpg" width="449" height="193" /></div>
             </div>
           </div>
@@ -145,65 +160,44 @@ window.onload = function(){
         <div class="clear"></div>
       </div>
     </div>
-
-
-
     <div class="left_4 top10px" style="height:auto;">
-      <h2><a href="#">正在热播电影</a><span> ---- 半边天帮助您快速购票、享受便捷网络购票体验 </span></h2>
+      <h2><a href="#">正在热播电影</a></h2>
       <div class="inner">
-
-      
-      @foreach($data as $key => $val)
+      @foreach($movie as $key => $val)
         <dl class="anli_list">
-          <dt><a href="{{ url('/home/movie') }}"><img src="/uploads/movie_img/{{ $val -> movie_img }}" width="150" height="100" /></a></dt>
-          <dd><a href="{{ url('/home/movie') }}">{{ $val -> movie_name }} </a>
-            @foreach($res as $k => $v)
-             <p style="font-weight:bold;">{{ $v -> date_name }}</p>
-            @endforeach
-            <p>{{ $val -> depict }}</p>
-          
-            <a href="{{ url('/home/indent') }}">
-              <input type="submit"  name="" class="dgbg02" value="马上购票" />
-            </a>
+          <dt><a href="{{ url('/home/movie/index') }}"><img src="/uploads/movie_img/{{ $val -> movie_img }}" width="150" height="100" /></a></dt>
+          <dd><a href="{{ url('/home/movie/index') }}"> {{ $val -> movie_name }} </a>
+            <p style="font-weight:bold;">07月12日</p>
+            <p>杨幂赵文卓展夺宝情缘</p>
+            <p>主演：杨幂 赵文卓 樊 ...</p>
+            <p>
+              <input name="" type="button" class="dgbg02" value="马上购票" />
+            </p>
           </dd>
         </dl>
-      @endforeach
-
+        @endforeach
+        
+       
         <div class="clear"></div>
       </div>
     </div>
     <div class="left_5">
-      <h2><a href="#">获奖影片展</a><span> ---- 半边天帮助您快速购票、享受便捷网络购票体验</span></h2>
+      <h2><a href="#">获奖影片展</a></h2>
       <div class="inner">
         <div id="demo" style="overflow:hidden; width:100%; margin:0 auto;">
           <table border="0" align="center" cellpadding="5" cellspacing="0" cellspace="0" >
             <tr>
-              <td id="demo1" valign="top"><table border="0"  cellpadding="0">
+              <td id="demo1" valign="top"><table border="0"  cellpadding="0">                 
                   <tr>
-                    <td align="center"><dl class="anli_list">
-                        <dt><a href="#"><img src="homelte/images/al1.jpg" width="150" height="100" /></a></dt>
-                        <dd><a href="#">十二生肖</a></dd>
-                      </dl></td>
-                    <td align="center"><dl class="anli_list">
-                        <dt><a href="#"><img src="homelte/images/al2.jpg" width="150" height="100" /></a></dt>
-                        <dd><a href="#">青春期3</a></dd>
-                      </dl></td>
-                    <td align="center"><dl class="anli_list">
-                        <dt><a href="#"><img src="homelte/images/al3.jpg" width="150" height="100" /></a></dt>
-                        <dd><a href="#">王者风范3</a></dd>
-                      </dl></td>
-                    <td align="center"><dl class="anli_list">
-                        <dt><a href="#"><img src="homelte/images/al4.jpg" width="150" height="100" /></a></dt>
-                        <dd><a href="#">重来电影节</a></dd>
-                      </dl></td>
-                    <td align="center"><dl class="anli_list">
-                        <dt><a href="#"><img src="homelte/images/al2.jpg" width="150" height="100" /></a></dt>
-                        <dd><a href="#">灵魂战车</a></dd>
-                      </dl></td>
-                    <td align="center"><dl class="anli_list">
-                        <dt><a href="#"><img src="homelte/images/al3.jpg" width="150" height="100" /></a></dt>
-                        <dd><a href="#">重来电影</a></dd>
-                      </dl></td>
+                  	@foreach($movie as $key => $val)
+                    <td align="center">
+                    	<dl class="anli_list">
+                        	<dt><a href="{{ url('/home/movie/index') }}"><img src="/uploads/movie_img/{{ $val -> movie_img }}" width="150" height="100" /></a></dt>
+                        	<dd><a href="{{ url('/home/movie/index') }}">{{ $val -> movie_name  }}</a></dd>
+                     	</dl>
+                    </td>
+					          @endforeach
+                    
                   </tr>
                 </table></td>
               <td id="demo2" valign="top"></td>
@@ -229,7 +223,7 @@ window.onload = function(){
                                     } )
                                     demo.mouseout(function() {
                                         MyMar=setInterval(Marquee,speed);
-                                    } )   
+                                    } )		
                             </script> 
         <!-- 
           
@@ -319,6 +313,10 @@ window.onload = function(){
           <li><a href="#"><span>17558</span>王者之剑</a></li>
           <li><a href="#"><span>17452</span>南极大冒险</a></li>
           <li><a href="#"><span>9955</span>肖申克的救赎</a></li>
+          <li><a href="#"><span>9858</span>无法触碰</a></li>
+          <li><a href="#"><span>7522</span>忠犬八公的故事</a></li>
+          <li><a href="#"><span>5200</span>惊悚快感</a></li>
+          <li><a href="#"><span>2777</span>气场大比拼</a></li>
         </ul>
       </div>
     </div>
@@ -337,13 +335,25 @@ window.onload = function(){
           <tr>
             <td height="135" align="center" width="140"><a href="#"><img src="homelte/images/index_r_03_seo3.gif" width="120" height="100" /></a></td>
             <td><a href="#">枕边凶灵</a><p>主演:安德鲁·加菲尔德</p></td>
-          </tr>         
+          </tr>
+          <tr>
+            <td height="135" align="center" width="140"><a href="#"><img src="homelte/images/index_r_03_seo4.gif" width="120" height="100" /></a></td>
+            <td><a href="#">疯魔美女2</a><p>主演:张静初·李冰冰</p></td>
+          </tr>
         </table>
       </div>
     </div>
   </div>
   <div class="clear"></div>
-
+  <div class="bottom top10px">
+    <h2>友情链接 >></h2>   
+    <div class="footer_nav">友情合作企业:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	
+		@foreach($frinedship as $key => $val)
+    	<a href="http://{{ $val -> url }}">{{ $val -> name }}</a> | 
+		@endforeach
+    </div>
+  </div>
   <div class="bottom top10px">
     <h2>订票帮助中心 >></h2>
     <div class="bottom_con">
@@ -352,32 +362,30 @@ window.onload = function(){
           <th scope="col"><a href="#"><img src="homelte/images/20091130101638768.jpg" width="128" height="35" /></a></th>
           <th scope="col"><a href="#"><img src="homelte/images/20091130101739119.jpg" width="128" height="35" /></a></th>
           <th scope="col"><a href="#"><img src="homelte/images/20091130101911881.jpg" width="128" height="35" /></a></th>
-          
         </tr>
         <tr>
           <td><a href="#">如何快速购票</a></td>
           <td><a href="#">购票说明介绍</a></td>
-          <td><a href="#">影片信息查询</a></td>         
+          <td><a href="#">影片信息查询</a></td>          
         </tr>
         <tr>
-          <td><a href="#">找到欣赏影片</a></td>         
-          <td><a href="#">联系我们</a></td>
-          <td><a href="#">电影订票系统</a></td>         
+          <td><a href="#">找到欣赏影片</a></td>
+          <td><a href="#">支付相关说明</a></td>
+          <td><a href="#">联系我们</a></td>          
         </tr>
         <tr>
           <td><a href="#">今日快速订票说明</a></td>
           <td><a href="#">优惠活动最新折扣</a></td>
-          <td><a href="#">电影购票系统说明</a></td>          
+          <td><a href="#">电影购票系统说明</a></td>
+          
         </tr>
       </table>
     </div>
-  </div>
+
   <div class="clear"></div>
-</div>
-<div class="footer">
-  <div class="footer_nav">lamp183旗下：电影售票系统&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">热门影片</a> | <a href="#">正在热映</a> | <a href="#">即将上映</a> | <a href="#">经典回味</a> | <a href="#">全球首映</a> | <a href="#">热门活动</a> | <a href="#">放映时刻表</a> </div>
-  <p>您是66666 位访客  欢迎您的光临！<br />
-    lamp183 版权所有 京ICP备0123456789号</p>
+ </div>
+  <div class="bottom top10px">   
+  <div class="footer">LAMP183&nbsp;&nbsp;&nbsp;版权所有&nbsp;&nbsp;&nbsp;京ICP&nbsp;&nbsp;备666666666号  <br />    
 </div>
 </body>
 </html>

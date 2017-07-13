@@ -1,17 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" >
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>确认订单</title>
-<link href="homelte/css/default.css" rel="stylesheet" type="text/css" />
-<script type="homelte/text/javascript" src="css/jquery.js"></script>
-<link href="homelte/css/sub.css" rel="stylesheet" type="text/css" />
+<title>确认订单 - {{ $title }}</title>
+<link href="{{ asset ('/home/homelte/css/default.css') }}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{{ asset ('/home/homelte/css/jquery.js') }}"></script>
+<link href="{{ asset ('/home/homelte/css/sub.css') }}" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="header">
   <div class="top_img">
-    <div class="logo"><a href="#"><img src="homelte/images/bbt.jpg" width="300" height="80" /></a></div>
-    <div class="rx"><img src="homelte/images/topad.gif" width="500" height="100" /></div>
+    <div class="logo"><a href="#"><img src="{{ asset ('/home/homelte/images/bbt.jpg') }}" width="300" height="80" /></a></div>
+    <div class="rx"><img src="{{ asset ('/home/homelte/images/topad.gif') }}" width="500" height="100" /></div>
     <div class="top_nav">
       <p><a href="#"> 登录 </a> </p>
       <p><a href="#"> 注册 </a></p>
@@ -40,25 +40,20 @@
         <table width="100%" cellspacing="0" cellpadding="0" border="0">
           <tbody>
             <tr>
-              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="homelte/images/index_r_03_seo.gif"></a></td>
+              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="{{ asset ('/home/homelte/images/index_r_03_seo.gif') }}"></a></td>
               <td><a href="#">超凡蜘蛛侠</a>
                 <p>主演:成龙、谢霆锋</p></td>
             </tr>
             <tr>
-              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="homelte/images/index_r_03_seo2.gif"></a></td>
+              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="{{ asset ('/home/homelte/images/index_r_03_seo2.gif') }}"></a></td>
               <td><a href="#">复仇者联盟</a>
                 <p>主演:周星驰、梁朝伟</p></td>
             </tr>
             <tr>
-              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="homelte/images/index_r_03_seo3.gif"></a></td>
+              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="{{ asset ('/home/homelte/images/index_r_03_seo3.gif') }}"></a></td>
               <td><a href="#">枕边凶灵</a>
                 <p>主演:安德鲁·加菲尔德</p></td>
-            </tr>
-            <tr>
-              <td width="140" height="135" align="center"><a href="#"><img width="120" height="100" src="homelte/images/index_r_03_seo4.gif"></a></td>
-              <td><a href="#">疯魔美女2</a>
-                <p>主演:张静初·李冰冰</p></td>
-            </tr>
+            </tr>            
           </tbody>
         </table>
       </div>
@@ -79,13 +74,13 @@
 				
 				//这里设置调用标记
 				linkarr[1] = "http://www.baidu.com";
-				picarr[1]  = "homelte/images/b02.jpg";
+				picarr[1]  = "{{ asset ('/home/homelte/images/b02.jpg') }}";
 				textarr[1] = "";
 				linkarr[2] = "http://www.baidu.com";
-				picarr[2]  = "homelte/images/b01.jpg";
+				picarr[2]  = "{{ asset ('/home/homelte/images/b01.jpg') }}";
 				textarr[2] = "";
 					linkarr[3] = "http://www.baidu.com";
-				picarr[3]  = "homelte/images/b03.jpg";
+				picarr[3]  = "{{ asset ('/home/homelte/images/b03.jpg') }}";
 				textarr[3] = "";
 			
 				
@@ -102,21 +97,19 @@
 				  else texts += "|"+textarr[i];
 				}
 				document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0" width="'+ swf_width +'" height="'+ swf_height +'">');
-				document.write('<param name="movie" value="homelte/images/bcastr3.swf"><param name="quality" value="high">');
+				document.write('<param name="movie" value="{{ asset ('/home/homelte/images/bcastr3.swf') }}"><param name="quality" value="high">');
 				document.write('<param name="menu" value="false"><param name=wmode value="opaque">');
-				document.write('<param name="FlashVars" value="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'">');
-				 
+				document.write('<param name="FlashVars" value="bcastr_file='+files+'&bcastr_link='+links+'&bcastr_title='+texts+'">');				
 				</script></div>
     <div class="right_con">
       <div class="curry">当前位置：<a href="#">电影</a>&nbsp;&nbsp;--&nbsp;&nbsp;<a href="#">蝙蝠侠前传3</a> &nbsp;&nbsp;--&nbsp;&nbsp;确认订购</div>
       <div class="right_content">
         <dl class="contact_list">
-          <dt><img src="homelte/images/contact_l.jpg" width="201" height="219" /></dt>
-          <dd><img src="homelte/images/order.jpg" width="400" height="80" />
+          <dt><img src="{{ asset ('/home/homelte/images/contact_l.jpg') }}" width="201" height="219" /></dt>
+          <dd><img src="{{ asset ('/home/homelte/images/order.jpg') }}" width="400" height="80" />
             <p><span>选择影片：</span>蝙蝠侠前传3</p>
             <p><span>放映时间：</span>12:20</p>
-            <p><span>选择影厅：</span>1号厅</p>
-            <p><span>电影版本：</span>3D</p>
+            <p><span>选择影厅：</span>1号厅</p>           
             <p><span>单张票价：</span>30元</p>
             <p><span>订购张数：</span><select name="" class="xz">
               <option selected="selected">订购1张</option>

@@ -145,15 +145,11 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 执行编辑
 	Route::post('/admin/project/update','Admin\ProjectController@update');
 
-
-
-
-	// 展示日历路由
-	// Route::get('/admin/calendar','Admin\CalendarController@calendar');
-
 	// 网站配置
 	Route::get('/admin/config/config','Admin\ConfigController@config');
-    	Route::post('/admin/config/insert','Admin\ConfigController@insert');
+    Route::post('/admin/config/insert','Admin\ConfigController@insert');
+
+//友情链接模块开始-------------------------------------------------------
 
 	// 添加友情链接
 	Route::get('/admin/frinedship/add','Admin\FrinedshipController@add');
@@ -169,8 +165,38 @@ Route::group(['middleware' => 'adminlogin'],function()
 	Route::get('/admin/frinedship/edit/{id}','Admin\FrinedshipController@edit');
 	Route::get('/admin/frinedship/delete/{id}','Admin\FrinedshipController@delete');
 
+//订单模块开始-------------------------------------------------------
+
 	// 订单路由
-	Route::get('/admin/indent/add','admin\IndentController@add');
+	Route::get('/admin/order/add','Admin\OrderController@add');
+	Route::post('/admin/order/insert','Admin\OrderController@insert');
+
+	// 加载订单路由
+	Route::get('/admin/order/index','Admin\OrderController@index');
+
+	// 执行订单编辑
+   	 Route::post('/admin/order/update','Admin\OrderController@update');
+
+	// 订单编辑操作
+	Route::get('/admin/order/edit/{id}','Admin\OrderController@edit');
+	Route::get('/admin/order/delete/{id}','Admin\OrderController@delete');
+
+
+//轮播模块开始-------------------------------------------------------
+
+	// 轮播添加
+	Route::get('/admin/carousel/add','Admin\CarouselController@add');
+	Route::post('/admin/carousel/insert','Admin\CarouselController@insert');
+
+	 //轮播列表
+	Route::get('/admin/carousel/index','Admin\CarouselController@index');
+
+	// 执行轮播编辑
+   	Route::post('/admin/carousel/update','Admin\CarouselController@update');
+
+	// 轮播编辑操作
+	Route::get('/admin/carousel/edit/{id}','Admin\CarouselController@edit');
+	Route::get('/admin/carousel/delete/{id}','Admin\CarouselController@delete');
 
 });
 
@@ -188,17 +214,17 @@ Route::group(['middleware' => 'adminlogin'],function()
 	Route::get('/send','Admin\MailController@send');
 
 
-
-
 //前台模块路由开始
 
 	//前台主页
 	Route::get('/home/index','home\IndexController@index');
 
-	// 电影管理
-	Route::get('/home/movie','home\MovieController@movie');
+	//前台电影介绍
+	Route::get('/home/movie/index','home\MovieController@index');
 
-	// 订单路由
-	Route::get('/home/indent','home\IndentController@indent');
+	//前台订单
+	Route::get('/home/order/index','home\OrderController@index');
+
+
 
 	

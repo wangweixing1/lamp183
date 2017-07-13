@@ -448,13 +448,22 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ url('/admin/indent/add') }}"><i class="fa fa-circle-o"></i> 添加订单</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+            <li><a href="{{ url('/admin/order/add') }}"><i class="fa fa-circle-o"></i> 添加订单</a></li>
+            <li><a href="{{ url('/admin/order/index') }}"><i class="fa fa-circle-o"></i> 订单列表</a></li>           
           </ul>
         </li>
-
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>轮播管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ url('/admin/carousel/add') }}"><i class="fa fa-circle-o"></i> 添加轮播 </a></li>
+            <li><a href="{{ url('/admin/carousel/index') }}"><i class="fa fa-circle-o"></i> 浏览轮播 </a></li>
+          </ul>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-calendar-check-o"></i>
@@ -506,8 +515,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ url('/admin/frinedship/index') }}"><i class="fa fa-circle-o"></i> 浏览链接</a></li>
             <li><a href="{{ url('/admin/frinedship/add') }}"><i class="fa fa-circle-o"></i> 添加链接</a></li>
+            <li><a href="{{ url('/admin/frinedship/index') }}"><i class="fa fa-circle-o"></i> 浏览链接</a></li>
           </ul>
         </li>
 
