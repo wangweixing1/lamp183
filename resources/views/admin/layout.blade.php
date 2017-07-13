@@ -434,6 +434,8 @@
           <ul class="treeview-menu">
             <li class="active"><a href="{{ url('/admin/project/add') }}"><i class="fa fa-hand-peace-o"></i> 放映添加</a></li>
             <li><a href="{{ url('/admin/project/index') }}"><i class="fa fa-industry"></i> 放映列表</a></li>
+             <li class="active"><a href="{{ url('/admin/showing/create') }}"><i class="fa fa-hand-peace-o"></i> 热映添加</a></li>
+             <li><a href="{{ url('/admin/showing') }}"><i class="fa fa-industry"></i> 热映列表</a></li>
           </ul>
         </li>
 

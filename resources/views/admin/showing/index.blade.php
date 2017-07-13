@@ -7,12 +7,12 @@
 		<!-- Content Header (Page header) -->
 		<section class="content-header">
 			<h1>
-				用户管理
+				电影管理
 				<small>列表</small>
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-				<li><a href="#">用户管理</a></li>
+				<li><a href="#">电影管理</a></li>
 				<li class="active">列表</li>
 			</ol>
 		</section>
@@ -23,7 +23,7 @@
 			<div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">快速查看用户列表</h3>
+						<h3 class="box-title">快速查看电影列表</h3>
 					</div>
 					<!-- /.box-header -->
 					<div class="box-body">
@@ -34,7 +34,7 @@
 							</div>
 						@endif
 
-						<form action="{{ url('/admin/user/index') }}" method="get">
+						<form action="{{ url('/admin/movie') }}" method="get">
 							<div class="row">
 								<div class="col-md-2">
 									<!-- select --> 
@@ -71,9 +71,13 @@
 												>160
 											</option>
 										</select>
+										
 									</div>
+									
 								</div>
+								
 								<div class="col-md-4 col-md-offset-6 ">
+									
 									<div class="input-group input-group">
 
 										{{-- <!--  value="{{ $request['keywords'] }}"  保持状态--> --}}
@@ -90,9 +94,10 @@
 							<thead>
 								<tr>
 									<th>ID</th>
-									<th>用户名</th>
-									<th>邮箱</th>
-									<th>头像</th>
+									<th>电影名</th>
+									<th>价格</th>
+									<th>电影图片</th>
+									<th>描述</th>
 									<th>操作</th>
 								</tr>
 							</thead>
@@ -101,10 +106,15 @@
 								@foreach($data as $key => $val)
 									<tr class="parent">
 										<td class="ids">{{ $val -> id }}</td>
-										<td class="name">{{ $val -> name }}</td>
-										<td>{{ $val -> email }}</td>
-										<td><img  style="width:20px;height:20px;" src=" /uploads/avatar/{{ $val -> avatar }}"/></td>
-										<td><a href="{{ url('/admin/user/edit') }}/{{ $val -> id }}">编辑</a> <a class="del" href="#" data-toggle="modal" data-target="#myModal">删除</a></td>
+										<td class="treeview" style="background:#222D32;color:#fff;">《{{ $val -> showing_name }}》</td>
+										<td><div style="width:30px;height:20px;color:red;">￥{{ $val -> showing_price }}</div></td>
+										<td style="background:black;"><img  style="width:50px;height:50px;" src=" /uploads/showing_img/{{ $val -> showing_img }}"/></td>	
+										<td><textarea name="" id="" cols="50" rows="8" style="resize:none;background:#ccc;" readonly="true">{{ $val -> showing_depict }}</textarea></td>
+										<td><a class="btn btn-info btn-flat" href="{{ url('/admin/showing') }}/{{ $val -> id }}/edit">编辑</a><span class="del"><a class="btn btn-info btn-flat" href="#">删除</a></span></td>
+										<form style="display:none;" action="{{ url('/admin/showing') }}/{{ $val -> id }}" method="post">
+											{{ method_field('DELETE') }}
+											{{ csrf_field() }}
+										</form>
 									</tr>
 								@endforeach
 							</tbody>
@@ -124,91 +134,18 @@
 	<!-- /.content -->
 	</div>
 
-@endsection
-@section('js')
-	<script type="text/javascript">
 
-		// ajax token 设置使用
-		$.ajaxSetup({
-			headers: {
-				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-			}
-		});	
 
-		// 绑定双击事件
-		$(".name").one('dblclick',aaa);
+	@endsection
 
-		// 双击事件封装函数 解决双击bug
-		function aaa(){
+	@section('js')
 
-			// 把 $(this) 放到td里 避免修改用户名时 获取到不必要的值
-			var td =  $(this);
+		<script type="text/javascript">
 
-			// 获取id
-			var id = $(this).parent('.parent').find('.ids').html();
-			// alert(id);
-			// 获取原来的值
-			var oldName = $(this).html();
-
-			// 创建输入框
-			var inp = $("<input type='text'>");
-
-			// 写入创建的input框并显示出来
-			inp.val(oldName);
-
-			// 双击变成input框
-			$(this).html(inp);
-
-			// 双击后直接选中
-			inp.select();
-
-			// 添加失去焦点事件
-			inp.on('blur',function(){
-				// 获取新的名字
-				var newName = inp.val();
-
-				// 执行ajax
-				$.ajax('/admin/user/ajaxrename',{
-					type:'POST',
-					data:{id:id,name:newName},
-					success:function(data){
-						if(data == '0' )
-						{
-							alert('用户名已经存在');
-							td.html(oldName);
-						}else if(data == '1')
-						{
-							alert('恭喜！修改成功');
-							td.html(newName);
-						}else
-						{
-							alert(' 抱歉！修改失败');
-						}
-
-						// alert(data);
-					},
-					error:function(data)
-					{
-						alert('数据异常');
-					},
-					dataType:'json'
-				});
-
-				// 再次双击修改用户名
-				td.one('dblclick' , aaa);
-
+			$(".del").on('click',function()
+			{
+				$(this).parent().next().submit();
 			});
-		}
-
-		// 获取要设置模态框的变量
-		// 全局变量
-		id = 0;
-
-		// 获取id保存到变量当中
-		$(".del").on('click',function(){
-			id = $(this).parents('.parent').find('.ids').html();
-			// alert(id);
-		});
-
-	</script>
+		</script>	
+	
 @endsection

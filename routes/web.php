@@ -145,6 +145,9 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 执行编辑
 	Route::post('/admin/project/update','Admin\ProjectController@update');
 
+	// 热映电影
+	Route::resource('/admin/showing','Admin\showingController');
+
 
 
 
@@ -187,4 +190,17 @@ Route::get('kit/captcha/{tmp}', 'Admin\KitController@captcha');
 
 // 发送邮件
 Route::get('/send','Admin\MailController@send');
+
+
+
+
+
+// 前台
+Route::get('/home/index','Home\IndexController@index');
+
+// 列表页
+Route::get('/home/case/index','Home\CaseController@index');
+
+//ajax
+Route::get('/home/case/ajax','Home\CaseController@ajax');
 

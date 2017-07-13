@@ -64,7 +64,7 @@ class MovieController extends Controller
             'movie_img' => 'required|image'
         ],[
             'movie_name.required' => '电影名不能为空',
-            'movie_name.unique' => '该电影已经存在',
+           
             'price.required' => '价格不能为空',
             'movie_img.required' => '电影图片不能为空',
             'movie_img.image' => '请上传图片'
