@@ -145,6 +145,18 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 执行编辑
 	Route::post('/admin/project/update','Admin\ProjectController@update');
 
+<<<<<<< HEAD
+=======
+	// 热映电影
+	Route::resource('/admin/showing','Admin\showingController');
+
+
+
+
+	// 展示日历路由
+	// Route::get('/admin/calendar','Admin\CalendarController@calendar');
+
+>>>>>>> 783ed4a14458552c85085ec9979689aacf6a2840
 	// 网站配置
 	Route::get('/admin/config/config','Admin\ConfigController@config');
     Route::post('/admin/config/insert','Admin\ConfigController@insert');
@@ -219,6 +231,7 @@ Route::group(['middleware' => 'adminlogin'],function()
 	//前台主页
 	Route::get('/home/index','home\IndexController@index');
 
+<<<<<<< HEAD
 	//前台电影介绍
 	Route::get('/home/movie/index','home\MovieController@index');
 
@@ -228,3 +241,18 @@ Route::group(['middleware' => 'adminlogin'],function()
 
 
 	
+=======
+
+
+
+
+// 前台
+Route::get('/home/index','Home\IndexController@index');
+
+// 列表页
+Route::get('/home/case/index','Home\CaseController@index');
+
+//ajax
+Route::get('/home/case/ajax','Home\CaseController@ajax');
+
+>>>>>>> 783ed4a14458552c85085ec9979689aacf6a2840

@@ -9,6 +9,7 @@ class IndexController extends Controller
 {
     //
     public function index()
+<<<<<<< HEAD
 	{		
 		$movie = \DB::table('movie') -> get();
 		// dd($movie);
@@ -20,4 +21,13 @@ class IndexController extends Controller
 
 
 
+=======
+    {
+    	// 查询数据
+    	$movie = \DB::table('movie') ->get();
+    	$showing = \DB::table('showing') -> get();
+    	
+    	return view('home.index.index',['title' => '首页','movie' => $movie,'showing' => $showing])->with(['info' => '22']);
+    }
+>>>>>>> 783ed4a14458552c85085ec9979689aacf6a2840
 }

@@ -15,10 +15,9 @@
 .left_2_con{ padding:0 10px;}
 .sub_list{}
 .sub_list li{ height:25px; line-height:25px; background:url(../images/icon3.png) no-repeat left center; text-indent:15px;}
-.pbanner{ height:192px; margin-bottom:10px; border:1px solid #DFC8D0; width:728px;}
-.right_con{ background:url(../images/rcon_bg.jpg) no-repeat;}
+.pbanner{ height:1000px; margin-bottom:10px; border:1px solid #DFC8D0; width:100%;}
 .curry{ height:31px; line-height:31px; text-indent:45px;}
-.right_content{ padding:15px;}
+.right_content{ padding:15px;height:1000px;width:100%;}
 .right_content p{ line-height:25px;}
 .right_content p span{ font-weight:bold;}
 
