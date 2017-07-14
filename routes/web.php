@@ -15,9 +15,14 @@
 //     return view('welcome');
 // });
 
-
 // 前台登录
 Route::get('/home/login','Home\LoginController@login');
+Route::post('/home/dologin','Home\LoginController@doLogin');
+
+
+// 注册页面
+Route::get('/home/regist','Home\RegistController@regist');
+Route::post('/home/insert','Home\RegistController@insert');
 
 // 跌幅群组
 Route::group(['middleware' => 'adminlogin'],function()

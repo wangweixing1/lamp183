@@ -449,7 +449,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> 订单列表</a></li>
+            <li><a href="{{ url('/admin/project/add') }}"><i class="fa fa-circle-o"></i> 订单列表</a></li>
             <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
             <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
             <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
@@ -585,22 +585,12 @@
         </li> -->
         <!-- <li>
           <a href="{{ url('/admin/calendar') }}">
-=======
-            <li><a href="{{ url('/admin/frinedship/add') }}"><i class="fa fa-circle-o"></i> 添加链接</a></li>          
-            <li><a href="{{ url('/admin/frinedship/index') }}"><i class="fa fa-circle-o"></i> 浏览链接</a></li>
-          </ul>
-        </li>
-
-        <li>
-          <a href="{{ url('/admin/calender') }}">
->>>>>>> 67edc232c18e3132b0548e0a56c482293fb51cdd
             <i class="fa fa-calendar"></i> <span>日历</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-red">3</small>
               <small class="label pull-right bg-blue">17</small>
             </span>
           </a>
-<<<<<<< HEAD
         </li> -->
         <!-- <li>
           <a href="pages/mailbox/mailbox.html">

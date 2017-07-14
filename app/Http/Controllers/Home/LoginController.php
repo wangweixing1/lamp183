@@ -10,36 +10,38 @@ class LoginController extends Controller
     //
     public function login()
     {
-    	return view('home.login.login',['title' =>'主页']);
-    }
-
+    	return view('home.login.login');
+    }  
+    
     // 执行登录
 	public function doLogin(Request $request)
 	{
 		// 获取数据 除了token字段
 		$data = $request -> except("_token");
+		// dd($data);
 
+		// 验证是否记住我
+		$remember_token = \Cookie::get('remember_token');
+		// dd($remember_token);
 		if($remember_token)
 		{
 			// 查询数据
 			$home = \DB::table('users') -> where('remember_token',$remember_token) -> first();
-
+			// dd($home);
 			// 存入session
 			session(['master' => $home]);
 
 			return redirect('/home/index') -> with(['info' => '登录成功']);
 		}
 
-		// 获取session
-		$code = session('code');
 
 		// 查询用户
 		$user = \DB::table('users') -> where('name', $data['name']) -> first();
-
+		// dd($user);
 		// 判断用户
 		if(!$user)
 		{
-			return back() -> with(['info' => '该用户不存在']);
+			return back() -> with(['info' => '该用户名不存在']);
 		}
 
 
@@ -55,8 +57,13 @@ class LoginController extends Controller
 		// 将用户数据存入session中
 		session(['master' => $user]);
 
+		// 写入cookie并判断（记住我）has是检测
+		if($request -> has('remember_me'))
+		{
+			\Cookie::queue('remember_token',$user -> remember_token,10);
+		}
 		
-		// 跳转到后后台主页
+		// 跳转到前台主页
 		return redirect('/home/index') -> with(['info' => '登录成功']);
 		// dd(11);
 	}
@@ -70,40 +77,4 @@ class LoginController extends Controller
 		//　回到登录页面
 		return redirect('/home/login') -> with(['info' => '退出成功！']);
 	}
-
-	public function web_login()
-    {
-        return view('home.login',['title' => '登录']);
-    }
-
-    // insert
-    public function insert(Request $request)
-    {
-        // echo 111;
-        $this->validate($request, [
-            // 规则验证
-            'name' => 'required|unique:user',  
-            'url' => 'required'           
-        ],[
-            'name.required' => '用户名不能为空',
-            'name.unique' => '用户名已经存在',
-            'url.required' => '链接地址不能为空'            
-        ]);
-
-        $data=$request->except('_token');
-         // dd($data);
-
-        // 执行添加（数据库）
-        $res = \DB::table('user')->insert(
-            $data
-        );     
-        
-        if($res)
-        {
-            return redirect('/home/login/login') -> with(['info' => '添加成功']);
-        }else
-        {
-            return back() -> with(['info' => '添加失败']);
-        }
-    }  
 }
