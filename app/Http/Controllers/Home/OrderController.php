@@ -12,6 +12,7 @@ class OrderController extends Controller
 	{	
 		$order = \DB::table('order') -> get();
 		// dd($order);	
-		return view('home.order.index',['title' => '电影订单','order'=>$order]);
+		$frinedship = \DB::table('frinedship') -> get();
+		return view('home.order.index',['title' => '电影订单','order'=>$order,'frinedship'=>$frinedship]);
 	}
 }

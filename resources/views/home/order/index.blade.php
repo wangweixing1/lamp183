@@ -3,15 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>确认订单 - {{ $title }}</title>
-<link href="{{ asset ('/home/homelte/css/default.css') }}" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="{{ asset ('/home/homelte/css/jquery.js') }}"></script>
-<link href="{{ asset ('/home/homelte/css/sub.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset ('/home/css/default.css') }}" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="{{ asset ('/home/css/jquery.js') }}"></script>
+<link href="{{ asset ('/home/css/sub.css') }}" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="header">
   <div class="top_img">
-    <div class="logo"><a href="#"><img src="{{ asset ('/home/homelte/images/bbt.jpg') }}" width="300" height="80" /></a></div>
-    <div class="rx"><img src="{{ asset ('/home/homelte/images/topad.gif') }}" width="500" height="100" /></div>
+ <div class="logo"><a href="#"><img src="/images/5.png" width="200" height="80" /></a></div>
+ <div class="rx"><img src="{{ asset ('/home/images/topad.gif') }}" width="500" height="100" /></div>
     <div class="top_nav">
       <p><a href="#"> 登录 </a> </p>
       <p><a href="#"> 注册 </a></p>
@@ -20,15 +20,12 @@
   </div>
   <div class="menu">
     <ul>
-      <li id="a1"><a href="index.html">首　页</a></li>
-      <li id="a2"> <a href="websj.html">热门影片</a></li>
-      <li id="a3"><a href="case.html">正在热映</a></li>
-      <li id="a4"><a href="product.html">即将上映</a></li>
-      <li id="a5"><a href="list.html">经典回味</a></li>
-      <li id="a6"><a href="tuiguang.html">全球首映</a></li>
-      <li id="a7"><a href="#">热门活动</a></li>
-      <li id="a8"><a href="sub.html">优惠专区</a></li>
-      <li id="a9"><a href="contact.html">放映时刻表</a></li>
+      <li id="a1"><a href="{{ url('/home/index') }}">首　页</a></li>
+      <li id="a2"> <a href="{{ url('/home/case/index') }}">电影</a></li>
+      <li id="a3"><a href="#">榜单</a></li>
+      <li id="a4"><a href="#">热点</a></li>
+      <li id="a8"><a href="#">优惠专区</a></li>
+      <li id="a9"><a href="#">放映时刻表</a></li>
     </ul>
   </div>
 </div>
@@ -137,12 +134,20 @@
     </div>
   </div>
   <div class="clear"></div>
+  <div class="bottom ">
+    <h2>友情链接 >></h2>
+    <div class="bottom_con">
+        @foreach($frinedship as $key => $val)
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://{{ $val -> url }}">{{ $val -> name }}</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+        @endforeach
+    </div>
+  </div>
+
+  <div class="clear"></div>
 </div>
-<div class="footer">
-  <div class="footer_nav">领悟科技旗下：电影售票系统&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">热门影片</a> | <a href="#">正在热映</a> | <a href="#">即将上映</a> | <a href="#">经典回味</a> | <a href="#">全球首映</a> | <a href="#">热门活动</a> | <a href="#">优惠专区</a> | <a href="#">放映时刻表</a> | <a href="#">公司新闻</a> | <a href="#">领悟科技</a> </div>
-  <p>您是305818 位访客  欢迎您的光临！<br />
-    海南领悟科技 版权所有 豫ICP备01025000148号 <br />
-    广告部：0371-6699999 / 668888 业务部：0371-6677777 / 66555577 / 66665555 / 155998899 </p>
+<div class="footer">  
+  <p>您是66666 位访客  欢迎您的光临！<br />
+    lamp183 版权所有 京ICP备0123456789号</p>
 </div>
 </body>
 </html>
