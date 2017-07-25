@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMovieToble extends Migration
+class CreateDateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,15 @@ class CreateMovieToble extends Migration
      */
     public function up()
     {
-        // 书写电影表结构
-        Schema::create('movie', function (Blueprint $table) {
+         // 书写日期表结构
+        Schema::create('date', function (Blueprint $table) {
             $table -> increments('id'); // 自增
-            $table -> string('movie_name'); 
-            $table -> integer('tid'); // 整型
-            $table -> string('price');
-            $table -> string('depict');
-            $table -> string('movie_img');
+            $table -> string('date_name'); 
+            $table -> integer('pid'); // 整型
+            $table -> string('week_name'); 
+            $table -> string('path');
             $table -> smallInteger('status');
-           });
+        });
     }
 
     /**
@@ -33,6 +32,6 @@ class CreateMovieToble extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('movie');
+        Schema::dropIfExists('date');
     }
 }

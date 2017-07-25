@@ -145,6 +145,7 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 热映电影
 	Route::resource('/admin/showing','Admin\showingController');
 
+<<<<<<< HEAD
 
 	// 即将上映电影
 	Route::resource('/admin/coming','Admin\comingController');
@@ -152,14 +153,32 @@ Route::group(['middleware' => 'adminlogin'],function()
 
 	// 订单管理
 	Route::get('/admin/order/index','Admin\OrderController@index');
+=======
+
+<<<<<<< HEAD
+	// 订单管理
+	Route::get('/admin/order/index','Admin\OrderController@index');
+
+>>>>>>> a2eb69db3ec4dd5fd48b4acfa98d66f9c1758257
 
 	// 展示日历路由
 	// Route::get('/admin/calendar','Admin\CalendarController@calendar');
 
+<<<<<<< HEAD
+=======
+=======
+	// 即将上映电影
+	Route::resource('/admin/coming','Admin\comingController');
+
+
+	// 订单管理
+	Route::get('/admin/order/index','Admin\OrderController@index');
+>>>>>>> 477302149c57f5d47f6978cc7988e80ce50236cb
+>>>>>>> a2eb69db3ec4dd5fd48b4acfa98d66f9c1758257
 
 	// 网站配置
 	Route::get('/admin/config/config','Admin\ConfigController@config');
-    Route::post('/admin/config/insert','Admin\ConfigController@insert');
+    	Route::post('/admin/config/insert','Admin\ConfigController@insert');
 
 //友情链接模块开始-------------------------------------------------------
 
@@ -272,6 +291,7 @@ Route::group(['middleware' => 'adminlogin'],function()
 	//前台订单
 	Route::get('/home/order/index','home\OrderController@index');
 
+<<<<<<< HEAD
 
 	// 列表页
 	Route::get('/home/case/index/{tid}','Home\CaseController@index');
@@ -279,6 +299,22 @@ Route::group(['middleware' => 'adminlogin'],function()
 	//实现分类（ajax）
 	Route::get('/home/case/ajax','Home\CaseController@ajax');
 
+=======
+	// 列表页
+	Route::get('/home/case/index/{tid}','Home\CaseController@index');
+
+	//实现分类（ajax）
+	Route::get('/home/case/ajax','Home\CaseController@ajax');
+
+<<<<<<< HEAD
+	// 详情页
+	Route::get('/home/ticket/index/{id}','Home\TicketController@index');
+
+	// 购票页
+	Route::get('/home/ticket/ticket/{id}','Home\TicketController@ticket');
+
+=======
+>>>>>>> a2eb69db3ec4dd5fd48b4acfa98d66f9c1758257
 	//放映时刻表
 	Route::get('/home/time/index','Home\TimeController@index');
 
@@ -291,6 +327,7 @@ Route::group(['middleware' => 'adminlogin'],function()
 	//ajax
 	Route::get('/home/case/ajax','Home\CaseController@ajax');
 
+<<<<<<< HEAD
 // 详情页
 Route::get('/home/ticket/index/{id}','Home\TicketController@index');
 
@@ -299,18 +336,29 @@ Route::get('/home/ticket/ticket/{id}','Home\TicketController@ticket');
 
 // CinemaAjax
 Route::get('/home/ticket/CinemaAjax','Home\TicketController@CinemaAjax');
+=======
+	// 详情页
+	Route::get('/home/ticket/index/{id}','Home\TicketController@index');
 
-// DateAjax
-Route::get('/home/ticket/DateAjax','Home\TicketController@DateAjax');
+	// 购票页
+	Route::get('/home/ticket/ticket/{id}','Home\TicketController@ticket');
 
-// 提交信息并选座
-Route::post('/home/ticket/seat/{id}','Home\TicketController@seat');
+>>>>>>> 477302149c57f5d47f6978cc7988e80ce50236cb
+	// CinemaAjax
+	Route::get('/home/ticket/CinemaAjax','Home\TicketController@CinemaAjax');
+>>>>>>> a2eb69db3ec4dd5fd48b4acfa98d66f9c1758257
 
-// 现在预订
-Route::get('/home/ticket/ajax','Home\TicketController@ajax');
+	// DateAjax
+	Route::get('/home/ticket/DateAjax','Home\TicketController@DateAjax');
 
-// 订票后台服务async
-Route::get('/async','Home\AsyncController@async');
+	// 提交信息并选座
+	Route::post('/home/ticket/seat/{id}','Home\TicketController@seat');
 
-// 缓存测试
-Route::get('/cache','Home\TicketController@cache');
+	// 现在预订
+	Route::get('/home/ticket/ajax','Home\TicketController@ajax');
+
+	// 订票后台服务async
+	Route::get('/async','Home\AsyncController@async');
+
+	// 缓存测试
+	Route::get('/cache','Home\TicketController@cache');

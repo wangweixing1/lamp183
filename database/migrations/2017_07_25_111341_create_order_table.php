@@ -19,7 +19,6 @@ class CreateOrderTable extends Migration
                     $table -> string('mid'); // 电影id
                     $table -> string('movie_name'); // 电影id
                     $table -> string('price'); // 价格
-                    // $table -> string('uesr_name'); // 用户名
                     $table -> string('set'); // 座位号
                     $table -> string('num'); // 订单号
                     $table -> string('date');// 放映日期
