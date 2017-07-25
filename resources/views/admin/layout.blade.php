@@ -433,8 +433,10 @@
           <ul class="treeview-menu">
             <li class="active"><a href="{{ url('/admin/project/add') }}"><i class="fa fa-hand-peace-o"></i> 放映添加</a></li>
             <li><a href="{{ url('/admin/project/index') }}"><i class="fa fa-industry"></i> 放映列表</a></li>
-             <li class="active"><a href="{{ url('/admin/showing/create') }}"><i class="fa fa-hand-peace-o"></i> 热映添加</a></li>
-             <li><a href="{{ url('/admin/showing') }}"><i class="fa fa-industry"></i> 热映列表</a></li>
+            <li class="active"><a href="{{ url('/admin/showing/create') }}"><i class="fa fa-hand-peace-o"></i> 热映添加</a></li>
+            <li><a href="{{ url('/admin/showing') }}"><i class="fa fa-industry"></i> 热映列表</a></li>
+            <li class="active"><a href="{{ url('/admin/coming/create') }}"><i class="fa fa-hand-peace-o"></i> 即将上映添加</a></li>
+            <li><a href="{{ url('/admin/coming') }}"><i class="fa fa-industry"></i> 即将上映列表</a></li>
           </ul>
         </li>
 
@@ -466,19 +468,21 @@
             <li><a href="{{ url('/admin/carousel/index') }}"><i class="fa fa-circle-o"></i> 浏览轮播 </a></li>
 
           </ul>
+        </li>   
         </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-calendar-check-o"></i>
-            <span>排行管理</span>
+            <span>榜单管理</span>
             <span class="pull-right-container"> 
               <i class="fa fa-angle-left pull-right"></i>             
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> 积分列表</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> 积分规则</a></li>
+            <li><a href="{{ url('/admin/list/add') }}"><i class="fa fa-circle-o"></i> 榜单添加 </a></li>
+            <li><a href="{{ url('/admin/list/index') }}"><i class="fa fa-circle-o"></i> 榜单列表 </a></li>
           </ul>
+        </li>    
         </li>
 
          <li class="treeview">
@@ -523,9 +527,7 @@
           </ul>
         </li>
       </ul>
-
-    </section>
-    <!-- /.sidebar -->
+      </ul>
   </aside>
   
   @yield('content')

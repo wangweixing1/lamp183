@@ -51,11 +51,11 @@
             @endif
             <div class="form-group">
               <label for="exampleInputName">电影名</label>
-              <input type="text" name="movie_name" value="{{ $data ->movie_name }}" class="form-control" id="exampleInputName" placeholder="请输入电影名">
+              <input type="text" name="carousel_name" value="{{ $data ->carousel_name }}" class="form-control" id="exampleInputName" placeholder="请输入电影名">
             </div>              
             <div class="form-group">
               <label for="exampleInputFile">电影图片</label>
-              <input type="file" name="movie_img" id="exampleInputFile">
+              <input type="file" name="carousel_img" id="exampleInputFile">
 
               <p class="help-block">请选择电影图片</p>
             </div>              

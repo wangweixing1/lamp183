@@ -23,7 +23,7 @@
 			<div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">快速查看用户列表</h3>
+						<h3 class="box-title">快速查看用户列表</h3><h5>(注:双击用户名修改)</h5>
 					</div>
 					<!-- /.box-header -->
 					<div class="box-body">
@@ -40,35 +40,35 @@
 									<!-- select --> 
 									<div class="form-group">
 										<select name="num" class="form-control">
-											<option value="10"
+											<option value="5"
 												@if(!empty($request['num']) && $request['num'] == '10')
 													selected="selected" 
 												@endif
-												>10
+												>5
 											</option> {{-- <!-- @if($request['num'] == '10')   selected="selected"    @endif    判断保持状态--> --}}
-											<option value="20"
+											<option value="10"
 												@if(!empty($request['num']) && $request['num'] == '20')
+													selected="selected" 
+												@endif
+												>10
+											</option>
+											<option value="15"
+												@if(!empty($request['num']) && $request['num'] == '40')
+													selected="selected" 
+												@endif
+												>15
+											</option>
+											<option value="20"
+												@if(!empty($request['num']) && $request['num'] == '80')
 													selected="selected" 
 												@endif
 												>20
 											</option>
-											<option value="40"
-												@if(!empty($request['num']) && $request['num'] == '40')
-													selected="selected" 
-												@endif
-												>40
-											</option>
-											<option value="80"
-												@if(!empty($request['num']) && $request['num'] == '80')
-													selected="selected" 
-												@endif
-												>80
-											</option>
-											<option value="160"
+											<option value="25"
 												@if(!empty($request['num']) && $request['num'] == '160')
 													selected="selected" 
 												@endif
-												>160
+												>25
 											</option>
 										</select>
 									</div>
