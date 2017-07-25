@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMovieTable extends Migration
+class CreateShowingTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,13 +14,13 @@ class CreateMovieTable extends Migration
     public function up()
     {
         // 书写电影表结构
-        Schema::create('movie', function (Blueprint $table) {
+        Schema::create('showing', function (Blueprint $table) {
                     $table -> increments('id'); // 自增
-                    $table -> string('movie_name'); 
-                    $table -> integer('tid'); // 整型
-                    $table -> string('price');
-                    $table -> string('depict');
-                    $table -> string('movie_img');
+                    $table -> string('showing_name'); 
+                    $table -> integer('pid'); // 整型
+                    $table -> string('showing_price');
+                    $table -> string('showing_depict');
+                    $table -> string('showing_img');
                     $table -> smallInteger('status');
            });
     }
@@ -33,6 +33,6 @@ class CreateMovieTable extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('movie');
+        Schema::dropIfExists('showing');
     }
 }

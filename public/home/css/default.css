@@ -63,7 +63,7 @@ hr {
 .lineh_25{ line-height:25px;}
 .lineh_255{ float:left; width:420px; overflow:hidden;}
 .txt14px{ font-size:14px;}
-.t_14{ color:#942F3F; font-size:14px;  font-weight:bold; text-align:center;}
+.t_14{ color:#942F3F; font-size:14px;  font-weight:bold; text-align:center;} 
 /*全局样式*/
 .header{ width:972px; margin:0 auto;}
 .top_img{ height:100px;  margin-bottom:3px;} 
@@ -71,27 +71,21 @@ hr {
 .top_nav p{ background: url(../images/left_huodong_j.gif) no-repeat left center; padding-left:15px; height:25px; line-height:25px;}
 .logo{ width:300px; height:80px;float:left; padding-top:15px; padding-bottom:5px; padding-left:10px; padding-right:5px;}
 .rx{ height:100px; width:500px; float:left;}
-.menu{ background:url(../images/menu.jpg) no-repeat; height:35px;}
+.menu{ background:#000 no-repeat; height:35px;}
 .menu ul li{ float:left; height:35px; line-height:35px; font-size:14px;}
 .menu ul li a{ color:#fff;}
 .menu ul li#a1{ width:96px; text-align:center;}
-.menu ul li#a2{ width:106px; text-align:center;}
-.menu ul li#a3{ width:108px; text-align:center;}
-.menu ul li#a4{ width:108px; text-align:center;}
-.menu ul li#a5{ width:108px; text-align:center;}
-.menu ul li#a6{ width:108px; text-align:center;}
-.menu ul li#a7{ width:108px; text-align:center;}
-.menu ul li#a8{ width:109px; text-align:center;}
-.menu ul li#a9{ width:121px; text-align:center;}
+.menu ul li#a2{ width:170px; text-align:center;}
+.menu ul li#a3{ width:172px; text-align:center;}
+.menu ul li#a4{ width:172px; text-align:center;}
+.menu ul li#a8{ width:173px; text-align:center;}
+.menu ul li#a9{ width:145px; text-align:center;}
 .menu ul li#a1 a:hover{  width:96px; text-align:center; display:block;color:#fff;}
-.menu ul li#a2 a:hover{ width:106px; text-align:center; display:block; background:url(../images/menuhover.jpg) no-repeat -96px center;color:#fff; }
-.menu ul li#a3 a:hover{ width:108px; text-align:center;display:block; background:url(../images/menuhover.jpg) no-repeat -202px center;color:#fff; }
-.menu ul li#a4 a:hover{ width:108px; text-align:center;display:block; background:url(../images/menuhover.jpg) no-repeat -310px center; color:#fff;}
-.menu ul li#a5 a:hover{ width:108px; text-align:center;display:block; background:url(../images/menuhover.jpg) no-repeat -418px center; color:#fff;}
-.menu ul li#a6 a:hover{ width:108px; text-align:center;display:block; background:url(../images/menuhover.jpg) no-repeat -526px center; color:#fff;}
-.menu ul li#a7 a:hover{ width:108px; text-align:center;display:block; background:url(../images/menuhover.jpg) no-repeat -634px center; color:#fff;}
-.menu ul li#a8 a:hover{ width:109px; text-align:center;display:block; background:url(../images/menuhover.jpg) no-repeat -743px center; color:#fff;}
-.menu ul li#a9 a:hover{ width:121px; text-align:center;display:block; background:url(../images/menuhover.jpg) no-repeat -851px center;color:#fff; }
+.menu ul li#a2 a:hover{ width:170px; text-align:center; display:block; background:url(../images/menuhover.jpg) no-repeat -96px center;color:#fff; }
+.menu ul li#a3 a:hover{ width:172px; text-align:center;display:block; background:url(../images/menuhover.jpg) no-repeat -202px center;color:#fff; }
+.menu ul li#a4 a:hover{ width:172px; text-align:center;display:block; background:url(../images/menuhover.jpg) no-repeat -310px center;color:#fff;}
+.menu ul li#a8 a:hover{ width:173px; text-align:center;display:block; background:url(../images/menuhover.jpg) no-repeat -743px center;color:#fff;}
+.menu ul li#a9 a:hover{ width:145px; text-align:center;display:block; background:url(../images/menuhover.jpg) no-repeat -851px center;color:#fff; }
 .banner{ height:300px; width:972px; margin:0 auto; padding:10px 0;overflow:hidden;}
 
 #YFocus{position:relative;z-index:4;width:970px;height:300px;overflow:hidden;}

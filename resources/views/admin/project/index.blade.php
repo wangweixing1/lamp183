@@ -7,13 +7,13 @@
 		<!-- Content Header (Page header) -->
 		<section class="content-header">
 			<h1>
-				日期管理
+				放映管理
 				<small>列表</small>
 			</h1>
 			<ol class="breadcrumb">
 				<li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-				<li><a href="#">日期管理</a></li>
-				<li class="active">时间列表</li>
+				<li><a href="#">放映管理</a></li>
+				<li class="active">放映列表</li>
 			</ol>
 		</section>
 
@@ -23,7 +23,7 @@
 			<div class="col-xs-12">
 				<div class="box">
 					<div class="box-header">
-						<h3 class="box-title">快速查看时间列表</h3>
+						<h3 class="box-title">快速查看放映列表</h3>
 					</div>
 					<!-- /.box-header -->
 					<div class="box-body">

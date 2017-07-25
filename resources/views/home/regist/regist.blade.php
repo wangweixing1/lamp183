@@ -4,23 +4,35 @@
 		<meta charset="utf-8">
 		<link href="{{ asset ('/home/css/style.css') }}" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+		<script type="application/x-javascript" ></script>
 		<!--webfonts-->
 		<!--//webfonts-->
 </head>
 <body>
-	<div class="main">
+	<div class="main" >
 		<div class="header" >
 			<h1>半边天影院</h1>
-			<form method="post" action="{{ url('/home/regist/insert') }}">
+			<form method="post" action="{{ url('/home/insert') }}">
+				{{ csrf_field() }}
 				<ul class="left-form">
-					<h2>欢迎注册:</h2>
+				
+								<!-- 显示验证错误 配合验证规则使用--> 
+								@if (count($errors) > 0)
+									<div class="alert alert-danger">
+										<ul>
+											@foreach ($errors->all() as $error)
+											<li>{{ $error }}</li>
+											@endforeach
+										</ul>
+									</div>
+								@endif
+					<li>欢迎注册:</li>
 					<li>
-						<input type="text" naem="name"  placeholder="用户名" required/>
+						<input type="text" name="name"  placeholder="用户名" required/>
 						<div class="clear"> </div>
 					</li> 
 					<li>
-						<input type="text" name="e-maile"   placeholder="邮箱" required/>
+						<input type="text" name="email"   placeholder="邮箱" required/>
 						<div class="clear"> </div>
 					</li> 
 					<li>
@@ -36,11 +48,7 @@
 					 	</div>
 				</ul>
 				<div class="clear"> </div>
-					
 			</form>
-			
 		</div>
-
-	
 </body>
 </html> 

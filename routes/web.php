@@ -15,15 +15,6 @@
 //     return view('welcome');
 // });
 
-// 前台登录
-Route::get('/home/login','Home\LoginController@login');
-Route::post('/home/dologin','Home\LoginController@doLogin');
-
-
-// 注册页面
-Route::get('/home/regist','Home\RegistController@regist');
-Route::post('/home/insert','Home\RegistController@insert');
-
 // 跌幅群组
 Route::group(['middleware' => 'adminlogin'],function()
 {
@@ -151,7 +142,8 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 执行编辑
 	Route::post('/admin/project/update','Admin\ProjectController@update');
 
-
+	// 热映电影
+	Route::resource('/admin/showing','Admin\showingController');
 
 
 	// 展示日历路由
@@ -159,8 +151,9 @@ Route::group(['middleware' => 'adminlogin'],function()
 
 	// 网站配置
 	Route::get('/admin/config/config','Admin\ConfigController@config');
-    	Route::post('/admin/config/insert','Admin\ConfigController@insert');
+    Route::post('/admin/config/insert','Admin\ConfigController@insert');
 
+//友情链接模块开始-------------------------------------------------------
 
 	// 添加友情链接
 	Route::get('/admin/frinedship/add','Admin\FrinedshipController@add');
@@ -169,12 +162,43 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 友情链接列表
 	Route::get('/admin/frinedship/index','Admin\FrinedshipController@index');
 
-     	// 执行友情链接编辑
+ 	// 执行友情链接编辑
    	 Route::post('/admin/frinedship/update','Admin\FrinedshipController@update');
 
 	// 编辑操作
 	Route::get('/admin/frinedship/edit/{id}','Admin\FrinedshipController@edit');
 	Route::get('/admin/frinedship/delete/{id}','Admin\FrinedshipController@delete');
+
+
+//订单模块开始-------------------------------------------------------
+
+	// 订单路由
+	Route::get('/admin/order/add','Admin\OrderController@add');
+	Route::post('/admin/order/insert','Admin\OrderController@insert');
+
+	// 加载订单路由
+	Route::get('/admin/order/index','Admin\OrderController@index');
+
+	// 执行订单删除
+	Route::get('/admin/order/delete/{id}','Admin\OrderController@delete');
+
+
+//轮播模块开始-------------------------------------------------------
+
+	// 轮播添加
+	Route::get('/admin/carousel/add','Admin\CarouselController@add');
+	Route::post('/admin/carousel/insert','Admin\CarouselController@insert');
+
+	 //轮播列表
+	Route::get('/admin/carousel/index','Admin\CarouselController@index');
+
+	// 执行轮播编辑
+   	Route::post('/admin/carousel/update','Admin\CarouselController@update');
+
+	// 轮播编辑操作
+	Route::get('/admin/carousel/edit/{id}','Admin\CarouselController@edit');
+	Route::get('/admin/carousel/delete/{id}','Admin\CarouselController@delete');
+
 
 });
 
@@ -190,4 +214,46 @@ Route::group(['middleware' => 'adminlogin'],function()
 
 	// 发送邮件
 	Route::get('/send','Admin\MailController@send');
+
+
+//前台模块路由开始
+	// 前台登录
+	Route::get('/home/login','Home\LoginController@login');
+	Route::post('/home/dologin','Home\LoginController@doLogin');
+
+
+	// 注册页面
+	Route::get('/home/regist','Home\RegistController@regist');
+	Route::post('/home/insert','Home\RegistController@insert');
+
+    // 个人中心
+	// 用户名修改
+	Route::get('/home/center','Home\CenterController@center');
+	Route::post('/home/dupdate','Home\CenterController@dupdate');
+
+	// 密码修改
+	Route::get('/home/mima','Home\CenterController@mima');
+	Route::post('/home/postreset','Home\CenterController@postreset');
+
+	// 头像修改
+	Route::get('/home/touxiang','Home\CenterController@touxiang');
+	Route::post('/home/update','Home\CenterController@update');
+
+	// 前台
+	Route::get('/home/index','Home\IndexController@index');
+
+	//前台电影介绍
+	Route::get('/home/movie/index','home\MovieController@index');
+
+	//前台订单
+	Route::get('/home/order/index','home\OrderController@index');
+
+	// 列表页
+	Route::get('/home/case/index','Home\CaseController@index');
+
+	//ajax
+	Route::get('/home/case/ajax','Home\CaseController@ajax');
+
+
+
 
