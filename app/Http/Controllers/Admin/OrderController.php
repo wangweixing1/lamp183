@@ -7,6 +7,13 @@ use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
+<<<<<<< HEAD
+    //加载订单列表
+    public function index()
+    {
+    	return view('admin.order.index',['title' => '订单列表']);
+    }
+=======
     // add
 	public function add()
 	{
@@ -77,4 +84,5 @@ class OrderController extends Controller
     }  
 
 	
+>>>>>>> 93c659ff982d7da3641615cf1612cc6f75fdd85a
 }

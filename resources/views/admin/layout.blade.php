@@ -467,6 +467,9 @@
             <li><a href="{{ url('/admin/carousel/add') }}"><i class="fa fa-circle-o"></i> 添加轮播 </a></li>
             <li><a href="{{ url('/admin/carousel/index') }}"><i class="fa fa-circle-o"></i> 浏览轮播 </a></li>
           </ul>
+<<<<<<< HEAD
+        </li>   
+=======
         </li>
         <li class="treeview">
           <a href="#">
@@ -480,7 +483,26 @@
             <li><a href="{{ url('/admin/list/add') }}"><i class="fa fa-circle-o"></i> 榜单添加 </a></li>
             <li><a href="{{ url('/admin/list/index') }}"><i class="fa fa-circle-o"></i> 榜单列表 </a></li>
           </ul>
+<<<<<<< HEAD
         </li>        
+=======
+        </li>
+
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-calendar-check-o"></i>
+            <span>积分管理</span>
+            <span class="pull-right-container"> 
+              <i class="fa fa-angle-left pull-right"></i>             
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> 积分列表</a></li>
+            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> 积分规则</a></li>
+          </ul>
+        </li>
+>>>>>>> 93c659ff982d7da3641615cf1612cc6f75fdd85a
+>>>>>>> 3b88238fa919b6d92b50cd45ec016c6e156b8b08
 
          <li class="treeview">
           <a href="#">
@@ -510,6 +532,9 @@
           </ul>
         </li>
 
+<<<<<<< HEAD
+      </ul>
+=======
         
 
     
@@ -581,6 +606,7 @@
         </li> -->
         <!-- <li>
           <a href="{{ url('/admin/calendar') }}">
+>>>>>>> 93c659ff982d7da3641615cf1612cc6f75fdd85a
     </section>
     <!-- /.sidebar -->
   </aside>
