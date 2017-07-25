@@ -25,15 +25,9 @@
   <div class="menu">
     <ul>
       <li id="a1"><a href="{{ url('/home/index') }}">首　页</a></li>
-<<<<<<< HEAD
-      <li id="a2"> <a href="{{ url('/home/case/index') }}">电影</a></li>
+      <li id="a2"> <a href="{{ url('/home/case/index/0') }}">电影</a></li>
       <li id="a3"><a href="{{ url('/home/list/index') }}">榜单</a></li>
       <li id="a4"><a href="{{ url('/home/hot/index') }}">热点</a></li>
-=======
-      <li id="a2"> <a href="{{ url('/home/case/index/0') }}">电影</a></li>
-      <li id="a3"><a href="#">榜单</a></li>
-      <li id="a4"><a href="#">热点</a></li>
->>>>>>> 3b88238fa919b6d92b50cd45ec016c6e156b8b08
       <li id="a8"><a href="#">优惠专区</a></li>
       <li id="a9"><a href="{{ url('/home/time/index') }}">放映时刻表</a></li>
     </ul>
@@ -167,14 +161,13 @@
     @endforeach 
   
     </div>
-<dl id="clo" style="display:none;" >
+        <dl id="clo" style="display:none;" >
           <dt><a href="#"><img src="/uploads/movie_img/14993998767042612.jpeg" width="150" height="100" /></a></dt>
-          <dd><a class="bbb" href="#">name </a>
-            <p>
-              <input name="" type="button" class="dgbg012" value="马上购票" />
-            </p>
+            <dd><a class="bbb" href="#">name </a>
+              <p>
+                <input name="" type="button" class="dgbg012" value="马上购票" />
+              </p>
           </dd>
-<<<<<<< HEAD
         </dl>
             <div class ="aaa"> 
                
@@ -188,21 +181,7 @@
             <div class ="aaa"> 
            
         </div> 
-=======
-</dl>
-                    <div class ="aaa"> 
-                       
-                    </div>
-                    <div class ="aaa"> 
-                       
-                    </div>              
-                    <div class ="aaa"> 
-                       
-                    </div> 
-                    <div class ="aaa"> 
-   
-                    </div> 
->>>>>>> 3b88238fa919b6d92b50cd45ec016c6e156b8b08
+
 
 <div class="clear"></div>
 
@@ -211,23 +190,10 @@
               {{ $movie->links() }}
 
         </div>
-<<<<<<< HEAD
 </div>
      </div>
     </div>
    
-=======
-    </div>45nhy6
-
-    <div class="clear"></div>
-</div>
-<div class="footer">
-  <div class="footer_nav">     领悟科技旗下：电影售票系统&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">热门影片</a> | <a href="#">正在热映</a> | <a href="#">即将上映</a> | <a href="#">经典回味</a> | <a href="#">全球首映</a> | <a href="#">热门活动</a> | <a href="#">优惠专区</a> | <a href="#">放映时刻表</a> | <a href="#">公司新闻</a> | <a href="#">领悟科技</a> </div>
-  <p>您是305818 位访客  欢迎您的光临！<br />
-    海南领悟科技 版权所有 豫ICP备01025000148号 <br />
-    广告部：0371-6699999 / 668888 业务部：0371-6677777 / 66555577 / 66665555 / 155998899  </p>
-
->>>>>>> 3b88238fa919b6d92b50cd45ec016c6e156b8b08
 <script src="/home/css/jquery.min.js"></script>
 
     <script type="text/javascript">
@@ -300,3 +266,6 @@
   <p>您是305818 位访客  欢迎您的光临！<br />
     海南领悟科技 版权所有 豫ICP备01025000148号 <br />
     广告部：0371-6699999 / 668888 业务部：0371-6677777 / 66555577 / 66665555 / 155998899  </p>
+</div>
+</body>
+</html>
