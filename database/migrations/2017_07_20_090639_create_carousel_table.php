@@ -13,11 +13,11 @@ class CreateCarouselTable extends Migration
      */
     public function up()
     {
-         // 书写轮播表结构
+        // 书写轮播表结构
         Schema::create('carousel', function (Blueprint $table) {
             $table -> increments('id'); // 自增
-            $table -> string('movie_name');            
-            $table -> string('movie_img');            
+            $table -> string('carousel_name');            
+            $table -> string('carousel_img');            
            });
     }
 

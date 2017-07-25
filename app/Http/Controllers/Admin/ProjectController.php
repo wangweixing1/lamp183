@@ -14,7 +14,8 @@ class ProjectController extends Controller
 		$cinema = \DB::table('cinema') -> get();
 		// dd($cinema);
 		$hall = \DB::table('hall') -> get();
-		// dd($hall);
+		// $showing = \DB::table('showing') -> get();
+		// dd($showing);
 		$movie = \DB::table('movie') -> get();
 		$date = \DB::table('date') -> get();
 		$time = \DB::table('time') -> get();

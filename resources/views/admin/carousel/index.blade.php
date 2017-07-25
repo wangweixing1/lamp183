@@ -91,8 +91,8 @@
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>电影名称</th>
-								<th>电影海报</th>
+								<th>轮播名称</th>
+								<th>轮播海报</th>
 								<th>操作</th>
 							</tr>
 						</thead>
@@ -101,8 +101,8 @@
 							@foreach($data as $key => $val)
 							<tr class="parent">
 								<td class="id">{{ $val -> id }}</td>
-								<td class="movie_name">{{ $val -> movie_name }}</td>
-								<td ><img style="width:50px;height:50px;" src=" /uploads/movie_img/{{ $val -> movie_img }}"/></td>
+								<td class="carousel_name">{{ $val -> carousel_name }}</td>
+								<td ><img style="width:50px;height:50px;" src=" /uploads/carousel_img/{{ $val -> carousel_img }}"/></td>
 								<td>
                                     <a href="{{ url('/admin/carousel/edit') }}/{{ $val -> id }}">编辑</a> 
                                     <a href="{{ url('/admin/carousel/delete') }}/{{ $val->id }}">删除</a>

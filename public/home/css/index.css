@@ -79,7 +79,7 @@
 .server_list li a span{ float:right;}
 .server{ clear:both; border:1px solid #ccc; overflow:hidden; }
 .server h2{ background:#eeeeee; height:32px; margin:1px; font-size:12px; line-height:32px; text-indent:10px;}
-.bottom{ clear:both; border:1px solid #ccc; overflow:hidden; }
+.bottom{ clear:both; border:1px solid #ccc; overflow:hidden;width: 1000px;margin: 0 auto; }
 .bottom h2{ background:#eeeeee; height:32px; margin:1px; font-size:12px; line-height:32px; text-indent:10px;}
 
 .bottom_con{ padding:10px;}

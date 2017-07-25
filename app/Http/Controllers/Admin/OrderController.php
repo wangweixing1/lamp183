@@ -7,7 +7,10 @@ use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 477302149c57f5d47f6978cc7988e80ce50236cb
     // add
 	public function add()
 	{
@@ -78,5 +81,5 @@ class OrderController extends Controller
     }  
 
 	
->>>>>>> 93c659ff982d7da3641615cf1612cc6f75fdd85a
+
 }

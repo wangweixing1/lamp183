@@ -18,13 +18,13 @@ class CarouselController extends Controller
 	{
 		$this->validate($request, [
 			// 规则验证
-			'movie_name' => 'required|unique:carousel',
-            'movie_img' => 'required|image'
+			'carousel_name' => 'required|unique:carousel',
+            'carousel_img' => 'required|image'
         ],[
-            'movie_name.required' => '电影名不能为空',
-            'movie_name.unique' => '该电影已经存在',            
-            'movie_img.required' => '电影图片不能为空',
-            'movie_img.image' => '请上传图片'
+            'carousel_name.required' => '电影名不能为空',
+            'carousel_name.unique' => '该电影已经存在',            
+            'carousel_img.required' => '电影图片不能为空',
+            'carousel_img.image' => '请上传图片'
         ]);
 
         // 获取数据
@@ -32,21 +32,21 @@ class CarouselController extends Controller
         // dd($data);
 
         // 处理图片 
-        if($request -> hasFile('movie_img'))
+        if($request -> hasFile('carousel_img'))
         {
-            if($request -> file('movie_img') -> isValid())
+            if($request -> file('carousel_img') -> isValid())
             {
                 // 获取扩展名
-                $ext = $request -> file('movie_img') -> extension();
+                $ext = $request -> file('carousel_img') -> extension();
 
                 // 随机文件名
                 $filename = time().mt_rand(1000000,9999999).'.'.$ext;
 
                 // 移动
-                $request -> file('movie_img') -> move('./uploads/movie_img',$filename);
+                $request -> file('carousel_img') -> move('./uploads/carousel_img',$filename);
 
                 // 添加 dada 数据
-                $data['movie_img'] = $filename;
+                $data['carousel_img'] = $filename;
             }
         }
 
@@ -73,7 +73,7 @@ class CarouselController extends Controller
 
 		// return '轮播列表';
 		// 查询值数据库
-		$data = \DB::table('carousel') ->where('movie_name','like','%'.$keywords.'%') -> paginate($num); 	// (like 代表模糊查询 $num 代表一页的条数)
+		$data = \DB::table('carousel') ->where('carousel_name','like','%'.$keywords.'%') -> paginate($num); 	// (like 代表模糊查询 $num 代表一页的条数)
 		// dd($data);
 		// 发送数据过去
 		return view('admin.carousel.index',['request' => $request ->all(), 'title' => '轮播列表','data' => $data]);
@@ -93,13 +93,13 @@ class CarouselController extends Controller
     {   
         $this->validate($request, [
             // 规则验证
-            'movie_name' => 'required|unique:carousel',
-            'movie_img' => 'required|image'
+            'carousel_name' => 'required|unique:carousel',
+            'carousel_img' => 'required|image'
         ],[
-            'movie_name.required' => '电影名不能为空',
-            'movie_name.unique' => '该电影已经存在',            
-            'movie_img.required' => '电影图片不能为空',
-            'movie_img.image' => '请上传图片'          
+            'carousel_name.required' => '电影名不能为空',
+            'carousel_name.unique' => '该电影已经存在',            
+            'carousel_img.required' => '电影图片不能为空',
+            'carousel_img.image' => '请上传图片'          
         ]);
 
         $data=$request->except('_token');
@@ -107,32 +107,32 @@ class CarouselController extends Controller
    
 	
 		// 查询旧图片
-		$oldAvatar = \DB::table('carousel') -> where('id' ,$request -> id) -> first() -> movie_img;
+		$oldAvatar = \DB::table('carousel') -> where('id' ,$request -> id) -> first() -> carousel_img;
 		// dd($oldAvatar);
 
-		if($request -> hasFile('movie_img'))
+		if($request -> hasFile('carousel_img'))
 		{
-			if($request -> file('movie_img') -> isValid())
+			if($request -> file('carousel_img') -> isValid())
 			{
 				// 获取扩展名
-				$ext = $request -> file('movie_img') -> extension();
+				$ext = $request -> file('carousel_img') -> extension();
 
 				// 随机文件名
 				$filename = time().mt_rand(1000000,9999999).'.'.$ext;
 
 				// 移动
-				$request -> file('movie_img') -> move('./uploads/movie_img',$filename);
+				$request -> file('carousel_img') -> move('./uploads/carousel_img',$filename);
 
 				// 删除旧图片
 				// 首先判断在不在
-				if(file_exists('./uploads/movie_img/'.$oldAvatar) && $oldAvatar != 'default.jpg')
+				if(file_exists('./uploads/carousel_img/'.$oldAvatar) && $oldAvatar != 'default.jpg')
 				{
-					unlink('./uploads/movie_img/'.$oldAvatar);
+					unlink('./uploads/carousel_img/'.$oldAvatar);
 				}
 
 
 				// 添加 dada 数据
-				$data['movie_img'] = $filename;
+				$data['carousel_img'] = $filename;
 			}
 		}
 		// 添加

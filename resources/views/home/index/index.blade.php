@@ -2,9 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>半边天售票系统-{{ $title }}</title>
+<title>{{ $title }}</title>
 <link href="/home/css/default.css" rel="stylesheet" type="text/css" />
 <link href="/home/css/index.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/home/css/reset.css">
+<link rel="stylesheet" href="/home/css/style.css">
+<script type="text/javascript" src="css/jquery.js"></script>
 <link href="/home/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/home/css/jquery.js"></script>
 <script src="/home/css/jquery.min.js"></script>
@@ -44,106 +47,90 @@ scrollDoor.prototype = {
     return oid;
   }
 }
-window.onload = function(){
-  var SDmodel = new scrollDoor();
-  SDmodel.sd(["m01","m02","m03","m04"],["c01","c02","c03","c04"],"sd01","sd02");
 
-}
 </script>
 </head>
 <body>
 <div class="header" >
+
   <div class="top_img">
-    <div class="logo"><a href="#"><img src="/images/5.png" width="200" height="80" /></a></div>
+    <div class="logo"><a href="#"><img src="/images/2.png" width="200" height="80" /></a></div>
     <div class="rx"><img src="images/topad.gif" width="500" height="100" /></div>
     <div class="top_nav">
-      <p><a href="#"> 登录 </a> </p>
-      <p><a href="#"> 注册 </a></p>
+      <a class="btn btn-info" href="#"> 登录 </a>  <a class="btn btn-info" href="#"> 注册 </a>
     </div>
     <div class="clear"></div>
   </div>
+
   <div class="menu">
     <ul>
       <li id="a1"><a href="{{ url('/home/index') }}">首　页</a></li>
       <li id="a2"> <a href="{{ url('/home/case/index/0') }}">电影</a></li>
-      <li id="a3"><a href="#">榜单</a></li>
-      <li id="a4"><a href="#">热点</a></li>
+      <li id="a3"><a href="{{ url('/home/list/index') }}">榜单</a></li>
+      <li id="a4"><a href="{{ url('/home/hot/index') }}">热点</a></li>
       <li id="a8"><a href="#">优惠专区</a></li>
-      <li id="a9"><a href="#">放映时刻表</a></li>
+      <li id="a9"><a href="{{ url('/home/time/index') }}">放映时刻表</a></li>
     </ul>
   </div>
 </div>
+
 <div class="banner">
-  <div id="YFocus">
-    <div id="YImage">
-      <p id="YPhotos"> <a href="#" title="11"><img src="/images/2_1.png" alt="11" /></a> <a href="#" title="11"><img src="/images/2_2.jpg" alt="111" /></a> <a href="#" title="11"><img src="/images/2_3.jpg" alt="22" /></a> <a href="#" title="1"><img src="/images/2_4.jpg" alt="22" /></a> </p>
-    </div>
-    <p id="YSamples"> <a href="#1" class="current" title="2"><img src="/images/2x_1.png" alt="22" /></a> <a href="#1" title="2"><img src="/images/2x_2.png" alt="2" /></a> <a href="#1" title="2"><img src="/images/2x_3.png" alt="2" /></a> <a href="#1" title="2"><img src="/images/2x_4.png" alt="2" /></a> </p>
-  </div>
-  <script language="javascript" type="text/javascript">
-<!--
-  YAO.YTabs({
-    tabs: YAO.getEl('YSamples').getElementsByTagName('img'),
-    contents: YAO.getEl('YPhotos').getElementsByTagName('img'),
-    auto: true,
-    scroll: true,
-    scrollId: 'YPhotos'
-  });
-//-->
-</script> 
+  <div id="YFocus"> 
+  <div id="slider">
+   
+    <ul class="slides clearfix">
+    @foreach($carousel as $key => $val)
+        <li><img class="responsive" src="/uploads/carousel_img/{{ $val -> carousel_img }}"></li>
+    @endforeach
+    </ul>
+    
+    <ul class="controls">
+        <li><img src="images/prev.png" alt="previous"></li>
+        <li><img style="margin-right:30px;" src="images/next.png" alt="next"></li>
+    </ul>
+    <ul class="pagination">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
 </div>
+<script src="/home/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src="/home/dist/easySlider.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $("#slider").easySlider( {
+            slideSpeed: 500,
+            paginationSpacing: "15px",
+            paginationDiameter: "12px",
+            paginationPositionFromBottom: "20px",
+            slidesClass: ".slides",
+            controlsClass: ".controls",
+            paginationClass: ".pagination"                  
+        });
+    });
+</script>
+ 
+  </div>
+  
+</div>
+
+
 <div class="contenter">
   <div class="left">
-    <div class="left_1">
-      <h2><span><a href="#">更多热映大片</a></span>全球抢先看 >></h2>
-      <div class="left_1_con">
-        <div class="left_1_l">
-          <div class="scrolldoorFrame">
-            <ul class="scrollUl">
-             @foreach($carousel as $key => $val)
-              <li class="sd01" id="m01">
-
-              <a href="#">
-              
-                <dl class="hd_list">
-                  <dt><img src="/uploads/movie_img/{{ $val -> movie_img }}" width="81" height="35" /></dt>
-                  <dd>{{ $val ->movie_name }}</dd>
-                  <dd>7月13日上映>></dd>
-                </dl>
-                </a></li>
-                @endforeach
-              
-            </ul>
-            @foreach($carousel as $key => $val)
-            <div class="cont">
-             
-              <div id="c01"><img src="/uploads/movie_img/{{ $val -> movie_img }}" width="449" height="193" /></div>
- 
-            </div>
-            @endforeach
-
-          </div>
-        </div>
-        <div class="left_1_r">
-          <h3>即将播出影片</h3>
-          
-          <dl>
-            <dt><a href="#"><img src="images/newspic.jpg" width="80" height="65" /></a></dt>
-            <dd><strong>杀人犯杀人游戏</strong> <br />
-              <a href="#">《怒火攻心》不演斯巴达勇士，演绎真人模拟游戏，够血腥够刺激！…</a></dd>
-          </dl>
-
-          <div class="clear"></div>
-          <ul>
-            <li><a href="#"><span>7月13日首播</span>炫舞天鹅 </a></li>
-            <li><a href="#"><span>8月30日首播</span>蝙蝠侠前传3:黑暗 </a></li>
-            <li><a href="#"><span>7月3日首播</span>灵魂战车2 </a></li>
-            <li><a href="#"><span>7月10日首播</span>非常小特工之时间大盗 </a></li>
-            <li><a href="#"><span>7月13日首播</span>炫舞天鹅 </a></li>
-            <li><a href="#"><span>8月30日首播</span>蝙蝠侠前传3:黑暗 </a></li>
-            <li><a href="#"><span>7月3日首播</span>灵魂战车2 </a></li>
-          </ul>
-        </div>
+    <div class="left_4 top10px" style="height:auto;">
+      <h2><a href="#">即将上映电影</a></h2>
+      <div class="inner">
+        @foreach($coming as $key => $val)
+        <dl class="anli_list">
+          <dt><a href="{{ url('/home/ticket/index') }}"><img src="/uploads/coming_img/{{ $val -> coming_img }}" width="150" height="100" /></a></dt>
+          <dd><a href="#">《{{ $val -> coming_name }}》</a>           
+            <p>
+              <input name="" type="button" class="dgbg02" value="马上购票" />
+            </p>
+          </dd>
+        </dl>
+       @endforeach
         <div class="clear"></div>
       </div>
     </div>
@@ -186,26 +173,26 @@ window.onload = function(){
           </table>
         </div>
         <script type="text/javascript">
-                                    var speed=30;
-                                    var demo = $("#demo");
-                                    var demo1 = $("#demo1");
-                                    var demo2 = $("#demo2");
-                                    demo2.html(demo1.html());
-                                    function Marquee(){ 
-                                        if(demo.scrollLeft()>=demo1.width())
-                                            demo.scrollLeft(0); 
-                                        else{
-                                            demo.scrollLeft(demo.scrollLeft()+1);
-                                        }
-                                    } 
-                                    var MyMar=setInterval(Marquee,speed) 
-                                    demo.mouseover(function() {
-                                        clearInterval(MyMar);
-                                    } )
-                                    demo.mouseout(function() {
-                                        MyMar=setInterval(Marquee,speed);
-                                    } )   
-                            </script> 
+            var speed=30;
+            var demo = $("#demo");
+            var demo1 = $("#demo1");
+            var demo2 = $("#demo2");
+            demo2.html(demo1.html());
+            function Marquee(){ 
+                if(demo.scrollLeft()>=demo1.width())
+                    demo.scrollLeft(0); 
+                else{
+                    demo.scrollLeft(demo.scrollLeft()+1);
+                }
+            } 
+            var MyMar=setInterval(Marquee,speed) 
+            demo.mouseover(function() {
+                clearInterval(MyMar);
+            } )
+            demo.mouseout(function() {
+                MyMar=setInterval(Marquee,speed);
+            } )   
+    </script> 
         <!-- 
           
          
@@ -213,36 +200,16 @@ window.onload = function(){
         <div class="clear"></div>
       </div>
     </div>
-    <div class="left_6 top10px">
-      <h2><span><a href="#">>>查看更多</a></span>热门活动优惠专区 </h2>
-      <div class="left_6_con">
-        <dl class="fx_list">
-          <dt><img src="images/fx1.jpg" width="65" height="65" /></dt>
-          <dd><strong>霸气抢票第e波 </strong><br />
-            -<a href="#">--《四大名捕》火热抢票送不停 抢票时间：7月16日-7月22日 </a></dd>
-        </dl>
-        <dl class="fx_list">
-          <dt><img src="images/fx12.jpg" width="65" height="65" /></dt>
-          <dd><strong>给力活动第一期 </strong><br />
-            <a href="#">---《给力火车》给力送票送不停 活动时间：7月19日-7月28日 </a></dd>
-        </dl>
-        <dl class="fx_list">
-          <dt><img src="images/fx13.jpg" width="65" height="65" /></dt>
-          <dd><strong>购票有礼大派送 </strong><br />
-            <a href="#">---《购票有礼》优惠大派送送不停 送票时间：7月20日-7月29日</a></dd>
-        </dl>
-        <div class="clear"></div>
-      </div>
-    </div>
+    
   </div>
   <div class="right">
     <div class="right_1">
       <h2><span style="color:#000; font-size:14px;">7月18日</span>今日快速订票 </h2>
       <div class="inner02">
         <dl style="border-bottom:0px #fff solid;">
-          <dt><img src="images/fa1.gif" width="56" height="45" /></dt>
+          <dt><img src="images/fa1.gif" width="50" height="45" /></dt>
           <dd style=" padding-top:10px;">
-            <select name="">
+            <select name="">             
               <option selected="selected">郑州电影院</option>
               <option>郑州电影院</option>
               <option>郑州电影院</option>
@@ -267,9 +234,9 @@ window.onload = function(){
           <dd style=" padding-top:10px;">
             <select name="">
               <option selected="selected">请选择场次</option>
-              <option>166(2号厅)</option>
-              <option>168(3号厅)</option>
-              <option>188(4号厅)</option>
+              
+              <option>1</option>
+            
             </select>
           </dd>
           <div class="clear"></div>
@@ -281,21 +248,20 @@ window.onload = function(){
           </dd>
           <div class="clear"></div>
         </dl>
-        <div class="wxpd"><a href="#"><img src="images/104.jpg" /></a></div>
+        <div class="wxpd"><img src="" /></div>
       </div>
     </div>
 
     <div class="right_5 top10px">
       <h2>热门影片榜 </h2>
-      <div class="inner02">
+      @foreach($showing as $key => $val)
+      <div class="inner01">
         <ul class="server_list">
-          <li><a href="#"><span>19888</span>白雪公主与猎人</a></li>
-          <li><a href="#"><span>18667</span>三个火枪手</a></li>
-          <li><a href="#"><span>17558</span>王者之剑</a></li>
-          <li><a href="#"><span>17452</span>南极大冒险</a></li>
-          <li><a href="#"><span>9955</span>肖申克的救赎</a></li>
+          <li><a href="{{ url('/home/movie/index') }}"><span>19888</span>{{ $val -> showing_name }}</a></li>
+         
         </ul>
       </div>
+      @endforeach
     </div>
         <div class="right_4 top10px">
       <h2><span><a href="#"> 更多影片 </a></span>今日上映推荐 </h2>

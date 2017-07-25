@@ -1,3 +1,55 @@
+<<<<<<< HEAD
+
+/*--------------SLIDER----------------*/
+
+#slider {
+	width: 1000px;
+}
+
+
+/*--------------CONTROLS--------------*/
+
+/*position controls*/
+.controls li {
+	top: 50%;
+	margin-top: -50px
+}
+
+.controls li:nth-child(1) {
+	left: 0;
+}
+
+.controls li:nth-child(2) {
+	right: 0;
+}
+
+
+/*------------PAGINATION------------*/
+
+/*style pagination*/
+.pagination li {
+	background-color: #ddd;
+}
+
+.pagination li.active {
+	background-color: #000;
+}
+
+
+/*-------------HELPERS----------------*/
+
+.responsive {
+	width: 970px;
+	height: 300px;
+	
+}
+
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+=======
 /*--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -476,3 +528,4 @@ ul.book-right li {
 		font-size: 13px;
 	}
 }
+>>>>>>> 3b88238fa919b6d92b50cd45ec016c6e156b8b08

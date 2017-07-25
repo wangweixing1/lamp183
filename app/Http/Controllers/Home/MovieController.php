@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class MovieController extends Controller
-    {
+{
     // 电影介绍
      public function index()
     {   

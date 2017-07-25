@@ -22,8 +22,8 @@
     <ul>
       <li id="a1"><a href="{{ url('/home/index') }}">首　页</a></li>
       <li id="a2"> <a href="{{ url('/home/case/index') }}">电影</a></li>
-      <li id="a3"><a href="#">榜单</a></li>
-      <li id="a4"><a href="#">热点</a></li>
+      <li id="a3"><a href="{{ url('/home/list/index') }}">榜单</a></li>
+      <li id="a4"><a href="{{ url('/home/hot/index') }}">热点</a></li>
       <li id="a8"><a href="#">优惠专区</a></li>
       <li id="a9"><a href="#">放映时刻表</a></li>
     </ul>
