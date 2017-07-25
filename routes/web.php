@@ -148,6 +148,9 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 热映电影
 	Route::resource('/admin/showing','Admin\showingController');
 
+	// 即将上映电影
+	Route::resource('/admin/coming','Admin\comingController');
+
 
 	// 展示日历路由
 	// Route::get('/admin/calendar','Admin\CalendarController@calendar');
@@ -201,6 +204,22 @@ Route::group(['middleware' => 'adminlogin'],function()
 	Route::get('/admin/carousel/edit/{id}','Admin\CarouselController@edit');
 	Route::get('/admin/carousel/delete/{id}','Admin\CarouselController@delete');
 
+	//榜单添加
+	Route::get('/admin/list/add','Admin\ListController@add');
+	Route::post('/admin/list/insert','Admin\ListController@insert');
+
+	// 榜单列表
+	Route::get('/admin/list/index','Admin\ListController@index');
+
+	// 执行榜单编辑
+   	Route::post('/admin/list/update','Admin\ListController@update');
+
+	// 榜单编辑操作
+	Route::get('/admin/list/edit/{id}','Admin\ListController@edit');
+	Route::get('/admin/list/delete/{id}','Admin\ListController@delete');
+
+
+
 });
 
 	// 登录路由
@@ -230,6 +249,15 @@ Route::group(['middleware' => 'adminlogin'],function()
 
 	// 列表页
 	Route::get('/home/case/index','Home\CaseController@index');
+
+	//放映时刻表
+	Route::get('/home/time/index','Home\TimeController@index');
+
+	//榜单
+	Route::get('/home/list/index','Home\ListController@index');
+
+	//热点
+	Route::get('/home/hot/index','Home\hotController@index');
 
 	//ajax
 	Route::get('/home/case/ajax','Home\CaseController@ajax');

@@ -12,10 +12,11 @@ class CaseController extends Controller
     {
     	// 查询数据库
     	$movie = \DB::table('movie') -> get();
+        $frinedship = \DB::table('frinedship') -> get();
     	$category = \DB::table('category') -> get();
 
     	// 加载页面并发送数据
-    	return view('home.case.index',['title' => '电影列表页','movie' => $movie,'category' => $category]) ->with(['info' => '更新成功']);
+    	return view('home.case.index',['title' => '电影列表页','frinedship' => $frinedship,'movie' => $movie,'category' => $category]) ->with(['info' => '更新成功']);
     }
 
     //ajax
