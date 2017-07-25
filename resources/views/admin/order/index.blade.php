@@ -7,12 +7,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                友情链接
+                订单管理
                 <small>列表</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="#"><i class="fa fa-dashboard"></i> 主页</a></li>
-                <li><a href="#">用户管理</a></li>
+                <li><a href="#">订单管理</a></li>
                 <li class="active">列表</li>
             </ol>
         </section>
@@ -23,7 +23,7 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title">快速浏览链接列表</h3>
+                        <h3 class="box-title">快速浏览订单列表</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -34,7 +34,7 @@
                             </div>
                         @endif
 
-                        <form action="{{ url('/admin/frinedship/index') }}" method="get">
+                        <form action="{{ url('/admin/order/index') }}" method="get">
                             <div class="row">
                                 <div class="col-md-2">
                                     <!-- select --> 
@@ -87,47 +87,54 @@
                             </div>
                         </form>
 
-                        <table id="example2" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>链接名称</th>
-                                    <th>链接地址</th>                                   
-                                    <th>操作</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-    
-                                @foreach($data as $key => $val)
-                                    <tr class="parent">
-                                        <td class="ids">{{ $val -> id }}</td>
-                                        <td class="name">{{ $val -> name }}</td>
-                                        <td>{{ $val -> url }}</td>                                       
-                                        <td>
-                                            <a href="{{ url('/admin/frinedship/edit') }}/{{ $val -> id }}">编辑</a> 
-                                            <a href="{{ url('/admin/frinedship/delete') }}/{{ $val->id }}">删除</a>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        {{ $data -> appends($request) -> links() }}
-                    </div>
-                    <!-- /.box-body -->
+						<table id="example2" class="table table-bordered table-hover">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>影片名称</th>
+									<th>用户名称</th>
+									<th>放映时间</th>
+									<th>影厅</th>
+									<th>票价</th>
+									<th>数量</th>
+									<th>操作</th>
+								</tr>
+							</thead>
+
+							<tbody>
+								@foreach($data as $key => $val)
+								<tr class="parent">
+									<td class="id">{{ $val -> id }}</td>
+									<td class="movie_name">{{ $val -> movie_name }}</td>
+									<td>{{ $val -> user_name }}</td>
+									<td>{{ $val -> time }}</td>
+									<td>{{ $val -> hall }}</td>
+									<td>{{ $val -> price }}</td>
+									<td>{{ $val -> poll }}</td>									
+									<td>                                       
+                                        <a href="{{ url('/admin/order/delete') }}/{{ $val->id }}">取消订单</a>
+                                    </td>
+								</tr>
+								@endforeach
+							</tbody>
+ 						</table>
+                    {{ $data -> appends($request) -> links() }}
                 </div>
-                <!-- /.box -->
+                <!-- /.box-body -->
             </div>
             <!-- /.box -->
         </div>
-        <!-- /.col -->
+        <!-- /.box -->
     </div>
-    <!-- /.row -->
-    </section>
-    <!-- /.content -->
-    </div>
+    <!-- /.col -->
+</div>
+<!-- /.row -->
+</section>
+<!-- /.content -->
+</div>
 
 
 
-    @endsection
+@endsection
 
    

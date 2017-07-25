@@ -100,7 +100,7 @@ window.onload = function(){
         <div class="left_1_l">
           <div class="scrolldoorFrame">
             <ul class="scrollUl">
-             @foreach($movie as $key => $val)
+             @foreach($carousel as $key => $val)
               <li class="sd01" id="m01">
 
               <a href="#">
@@ -114,7 +114,7 @@ window.onload = function(){
                 @endforeach
               
             </ul>
-            @foreach($movie as $key => $val)
+            @foreach($carousel as $key => $val)
             <div class="cont">
              
               <div id="c01"><img src="/uploads/movie_img/{{ $val -> movie_img }}" width="449" height="193" /></div>
@@ -152,9 +152,14 @@ window.onload = function(){
       <div class="inner">
         @foreach($showing as $key => $val)
         <dl class="anli_list">
+<<<<<<< HEAD
           <dt><a href="#"><img src="/uploads/showing_img/{{ $val -> showing_img }}" width="150" height="100" /></a></dt>
           <dd><a href="#">《{{ $val -> showing_name }}》 </a>
             <p></p>
+=======
+          <dt><a href="{{ url('/home/movie/index') }}"><img src="/uploads/showing_img/{{ $val -> showing_img }}" width="150" height="100" /></a></dt>
+          <dd><a href="#">《{{ $val -> showing_name }}》</a>           
+>>>>>>> 93c659ff982d7da3641615cf1612cc6f75fdd85a
             <p>
               <input name="" type="button" class="dgbg02" value="马上购票" />
             </p>
@@ -348,10 +353,23 @@ window.onload = function(){
       </table>
     </div>
   </div>
+
+
+  <div class="clear"></div>
+
+  <div class="bottom ">
+    <h2>友情链接 >></h2>
+    <div class="bottom_con">
+        @foreach($frinedship as $key => $val)
+
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://{{ $val -> url }}">{{ $val -> name }}</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+        @endforeach
+    </div>
+  </div>
+
   <div class="clear"></div>
 </div>
-<div class="footer">
-  <div class="footer_nav">lamp183旗下：电影售票系统&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">热门影片</a> | <a href="#">正在热映</a> | <a href="#">即将上映</a> | <a href="#">经典回味</a> | <a href="#">全球首映</a> | <a href="#">热门活动</a> | <a href="#">放映时刻表</a> </div>
+<div class="footer">  
   <p>您是66666 位访客  欢迎您的光临！<br />
     lamp183 版权所有 京ICP备0123456789号</p>
 </div>
