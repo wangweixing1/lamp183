@@ -5,16 +5,12 @@
 <title>{{ $title }}</title>
 <link href="/home/css/default.css" rel="stylesheet" type="text/css" />
 <link href="/home/css/index.css" rel="stylesheet" type="text/css" />
-<<<<<<< HEAD
 <link rel="stylesheet" href="/home/css/reset.css">
-<link rel="stylesheet" href="{{ asset('/admin/adminlte/bootstrap/css/bootstrap.min.css') }}">
 <link rel="stylesheet" href="/home/css/style.css">
 <script type="text/javascript" src="css/jquery.js"></script>
-=======
 <link href="/home/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="/home/css/jquery.js"></script>
 <script src="/home/css/jquery.min.js"></script>
->>>>>>> 3b88238fa919b6d92b50cd45ec016c6e156b8b08
 <script language="javascript" type="text/javascript" src="css/yao.js"></script>
 
 <!-- 滑动门 -->
@@ -69,15 +65,9 @@ scrollDoor.prototype = {
   <div class="menu">
     <ul>
       <li id="a1"><a href="{{ url('/home/index') }}">首　页</a></li>
-<<<<<<< HEAD
-      <li id="a2"> <a href="{{ url('/home/case/index') }}">电影</a></li>
+      <li id="a2"> <a href="{{ url('/home/case/index/0') }}">电影</a></li>
       <li id="a3"><a href="{{ url('/home/list/index') }}">榜单</a></li>
       <li id="a4"><a href="{{ url('/home/hot/index') }}">热点</a></li>
-=======
-      <li id="a2"> <a href="{{ url('/home/case/index/0') }}">电影</a></li>
-      <li id="a3"><a href="#">榜单</a></li>
-      <li id="a4"><a href="#">热点</a></li>
->>>>>>> 3b88238fa919b6d92b50cd45ec016c6e156b8b08
       <li id="a8"><a href="#">优惠专区</a></li>
       <li id="a9"><a href="{{ url('/home/time/index') }}">放映时刻表</a></li>
     </ul>
@@ -133,7 +123,7 @@ scrollDoor.prototype = {
       <div class="inner">
         @foreach($coming as $key => $val)
         <dl class="anli_list">
-          <dt><a href="{{ url('/home/movie/index') }}"><img src="/uploads/coming_img/{{ $val -> coming_img }}" width="150" height="100" /></a></dt>
+          <dt><a href="{{ url('/home/ticket/index') }}"><img src="/uploads/coming_img/{{ $val -> coming_img }}" width="150" height="100" /></a></dt>
           <dd><a href="#">《{{ $val -> coming_name }}》</a>           
             <p>
               <input name="" type="button" class="dgbg02" value="马上购票" />
@@ -149,14 +139,8 @@ scrollDoor.prototype = {
       <div class="inner">
         @foreach($showing as $key => $val)
         <dl class="anli_list">
-<<<<<<< HEAD
-          <dt><a href="#"><img src="/uploads/showing_img/{{ $val -> showing_img }}" width="150" height="100" /></a></dt>
-          <dd><a href="#">《{{ $val -> showing_name }}》 </a>
-            <p></p>
-=======
           <dt><a href="{{ url('/home/movie/index') }}"><img src="/uploads/showing_img/{{ $val -> showing_img }}" width="150" height="100" /></a></dt>
           <dd><a href="#">《{{ $val -> showing_name }}》</a>           
->>>>>>> 93c659ff982d7da3641615cf1612cc6f75fdd85a
             <p>
               <input name="" type="button" class="dgbg02" value="马上购票" />
             </p>
