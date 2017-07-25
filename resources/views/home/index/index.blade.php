@@ -152,14 +152,8 @@ window.onload = function(){
       <div class="inner">
         @foreach($showing as $key => $val)
         <dl class="anli_list">
-<<<<<<< HEAD
-          <dt><a href="#"><img src="/uploads/showing_img/{{ $val -> showing_img }}" width="150" height="100" /></a></dt>
-          <dd><a href="#">《{{ $val -> showing_name }}》 </a>
-            <p></p>
-=======
           <dt><a href="{{ url('/home/movie/index') }}"><img src="/uploads/showing_img/{{ $val -> showing_img }}" width="150" height="100" /></a></dt>
           <dd><a href="#">《{{ $val -> showing_name }}》</a>           
->>>>>>> 93c659ff982d7da3641615cf1612cc6f75fdd85a
             <p>
               <input name="" type="button" class="dgbg02" value="马上购票" />
             </p>

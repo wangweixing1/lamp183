@@ -148,18 +148,18 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 热映电影
 	Route::resource('/admin/showing','Admin\showingController');
 
-<<<<<<< HEAD
+
 	// 订单管理
 	Route::get('/admin/order/index','Admin\OrderController@index');
-=======
+
 
 	// 展示日历路由
 	// Route::get('/admin/calendar','Admin\CalendarController@calendar');
->>>>>>> 93c659ff982d7da3641615cf1612cc6f75fdd85a
+
 
 	// 网站配置
 	Route::get('/admin/config/config','Admin\ConfigController@config');
-    Route::post('/admin/config/insert','Admin\ConfigController@insert');
+    	Route::post('/admin/config/insert','Admin\ConfigController@insert');
 
 //友情链接模块开始-------------------------------------------------------
 
@@ -233,46 +233,32 @@ Route::group(['middleware' => 'adminlogin'],function()
 	//前台订单
 	Route::get('/home/order/index','home\OrderController@index');
 
-<<<<<<< HEAD
-// 前台
-Route::get('/home/index','Home\IndexController@index');
-
-// 列表页
-Route::get('/home/case/index/{tid}','Home\CaseController@index');
-
-//实现分类（ajax）
-Route::get('/home/case/ajax','Home\CaseController@ajax');
-=======
 	// 列表页
-	Route::get('/home/case/index','Home\CaseController@index');
+	Route::get('/home/case/index/{tid}','Home\CaseController@index');
 
-	//ajax
+	//实现分类（ajax）
 	Route::get('/home/case/ajax','Home\CaseController@ajax');
 
+	// 详情页
+	Route::get('/home/ticket/index/{id}','Home\TicketController@index');
 
+	// 购票页
+	Route::get('/home/ticket/ticket/{id}','Home\TicketController@ticket');
 
->>>>>>> 93c659ff982d7da3641615cf1612cc6f75fdd85a
+	// CinemaAjax
+	Route::get('/home/ticket/CinemaAjax','Home\TicketController@CinemaAjax');
 
-// 详情页
-Route::get('/home/ticket/index/{id}','Home\TicketController@index');
+	// DateAjax
+	Route::get('/home/ticket/DateAjax','Home\TicketController@DateAjax');
 
-// 购票页
-Route::get('/home/ticket/ticket/{id}','Home\TicketController@ticket');
+	// 提交信息并选座
+	Route::post('/home/ticket/seat/{id}','Home\TicketController@seat');
 
-// CinemaAjax
-Route::get('/home/ticket/CinemaAjax','Home\TicketController@CinemaAjax');
+	// 现在预订
+	Route::get('/home/ticket/ajax','Home\TicketController@ajax');
 
-// DateAjax
-Route::get('/home/ticket/DateAjax','Home\TicketController@DateAjax');
+	// 订票后台服务async
+	Route::get('/async','Home\AsyncController@async');
 
-// 提交信息并选座
-Route::post('/home/ticket/seat/{id}','Home\TicketController@seat');
-
-// 现在预订
-Route::get('/home/ticket/ajax','Home\TicketController@ajax');
-
-// 订票后台服务async
-Route::get('/async','Home\AsyncController@async');
-
-// 缓存测试
-Route::get('/cache','Home\TicketController@cache');
+	// 缓存测试
+	Route::get('/cache','Home\TicketController@cache');
