@@ -101,7 +101,7 @@ a.page_a:hover{color:#333;}
 .m_t_10{margin-top:10px;}
 .pro_tab{ width:95%; margin:0 auto;}
 .product_info{padding:10px; margin-top:10px;}
-.product_info_img{border:1px solid #ccc; width:220px; height:280px; padding:10px; text-align:center; overflow:hidden; float:left;}
+.product_info_img{border:1px solid #ccc; width:160px; height:250px; padding:10px; text-align:center; overflow:hidden; float:left;}
 .icon_fd{background:url(../images/icon_fd.gif) no-repeat left top; height:20px; padding-left:25px; line-height:20px; display:inline-block;}
 .p_button1{background:url(../images/p_button1.jpg); width:90px; height:25px; line-height:25px; text-align:center; color:#333; font-weight:bold; display:inline-block;}
 .p_button2{background:url(../images/p_button2.jpg); width:100px; height:25px; line-height:25px; text-align:center; color:#333; font-weight:bold; display:inline-block;}

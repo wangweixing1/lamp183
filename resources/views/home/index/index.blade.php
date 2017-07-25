@@ -5,7 +5,9 @@
 <title>半边天售票系统-{{ $title }}</title>
 <link href="/home/css/default.css" rel="stylesheet" type="text/css" />
 <link href="/home/css/index.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="css/jquery.js"></script>
+<link href="/home/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/home/css/jquery.js"></script>
+<script src="/home/css/jquery.min.js"></script>
 <script language="javascript" type="text/javascript" src="css/yao.js"></script>
 
 <!-- 滑动门 -->
@@ -63,7 +65,7 @@ window.onload = function(){
   <div class="menu">
     <ul>
       <li id="a1"><a href="{{ url('/home/index') }}">首　页</a></li>
-      <li id="a2"> <a href="{{ url('/home/case/index') }}">电影</a></li>
+      <li id="a2"> <a href="{{ url('/home/case/index/0') }}">电影</a></li>
       <li id="a3"><a href="#">榜单</a></li>
       <li id="a4"><a href="#">热点</a></li>
       <li id="a8"><a href="#">优惠专区</a></li>
@@ -152,7 +154,7 @@ window.onload = function(){
         <dl class="anli_list">
           <dt><a href="#"><img src="/uploads/showing_img/{{ $val -> showing_img }}" width="150" height="100" /></a></dt>
           <dd><a href="#">《{{ $val -> showing_name }}》 </a>
-            <p>【{{ $val -> showing_depict }}】</p>
+            <p></p>
             <p>
               <input name="" type="button" class="dgbg02" value="马上购票" />
             </p>
