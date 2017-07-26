@@ -67,7 +67,7 @@ hr {
 /*全局样式*/
 .header{ width:972px; margin:0 auto;}
 .top_img{ height:100px;  margin-bottom:3px;} 
-.top_nav{ width:120px; float:right; padding-top:20px;}
+.top_nav{  float:right; padding-top:20px;}
 .top_nav p{ background: url(../images/left_huodong_j.gif) no-repeat left center; padding-left:15px; height:25px; line-height:25px;}
 .logo{ width:300px; height:80px;float:left; padding-top:15px; padding-bottom:5px; padding-left:10px; padding-right:5px;}
 .rx{ height:100px; width:500px; float:left;}

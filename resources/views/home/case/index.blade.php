@@ -126,10 +126,6 @@
             <div class ="aaa"> 
            
         </div> 
-<<<<<<< HEAD
-
-=======
->>>>>>> a2eb69db3ec4dd5fd48b4acfa98d66f9c1758257
 
 <div class="clear"></div>
 <div class="list_page" style="padding-right:18px;">
