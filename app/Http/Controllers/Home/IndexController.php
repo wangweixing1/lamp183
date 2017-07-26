@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+ 
 class IndexController extends Controller
 {
     //
@@ -16,6 +16,7 @@ class IndexController extends Controller
     	$movie = \DB::table('movie') ->get();
     	$showing = \DB::table('showing') -> get();
         $frinedship = \DB::table('frinedship') -> get();
+    	// dd($movie);
         $hall = \DB::table('hall') -> get();
         $carousel = \DB::table('carousel') -> get();
     	// dd($carousel);

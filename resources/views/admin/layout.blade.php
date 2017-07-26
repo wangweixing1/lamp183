@@ -458,6 +458,28 @@
           </ul>
         </li>
 
+<<<<<<< HEAD
+=======
+=======
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-table"></i> <span>轮播管理</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ url('/admin/carousel/add') }}"><i class="fa fa-circle-o"></i> 添加轮播 </a></li>
+            <li><a href="{{ url('/admin/carousel/index') }}"><i class="fa fa-circle-o"></i> 浏览轮播 </a></li>
+
+          </ul>
+<<<<<<< HEAD
+        </li>   
+=======
+>>>>>>> a2eb69db3ec4dd5fd48b4acfa98d66f9c1758257
+        </li>
+>>>>>>> 477302149c57f5d47f6978cc7988e80ce50236cb
+>>>>>>> ead3331a1765a30f2417773c3d1439ad6f681a2a
         <li class="treeview">
           <a href="#">
             <i class="fa fa-calendar-check-o"></i>
@@ -470,6 +492,14 @@
             <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> 积分列表</a></li>
             <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> 积分规则</a></li>
           </ul>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        </li>    
+=======
+
+>>>>>>> a2eb69db3ec4dd5fd48b4acfa98d66f9c1758257
+>>>>>>> ead3331a1765a30f2417773c3d1439ad6f681a2a
         </li>
 
          <li class="treeview">
@@ -515,6 +545,14 @@
             <li><a href="{{ url('/admin/frinedship/add') }}"><i class="fa fa-circle-o"></i> 添加链接</a></li>
           </ul>
         </li>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      </ul>
+      </ul>
+=======
+<<<<<<< HEAD
+>>>>>>> ead3331a1765a30f2417773c3d1439ad6f681a2a
 
         
 
@@ -674,6 +712,7 @@
       </ul>
     </section>
     <!-- /.sidebar -->
+>>>>>>> a2eb69db3ec4dd5fd48b4acfa98d66f9c1758257
   </aside>
   
   @yield('content')

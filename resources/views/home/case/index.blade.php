@@ -106,12 +106,12 @@
     </dl>
     @endforeach 
     </div>
-<dl id="clo" style="display:none;" >
+        <dl id="clo" style="display:none;" >
           <dt><a href="#"><img src="/uploads/movie_img/14993998767042612.jpeg" width="150" height="100" /></a></dt>
-          <dd><a class="bbb" href="#">name </a>
-            <p>
-              <input name="" type="button" class="dgbg012" value="马上购票" />
-            </p>
+            <dd><a class="bbb" href="#">name </a>
+              <p>
+                <input name="" type="button" class="dgbg012" value="马上购票" />
+              </p>
           </dd>
         </dl>
             <div class ="aaa"> 
@@ -126,6 +126,10 @@
             <div class ="aaa"> 
            
         </div> 
+<<<<<<< HEAD
+
+=======
+>>>>>>> a2eb69db3ec4dd5fd48b4acfa98d66f9c1758257
 
 <div class="clear"></div>
 <div class="list_page" style="padding-right:18px;">
@@ -200,3 +204,6 @@
   <p>您是305818 位访客  欢迎您的光临！<br />
     海南领悟科技 版权所有 豫ICP备01025000148号 <br />
     广告部：0371-6699999 / 668888 业务部：0371-6677777 / 66555577 / 66665555 / 155998899  </p>
+</div>
+</body>
+</html>

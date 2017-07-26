@@ -1,0 +1,184 @@
+/*整体样式开始*/
+#toubu, #guanggao, #neirong, #weibu{
+	margin:0 auto;
+	
+}
+
+
+/*整体样式结束*/
+
+/*头部样式开始*/
+#toubu{
+	
+	width:100%;
+	
+	
+	
+}
+#toubu > .toubu-dl{
+	width:960px;
+	margin:0 auto;
+}
+
+/*搜索条样式开始*/
+.sousuo{
+	width:100%;
+	height:24px;
+	background-color:#e6e9ee;
+}
+.ssleft{
+	float:left;
+	margin-right:10px;
+}
+.ssright{
+	float:right;
+	margin-left:10px;
+}
+.toubu{
+	width:960px;
+	margin:0 auto;
+}
+a{
+	text-decoration:none;
+}
+a:hover{
+	color:red;
+}
+
+/*搜索条样式结束*/
+
+/*登录条样式开始*/
+.denglu{
+	width:960px;
+	height:80px;
+	
+}
+.tu1{
+	width:30%;
+	height:80px;
+	margin:0 auto;
+	background-image:url("../images/logo.png");
+	background-repeat:no-repeat;
+	float:left;
+}
+.tu2{
+	width:30%;
+	height:80px;
+	margin:0 auto;
+	background-image:url("../images/wxdbjc.gif");
+	background-repeat:no-repeat;
+	background-position:bottom 14px left;
+	float:left;
+}
+.set{
+	width:55px;
+	height:55px;
+	background-image:url("../images/1 (2).jpg");
+}
+/*登录条样式结束*/
+
+/*导航条样式开始*/
+.daohang{
+	width:100%;
+	height:46px;
+	background-color:#075991;
+}
+.tu3 a{
+	margin-bottom:20px;
+	color:black;
+}
+#zhuce{
+	top:75px;
+	position:absolute;
+
+}
+.daohangtiao{
+	width:960px;
+	height:80px;
+	margin:0 auto;
+}
+.left{
+	float:left;
+	margin-right:30px;
+	margin-top:15px;
+	font-size:20px;
+}
+.left a{
+	color:white;
+}
+.left a:hover{
+	font-size:1.2em;
+}
+.left a:visited{
+	color:red;
+}
+/*导航条样式结束*/
+
+/*内容*/
+.xiongdilian{
+	width:960px;
+	margin:0 auto;
+}
+.zuobian{
+	width:300px;
+	height:600px;
+	background-color:#fff;
+	margin-left:30px;
+}
+.biankuangxian{
+	width:150px;
+	height:200px;
+	border-right:2px dotted #ccc;
+	padding:50px 20px 0 100px; 
+	
+}
+.mima{
+	padding:30px 0 0 0;
+}
+.touxiang{
+	padding:30px 0 0 0;
+}
+.youbian{
+	width:500px;
+	height:300px;
+	background-color:#fff;
+	margin:-600px 0 0 320px;
+}
+.nicheng{
+	padding:50px 0 0 100px;
+}
+.youxiang{
+	padding:0 0 0 100px;
+}
+.qq{
+	padding:0 0 0 100px;
+}
+.querenxiugai{
+	padding:0 0 0 140px;
+}
+
+/*尾部样式开始*/
+#weibu{
+	width:970px;
+	height:100px;
+}
+.youqinglianjie2{
+	height:30px;
+	width:940px;
+	padding-left:30px;
+	padding-top:12px;
+	background-image:url("../images/h.png");
+}
+.wenzi12{
+	float:left;
+}
+.lianjie{
+	width:970px;
+	height:60px;
+	background-color:#fff;
+}
+.weilian{
+	margin-top:50px;
+}
+
+/*尾部样式结束*/

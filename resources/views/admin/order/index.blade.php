@@ -87,41 +87,44 @@
                             </div>
                         </form>
 
-						<table id="example2" class="table table-bordered table-hover">
-							<thead>
-								<tr>
-									<th>ID</th>
-									<th>影片名称</th>
-									<th>用户名称</th>
-									<th>放映时间</th>
-									<th>影厅</th>
-									<th>票价</th>
-									<th>数量</th>
-									<th>操作</th>
-								</tr>
-							</thead>
+			<table id="example2" class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>电影ID</th>
+						<th>电影名称</th>
+                                                                                                <th>价格</th>
+						<th>座位号</th>
+						<th>订单序列</th>
+                                                                                                <th>日期</th>
+						<th>时间</th>
+						<th>影城</th>
+                                                                                                <th>影厅</th>
+						<th>状态</th>
+					</tr>
+				</thead>
 
-							<tbody>
-								@foreach($data as $key => $val)
-								<tr class="parent">
-									<td class="id">{{ $val -> id }}</td>
-									<td class="movie_name">{{ $val -> mid }}</td>
-									<td>{{ $val -> movie_name }}</td>
-                                                                                                            <td>{{ $val -> set }}</td>
-                                                                                                            <td>{{ $val -> num }}</td>
-                                                                                                            <td>{{ $val -> date }}</td>
-                                                                                                            <td>{{ $val -> cinema_name }}</td>
-									<td>{{ $val -> time }}</td>
-									<td>{{ $val -> hall_name }}</td>
-                                                                                                            <td>{{ $val -> price }}</td>                                    
-									<td>{{ $val -> status }}</td>									
-									<td>                                       
-                                        <a href="{{ url('/admin/order/delete') }}/{{ $val->id }}">取消订单</a>
-                                    </td>
-								</tr>
-								@endforeach
-							</tbody>
- 						</table>
+				<tbody>
+					@foreach($data as $key => $val)
+					<tr class="parent">
+						<td class="id">{{ $val -> id }}</td>
+						<td class="movie_name">{{ $val -> mid }}</td>
+						<td>{{ $val -> movie_name }}</td>
+                                                                                                <td>{{ $val -> price }}</td>     
+                                                                                                <td>{{ $val -> set }}</td>
+                                                                                                <td>{{ $val -> num }}</td>
+                                                                                                <td>{{ $val -> date }}</td>
+                                                                                                <td>{{ $val -> time }}</td>
+                                                                                                <td>{{ $val -> cinema_name }}</td>
+						<td>{{ $val -> hall_name }}</td>                           
+						<td>{{ $val -> status }}</td>									
+						<td>                                       
+                                                                                                            <a href="{{ url('/admin/order/delete') }}/{{ $val->id }}">已处理订单</a>
+                                                                                                </td>
+					</tr>
+					@endforeach
+				</tbody>
+				</table>
                     {{ $data -> appends($request) -> links() }}
                 </div>
                 <!-- /.box-body -->
@@ -136,9 +139,6 @@
 </section>
 <!-- /.content -->
 </div>
-
-
-
 @endsection
 
    

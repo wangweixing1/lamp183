@@ -124,97 +124,7 @@
 	<!-- /.content -->
 	</div>
 
-<<<<<<< HEAD
 
-
-
-@endsection
-	@section('js')
-	<script type="text/javascript">
-
-	// ajax token 设置使用
-	$.ajaxSetup({
-	headers: {
-	'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-	}
-	});	
-
-	// 绑定双击事件
-	$(".name").one('dblclick',aaa);
-
-	// 双击事件封装函数 解决双击bug
-	function aaa(){
-
-	// 把 $(this) 放到td里 避免修改用户名时 获取到不必要的值
-	var td =  $(this);
-
-	// 获取id
-	var id = $(this).parent('.parent').find('.ids').html();
-	// alert(id);
-	// 获取原来的值
-	var oldName = $(this).html();
-
-	// 创建输入框
-	var inp = $("<input type='text'>");
-
-	// 写入创建的input框并显示出来
-	inp.val(oldName);
-
-	// 双击变成input框
-	$(this).html(inp);
-
-	// 双击后直接选中
-	inp.select();
-
-	// 添加失去焦点事件
-	inp.on('blur',function(){
-	// 获取新的名字
-	var newName = inp.val();
-
-	// 执行ajax
-	$.ajax('/admin/user/ajaxrename',{
-	type:'POST',
-	data:{id:id,name:newName},
-	success:function(data){
-	if(data == '0' )
-	{
-	alert('用户名已经存在');
-	td.html(oldName);
-	}else if(data == '1')
-	{
-	alert('恭喜！修改成功');
-	td.html(newName);
-	}else
-	{
-	alert(' 抱歉！修改失败');
-	}
-
-	// alert(data);
-	},
-	error:function(data)
-	{
-	alert('数据异常');
-	},
-	dataType:'json'
-	});
-
-	// 再次双击修改用户名
-	td.one('dblclick' , aaa);
-
-	});
-	}
-
-	// 获取要设置模态框的变量
-	// 全局变量
-	id = 0;
-
-	// 获取id保存到变量当中
-	$(".del").on('click',function(){
-	id = $(this).parents('.parent').find('.ids').html();
-	// alert(id);
-	});
-
-=======
 @endsection
 @section('js')
 	<script type="text/javascript">
@@ -300,7 +210,5 @@
 			id = $(this).parents('.parent').find('.ids').html();
 			// alert(id);
 		});
-
->>>>>>> 783ed4a14458552c85085ec9979689aacf6a2840
 	</script>
 @endsection
