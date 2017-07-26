@@ -105,12 +105,16 @@
 								@foreach($data as $key => $val)
 								<tr class="parent">
 									<td class="id">{{ $val -> id }}</td>
-									<td class="movie_name">{{ $val -> movie_name }}</td>
-									<td>{{ $val -> user_name }}</td>
+									<td class="movie_name">{{ $val -> mid }}</td>
+									<td>{{ $val -> movie_name }}</td>
+                                                                                                            <td>{{ $val -> set }}</td>
+                                                                                                            <td>{{ $val -> num }}</td>
+                                                                                                            <td>{{ $val -> date }}</td>
+                                                                                                            <td>{{ $val -> cinema_name }}</td>
 									<td>{{ $val -> time }}</td>
-									<td>{{ $val -> hall }}</td>
-									<td>{{ $val -> price }}</td>
-									<td>{{ $val -> poll }}</td>									
+									<td>{{ $val -> hall_name }}</td>
+                                                                                                            <td>{{ $val -> price }}</td>                                    
+									<td>{{ $val -> status }}</td>									
 									<td>                                       
                                         <a href="{{ url('/admin/order/delete') }}/{{ $val->id }}">取消订单</a>
                                     </td>

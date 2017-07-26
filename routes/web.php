@@ -149,22 +149,15 @@ Route::group(['middleware' => 'adminlogin'],function()
 	Route::resource('/admin/showing','Admin\showingController');
 
 
-<<<<<<< HEAD
-	// 订单管理
-	Route::get('/admin/order/index','Admin\OrderController@index');
-
-
 	// 展示日历路由
 	// Route::get('/admin/calendar','Admin\CalendarController@calendar');
 
-=======
 	// 即将上映电影
 	Route::resource('/admin/coming','Admin\comingController');
 
 
 	// 订单管理
 	Route::get('/admin/order/index','Admin\OrderController@index');
->>>>>>> 477302149c57f5d47f6978cc7988e80ce50236cb
 
 	// 网站配置
 	Route::get('/admin/config/config','Admin\ConfigController@config');
@@ -264,14 +257,6 @@ Route::group(['middleware' => 'adminlogin'],function()
 	//实现分类（ajax）
 	Route::get('/home/case/ajax','Home\CaseController@ajax');
 
-<<<<<<< HEAD
-	// 详情页
-	Route::get('/home/ticket/index/{id}','Home\TicketController@index');
-
-	// 购票页
-	Route::get('/home/ticket/ticket/{id}','Home\TicketController@ticket');
-
-=======
 	//放映时刻表
 	Route::get('/home/time/index','Home\TimeController@index');
 
@@ -290,7 +275,6 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 购票页
 	Route::get('/home/ticket/ticket/{id}','Home\TicketController@ticket');
 
->>>>>>> 477302149c57f5d47f6978cc7988e80ce50236cb
 	// CinemaAjax
 	Route::get('/home/ticket/CinemaAjax','Home\TicketController@CinemaAjax');
 

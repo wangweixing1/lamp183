@@ -7,10 +7,6 @@ use App\Http\Controllers\Controller;
 
 class OrderController extends Controller
 {
-<<<<<<< HEAD
-
-=======
->>>>>>> 477302149c57f5d47f6978cc7988e80ce50236cb
     // add
 	public function add()
 	{

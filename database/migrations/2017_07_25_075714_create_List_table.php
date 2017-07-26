@@ -31,5 +31,6 @@ class CreateListTable extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('list');
     }
 }

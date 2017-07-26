@@ -29,5 +29,6 @@ class CreateCarouselTable extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('carousel');
     }
 }
