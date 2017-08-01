@@ -155,8 +155,12 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// Route::get('/admin/calendar','Admin\CalendarController@calendar');
 
 	// 网站配置
-	Route::get('/admin/config/config','Admin\ConfigController@config');
-    	Route::post('/admin/config/insert','Admin\ConfigController@insert');
+	Route::get('/admin/config/add','Admin\ConfigController@add');
+    Route::post('/admin/config/insert','Admin\ConfigController@insert');
+
+    //网站列表
+	Route::get('/admin/config/index','Admin\ConfigController@index');
+
 
 //友情链接模块开始-------------------------------------------------------
 
@@ -242,6 +246,9 @@ Route::group(['middleware' => 'adminlogin'],function()
 	Route::get('/home/login','Home\LoginController@login');
 	Route::post('/home/dologin','Home\LoginController@doLogin');
 
+	// 前台退出
+	Route::get('/home/logout','Home\LoginController@logout');
+
 
 	// 注册页面
 	Route::get('/home/regist','Home\RegistController@regist');
@@ -251,6 +258,15 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 用户名修改
 	Route::get('/home/center','Home\CenterController@center');
 	Route::post('/home/dupdate','Home\CenterController@dupdate');
+
+	// 订单详情
+	Route::get('/home/xiangqing','Home\TicketController@xiangqing');
+
+	// 去支付
+	Route::get('/home/zhifu','Home\TicketController@zhifu');
+
+	// 支付ajax
+	Route::get('/home/ticket/zhifuajax','Home\TicketController@zhifuajax');
 
 	// 密码修改
 	Route::get('/home/mima','Home\CenterController@mima');
@@ -263,9 +279,6 @@ Route::group(['middleware' => 'adminlogin'],function()
 	// 前台
 	Route::get('/home/index','Home\IndexController@index');
 
-	//前台电影介绍
-	Route::get('/home/movie/index','home\MovieController@index');
-
 	//前台订单
 	Route::get('/home/order/index','home\OrderController@index');
 
@@ -277,6 +290,7 @@ Route::group(['middleware' => 'adminlogin'],function()
 
 	// 详情页
 	Route::get('/home/ticket/index/{id}','Home\TicketController@index');
+	Route::get('/home/ticket/index1/{id}','Home\TicketController@index1');
 
 	// 购票页
 	Route::get('/home/ticket/ticket/{id}','Home\TicketController@ticket');

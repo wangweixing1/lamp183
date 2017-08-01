@@ -11,8 +11,8 @@ class OrderController extends Controller
      public function index()
 	{	
 		$order = \DB::table('order') -> get();
-		// dd($order);	
+		$config = \DB::table('config') -> get();
 		$frinedship = \DB::table('frinedship') -> get();
-		return view('home.order.index',['title' => '电影订单','order'=>$order,'frinedship'=>$frinedship]);
+		return view('home.order.index',['title' => '电影订单','order'=>$order,'config'=>$config,'frinedship'=>$frinedship]);
 	}
 }

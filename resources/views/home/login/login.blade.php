@@ -17,7 +17,7 @@ document.createElement("footer");
 <![endif]--> 
 </head> 
  
-<body> 
+<body style="background:url('/home/images/111.jpg'); background-repeat: no-repeat;"> 
 <div class="wrap"> 
   @if(session('info'))
     <p class="text-danger">{{ session('info') }}</p>
@@ -26,7 +26,7 @@ document.createElement("footer");
     {{ csrf_field() }} 
     <section class="loginForm"> 
       <header> 
-        <h1>欢迎登录</h1> 
+        <h1>欢迎登录半边天</h1> 
       </header> 
       <div class="loginForm_content"> 
         <fieldset> 

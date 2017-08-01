@@ -12,8 +12,9 @@ class ListController extends Controller
     {   
     	$list = \DB::table('list') -> get();
     	$frinedship = \DB::table('frinedship') -> get();
+    	$config = \DB::table('config') -> get();
     	// dd($frinedship);
-        return view('home.list.index',['title' => '榜单','list'=>$list,'frinedship'=>$frinedship]);
+        return view('home.list.index',['title' => '榜单','list'=>$list,'config'=>$config,'frinedship'=>$frinedship]);
 
     }
 }

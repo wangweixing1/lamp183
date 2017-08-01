@@ -11,13 +11,13 @@
 <!-- //for-mobile-apps -->
 <link href='//fonts.googleapis.com/css?family=Kotta+One' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<link href="/home/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="/seat/style.css" rel="stylesheet" type="text/css" media="all" />
 <script src="/home/js/jquery-1.11.0.min.js"></script>
 <script src="/home/js/jquery.seat-charts.js"></script>
 </head>
-<body>
+<body style="background:url(/home/images/banner2.jpg) no-repeat center;">
 <div class="content">
-	<h1>半边天电影na yang chun jie de yu ji</h1>
+	<h1>半边天电影 na yang chun jie de yu ji</h1>
 	<div class="main">
 		<h2>选座</h2>
 		<div class="demo">
@@ -88,6 +88,7 @@
 						'aaaaaaaa',
 						'aaaaaaaa',
 						'aaaaaaaa',
+						
 					],
 
 					naming : {
@@ -159,8 +160,9 @@
 					'data':{'ids':ids,'mid':mid,'date':date,'time':time,'hall_name':hall_name,'price':price,'cinema_name':cinema_name,'movie_name':movie_name},
 					'success':function(data){
 						 if(data == 0){
-						 	// location.href=
 						 	alert('恭喜！订票成功！请前去订单中心完成支付。');
+						 	location.href="{{ url('/home/center') }}";
+						 	// alert('恭喜！订票成功！请前去订单中心完成支付。');
 						 	sc.get(ids).status('unavailable');
 						 }	
 						 if(data == 1){

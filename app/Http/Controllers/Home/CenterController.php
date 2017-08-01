@@ -10,12 +10,40 @@ class CenterController extends Controller
     // center
     public function center()
     {
+
+        if(!session('master'))
+        {
+            return redirect('/home/login') -> with(['info' => '尚未登录']);
+        }
+
+        // 获取登录用户id
     	$id = session('master')->id;
     	
     	$data= \DB::table('users')->where('users.id',$id)->first();
+        $order= \DB::table('order') -> first();
+
+        $config= \DB::table('config') -> get();
     	// dd($data);
 
-    	return view('home.center.center',['title' => '个人中心','data'=>$data]);
+        // 查询订单信息
+
+        $res= \DB::table('order') -> where('user_name',$id)-> first();
+        
+        if($res)
+        {
+            // 获取订单id
+            $res = $res -> user_name;
+        }else
+        {
+            $res='';
+        }
+        
+        // dd($res);
+
+        // 获取登录用户id
+        $session = session('master');
+
+    	return view('home.center.center',['title' => '个人中心','res' => $res,'session' => $session,'data'=>$data,'config'=>$config,'order' => $order]);
     }
 
     public function dupdate(Request $request)
@@ -36,7 +64,30 @@ class CenterController extends Controller
     // mima
     public function mima()
 	{
-  		return view('home.center.mima',['title' => '个人中心']);
+        // 查询订单信息
+        $order= \DB::table('order') -> first();
+        $config= \DB::table('config') -> get();
+
+        // 获取登录用户id
+        $session = session('master');
+        $id = session('master')->id;
+        
+        // 查询订单信息
+        $res= \DB::table('order') -> where('user_name',$id)-> first();
+        
+        // 判断
+        if($res)
+        {
+            // 获取订单id
+            $res = $res -> user_name;
+            // dd($res);
+        }else
+        {
+            $res = '';
+        }
+        
+
+  		return view('home.center.mima',['title' => '个人中心','res' => $res,'session' => $session,'config'=>$config,'order' => $order]);
 	}
  
 	public function postReset(Request $request)
@@ -63,7 +114,10 @@ class CenterController extends Controller
     // touxiang
     public function touxiang(Request $request)
     {
-    	return view('home.center.touxiang',['title' => '个人中心']);
+
+        $order= \DB::table('order') -> first();
+        $config= \DB::table('config') -> first();
+    	return view('home.center.touxiang',['title' => '个人中心','config'=>$config,'order' => $order]);
     }
 
     public function update(Request $request)

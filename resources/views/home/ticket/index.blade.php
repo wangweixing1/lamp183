@@ -5,6 +5,8 @@
 <title>{{ $title }}</title>
 <link href="/home/css/default.css" rel="stylesheet" type="text/css" />
 <link href="/home/css/sub.css" rel="stylesheet" type="text/css" />
+<link href="/home/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
 <!-- <link href="/home/css/bootstrap.min.css" rel="stylesheet" type="text/css" /> -->
 
 <style type="text/css">
@@ -74,22 +76,24 @@ window.onload=function(){
 <body>
 <div class="header">
   <div class="top_img">
-    <div class="logo"><a href="#"><img src="/images/3.png" width="200" height="80" /></a></div>
-    <div class="rx"><img src="/home/images/topad.gif" width="500" height="100" /></div>
+  @foreach($config as $key => $val)
+    <div class="logo"><a href="{{ url('/home/index') }}"><img src="/uploads/logo_img/{{ $val -> logo }}" width="200" height="80" /></a></div>
+  @endforeach 
+    <div class="rx"><img src="/home/images/000.jpg" width="500" height="100" /></div>
     <div class="top_nav">
-      <p><a href="#"> 快速订票系统入口</a> </p>
-      <p><a href="#"> 最新优惠活动中心</a></p>
+      <a style="padding:2px 2px;" class="btn btn-info" href="{{ url('/home/login') }}"> 登录 </a>  <a style="padding:2px 2px;" class="btn btn-info" href="{{ url('/home/regist') }}"> 注册 </a> <a style="padding:2px 2px;" class="btn btn-info" href="{{ url('/home/center') }}">  个人中心  </a>
     </div>
     <div class="clear"></div>
   </div>
+
   <div class="menu">
     <ul>
-     <li id="a1"><a href="{{ url('/home/index') }}">首　页</a></li>
+      <li id="a1"><a href="{{ url('/home/index') }}">首　页</a></li>
       <li id="a2"> <a href="{{ url('/home/case/index/0') }}">电影</a></li>
-      <li id="a3"><a href="#">榜单</a></li>
-      <li id="a4"><a href="#">热点</a></li>
+      <li id="a3"><a href="{{ url('/home/list/index') }}">榜单</a></li>
+      <li id="a4"><a href="{{ url('/home/hot/index') }}">热点</a></li>
       <li id="a8"><a href="#">优惠专区</a></li>
-      <li id="a9"><a href="#">放映时刻表</a></li>
+      <li id="a9"><a href="{{ url('/home/time/index') }}">放映时刻表</a></li>
     </ul>
   </div>
 </div>
@@ -155,7 +159,7 @@ window.onload=function(){
                 <th width="25%">购票</th>
             </tr>
             <tr>
-            	<td>11:20</td>
+            	<td>8:00</td>
                 <td>余98/128总</td>
                 <td>国语</td>
                 <td>3D</td>
@@ -163,7 +167,7 @@ window.onload=function(){
                 <td><input name="" type="button" class="dgbg02" value="马上购票" /></td>
             </tr>
             <tr>
-            	<td>11:20</td>
+            	<td>10:00</td>
                 <td>余98/128总</td>
                 <td>国语</td>
                 <td>3D</td>
@@ -171,7 +175,7 @@ window.onload=function(){
                 <td><input name="" type="button" class="dgbg02" value="马上购票" /></td>
             </tr>
             <tr>
-            	<td>11:20</td>
+            	<td>14:00</td>
                 <td>余98/128总</td>
                 <td>国语</td>
                 <td>3D</td>
@@ -179,7 +183,7 @@ window.onload=function(){
                 <td><input name="" type="button" class="dgbg02" value="马上购票" /></td>
             </tr>
             <tr>
-            	<td>11:20</td>
+            	<td>16:20</td>
                 <td>余98/128总</td>
                 <td>国语</td>
                 <td>3D</td>
@@ -187,53 +191,14 @@ window.onload=function(){
                 <td><input name="" type="button" class="dgbg02" value="马上购票" /></td>
             </tr>
             <tr>
-            	<td>11:20</td>
+            	<td>18:20</td>
                 <td>余98/128总</td>
                 <td>国语</td>
                 <td>3D</td>
                 <td>50元</td>
                 <td><input name="" type="button" class="dgbg02" value="马上购票" /></td>
             </tr>
-            <tr>
-            	<td>11:20</td>
-                <td>余98/128总</td>
-                <td>国语</td>
-                <td>3D</td>
-                <td>50元</td>
-                <td><input name="" type="button" class="dgbg02" value="马上购票" /></td>
-            </tr>
-            <tr>
-            	<td>11:20</td>
-                <td>余98/128总</td>
-                <td>国语</td>
-                <td>3D</td>
-                <td>50元</td>
-                <td><input name="" type="button" class="dgbg02" value="马上购票" /></td>
-            </tr>
-            <tr>
-            	<td>11:20</td>
-                <td>余98/128总</td>
-                <td>国语</td>
-                <td>3D</td>
-                <td>50元</td>
-                <td><input name="" type="button" class="dgbg02" value="马上购票" /></td>
-            </tr>
-            <tr>
-            	<td>11:20</td>
-                <td>余98/128总</td>
-                <td>国语</td>
-                <td>3D</td>
-                <td>50元</td>
-                <td><input name="" type="button" class="dgbg02" value="马上购票" /></td>
-            </tr>
-            <tr>
-            	<td>11:20</td>
-                <td>余98/128总</td>
-                <td>国语</td>
-                <td>3D</td>
-                <td>50元</td>
-                <td><input name="" type="button" class="dgbg02" value="马上购票" /></td>
-            </tr>
+            
         </tbody>
     </table></div>
 	<div style="display:none"><img src="/home/images/bfx.jpg" width="650" height="436" /></div>
@@ -278,12 +243,25 @@ Oldman）都将回归。
     </div>
   </div>
   <div class="clear"></div>
-</div>
-<div class="footer">
-  <div class="footer_nav">领悟科技旗下：电影售票系统&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">热门影片</a> | <a href="#">正在热映</a> | <a href="#">即将上映</a> | <a href="#">经典回味</a> | <a href="#">全球首映</a> | <a href="#">热门活动</a> | <a href="#">优惠专区</a> | <a href="#">放映时刻表</a> | <a href="#">公司新闻</a> | <a href="#">领悟科技</a> </div>
-  <p>您是305818 位访客  欢迎您的光临！<br />
-    海南领悟科技 版权所有 豫ICP备01025000148号 <br />
-    广告部：0371-6699999 / 668888 业务部：0371-6677777 / 66555577 / 66665555 / 155998899 </p>
-</div>
+ 
+   <div class="bottom ">
+     <h2>友情链接 >></h2>
+     <div class="bottom_con">
+         @foreach($frinedship as $key => $val)
+ 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://{{ $val -> url }}">{{ $val -> name }}</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+         @endforeach
+     </div>
+   </div>
+ 
+   <div class="clear"></div>
+ </div>  
+   @foreach($config as $key => $val)
+ <div class="footer">  
+   <p>您是66666 位访客  欢迎您的光临！<br />
+     {{$val -> copy}} 版权所有 京ICP备0123456789号</p>
+ </div>
+ @endforeach
+
 </body>
 </html>

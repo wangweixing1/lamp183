@@ -54,22 +54,24 @@ window.onload = function(){
 <body>
 <div class="header" >
   <div class="top_img">
-    <div class="logo"><a href="#"><img src="/images/5.png" width="200" height="80" /></a></div>
-    <div class="rx"><img src="images/topad.gif" width="500" height="100" /></div>
+  @foreach($config as $key => $val)
+    <div class="logo"><a href="{{ url('/home/index') }}"><img src="/uploads/logo_img/{{ $val -> logo }}" width="200" height="80" /></a></div>
+  @endforeach 
+    <div class="rx"><img src="/home/images/000.jpg" width="500" height="100" /></div>
     <div class="top_nav">
-      <p><a href="{{ url('/home/login') }}"> 登录 </a></p>
-      <p><a href="{{ url('/home/regist') }}"> 注册 </a></p>
+      <a style="padding:2px 2px;" class="btn btn-info" href="{{ url('/home/login') }}"> 登录 </a>  <a style="padding:2px 2px;" class="btn btn-info" href="{{ url('/home/regist') }}"> 注册 </a> <a style="padding:2px 2px;" class="btn btn-info" href="{{ url('/home/center') }}">  个人中心  </a>
     </div>
     <div class="clear"></div>
   </div>
+
   <div class="menu">
     <ul>
       <li id="a1"><a href="{{ url('/home/index') }}">首　页</a></li>
-      <li id="a2"> <a href="{{ url('/home/case/index') }}">电影</a></li>
-      <li id="a3"><a href="#">榜单</a></li>
-      <li id="a4"><a href="#">热点</a></li>
+      <li id="a2"> <a href="{{ url('/home/case/index/0') }}">电影</a></li>
+      <li id="a3"><a href="{{ url('/home/list/index') }}">榜单</a></li>
+      <li id="a4"><a href="{{ url('/home/hot/index') }}">热点</a></li>
       <li id="a8"><a href="#">优惠专区</a></li>
-      <li id="a9"><a href="#">放映时刻表</a></li>
+      <li id="a9"><a href="{{ url('/home/time/index') }}">放映时刻表</a></li>
     </ul>
   </div>
 </div>
@@ -83,7 +85,12 @@ window.onload = function(){
           <div class="biankuangxian">
             <div class="xinxi"><a href="/home/center">修改信息</a></div>
             <div class="mima"><a href="/home/mima">修改密码</a></div>
-            <div class="touxiang"><a href="/home/touxiang">修改头像</a></div>
+            <div class="touxiang"><a href="#">修改头像</a></div>
+            @if($order == null)
+            <div class="touxiang"><a href="">无订单</a></div>
+            @else
+            <div class="touxiang"><a href="/home/xiangqing">订单详情</a></div>
+            @endif
           </div>
         </div>
         <form class="" role="form" enctype="multipart/form-data" method="post" action="{{ url('/home/update')}}">

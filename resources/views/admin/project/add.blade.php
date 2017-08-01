@@ -48,6 +48,7 @@
 										</ul>
 									</div>
 								@endif
+								
 								<div class="form-group">
 									<label for="exampleInputName">影院</label>
 									<select name="cinema_id" class="form-control">

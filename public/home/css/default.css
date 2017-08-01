@@ -67,7 +67,7 @@ hr {
 /*全局样式*/
 .header{ width:972px; margin:0 auto;}
 .top_img{ height:100px;  margin-bottom:3px;} 
-.top_nav{ width:120px; float:right; padding-top:20px;}
+.top_nav{  float:right; padding-top:20px;}
 .top_nav p{ background: url(../images/left_huodong_j.gif) no-repeat left center; padding-left:15px; height:25px; line-height:25px;}
 .logo{ width:300px; height:80px;float:left; padding-top:15px; padding-bottom:5px; padding-left:10px; padding-right:5px;}
 .rx{ height:100px; width:500px; float:left;}
@@ -86,12 +86,12 @@ hr {
 .menu ul li#a4 a:hover{ width:172px; text-align:center;display:block; background:url(../images/menuhover.jpg) no-repeat -310px center;color:#fff;}
 .menu ul li#a8 a:hover{ width:173px; text-align:center;display:block; background:url(../images/menuhover.jpg) no-repeat -743px center;color:#fff;}
 .menu ul li#a9 a:hover{ width:145px; text-align:center;display:block; background:url(../images/menuhover.jpg) no-repeat -851px center;color:#fff; }
-.banner{ height:300px; width:972px; margin:0 auto; padding:10px 0;overflow:hidden;}
+.banner{ height:500px; width:972px; margin:0 auto; padding:10px 0;overflow:hidden;}
 
-#YFocus{position:relative;z-index:4;width:970px;height:300px;overflow:hidden;}
+#YFocus{position:relative;z-index:4;width:970px;height:500px;overflow:hidden;}
 #YImage,#YPhotos{margin:0 auto;overflow:hidden;}
 #YImage{position:relative;z-index:5;}
-#YImage,#YPhotos img{width:970px;height:300px;}
+#YImage,#YPhotos img{width:970px;height:500px;}
 #YPhotos{position:absolute;top:0;left:0;z-index:6;overflow:hidden;}
 #YPhotos img{float:left;clear:both;}
 #YSamples{position:absolute;z-index:7;width:400px;height:63px;overflow:hidden;bottom:4px;left:4px;}

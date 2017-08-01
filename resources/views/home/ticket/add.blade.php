@@ -13,10 +13,11 @@
 <div class="header">
   <div class="top_img">
     <div class="logo"><a href="#"><img src="/images/3.png" width="200" height="80" /></a></div>
-    <div class="rx"><img src="/home/images/43.jpg" width="300" height="100" /></div>
+    <div class="rx"><img src="/home/images/000.jpg" width="500" height="100" /></div>
     <div class="top_nav">
-      <p><a href="#"> 快速订票系统入口</a> </p>
-      <p><a href="#"> 最新优惠活动中心</a></p>
+      <a style="padding:2px 2px;" class="btn btn-info" href="{{ url('/home/login') }}"> 登录 </a>  
+      <a style="padding:2px 2px;" class="btn btn-info" href="{{ url('/home/regist') }}"> 注册 </a> 
+      <a style="padding:2px 2px;" class="btn btn-info" href="{{ url('/home/center') }}">  个人中心  </a>
     </div>
     <div class="clear"></div>
   </div>
@@ -24,10 +25,10 @@
     <ul>
      <li id="a1"><a href="{{ url('/home/index') }}">首　页</a></li>
       <li id="a2"> <a href="{{ url('/home/case/index/0') }}">电影</a></li>
-      <li id="a3"><a href="#">榜单</a></li>
-      <li id="a4"><a href="#">热点</a></li>
+      <li id="a3"><a href="{{ url('/home/list/index') }}">榜单</a></li>
+      <li id="a4"><a href="{{ url('/home/hot/index') }}">热点</a></li>
       <li id="a8"><a href="#">优惠专区</a></li>
-      <li id="a9"><a href="#">放映时刻表</a></li>
+      <li id="a9"><a href="{{ url('/home/time/index') }}">放映时刻表</a></li>
     </ul>
   </div>
 </div>
@@ -174,8 +175,7 @@
               <div class="box-footer">
               
                   <button type="submit" class="btn btn-warning">选座</button>
-                <!-- <a href="{{ url('/home/ticket/seat') }}"><input class="btn btn-warning" type="button" value="选座"></a> -->
-                <!-- <button type="submit" class="btn btn-primary">确认提交</button> -->
+  
               </div>
             </form>
 
@@ -185,13 +185,25 @@
     </div>
   </div>
   <div class="clear"></div>
-</div>
-<div class="footer">
-  <div class="footer_nav">领悟科技旗下：电影售票系统&nbsp;&nbsp;&nbsp;&nbsp; <a href="#">热门影片</a> | <a href="#">正在热映</a> | <a href="#">即将上映</a> | <a href="#">经典回味</a> | <a href="#">全球首映</a> | <a href="#">热门活动</a> | <a href="#">优惠专区</a> | <a href="#">放映时刻表</a> | <a href="#">公司新闻</a> | <a href="#">领悟科技</a> </div>
-  <p>您是305818 位访客  欢迎您的光临！<br />
-    海南领悟科技 版权所有 豫ICP备01025000148号 <br />
-    广告部：0371-6699999 / 668888 业务部：0371-6677777 / 66555577 / 66665555 / 155998899 </p>
-
+ 
+   <div class="bottom ">
+     <h2>友情链接 >></h2>
+     <div class="bottom_con">
+         @foreach($frinedship as $key => $val)
+ 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://{{ $val -> url }}">{{ $val -> name }}</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| 
+         @endforeach
+     </div>
+   </div>
+ 
+   <div class="clear"></div>
+ </div>  
+   @foreach($config as $key => $val)
+ <div class="footer">  
+   <p>您是66666 位访客  欢迎您的光临！<br />
+     {{$val -> copy}} 版权所有 京ICP备0123456789号</p>
+ </div>
+ @endforeach
 
     <script src="/home/css/jquery.min.js"></script>
 
@@ -257,7 +269,7 @@
                 type: 'get',
                 data: {res:res},
                 success: function(data){
-
+                        // console.log(data);
               // 遍历
                     $.each(data,function(i, n)
                     {   

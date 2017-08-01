@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'php183电影购票'),
+    'name' => env('APP_NAME', 'Holle！ Welcome to 半边天'),
 
     /*
     |--------------------------------------------------------------------------

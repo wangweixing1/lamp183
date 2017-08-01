@@ -12,6 +12,8 @@ class HotController extends Controller
     {
     	$list = \DB::table('list') -> get();
         $frinedship = \DB::table('frinedship') -> get();
-    	return view('home.hot.index',['title' => '热点','list'=>$list,'frinedship'=>$frinedship]);
+        $config = \DB::table('config') -> get();
+
+    	return view('home.hot.index',['title' => '热点','list'=>$list,'config'=>$config,'frinedship'=>$frinedship]);
     }
 }

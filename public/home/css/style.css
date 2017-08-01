@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
+
 
 /*--------------SLIDER----------------*/
 
@@ -42,7 +41,7 @@
 
 .responsive {
 	width: 970px;
-	height: 300px;
+	height: 450px;
 	
 }
 
@@ -92,10 +91,8 @@ body{
 	background: #eee;
 }
 .header {
-	background:url(/images/3.png) no-repeat;
 	background-size: cover;
 	text-align:center;
-	padding:2.0em;
 }
 .header h1 {
 	color:#272727;
@@ -456,7 +453,7 @@ input[type=checkbox].css-checkbox10:checked + label i.css-label10 {
 body{
 	padding:0;
 	margin:0;
-    background:url(../images/banner2.jpg) no-repeat center;
+    /*background:url(../images/banner2.jpg) no-repeat center;*/
     background-size: cover;
     -webkit-background-size: cover;
     -o-background-size: cover;

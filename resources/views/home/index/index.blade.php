@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>半边天售票系统-{{ $title }}</title>
-
+<title>{{ $title }}</title>
 <link href="/home/css/default.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="/home/css/board-index.92a06072.css"/>
 <link href="/home/css/index.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="/home/css/reset.css">
 <link rel="stylesheet" href="/home/css/style.css">
@@ -52,13 +52,15 @@ scrollDoor.prototype = {
 </script>
 </head>
 <body>
-<div class="header" >
 
+<div class="header" >
   <div class="top_img">
-    <div class="logo"><a href="#"><img src="/images/2.png" width="200" height="80" /></a></div>
-    <div class="rx"><img src="images/topad.gif" width="500" height="100" /></div>
+  @foreach($config as $key => $val)
+    <div class="logo"><a href="{{ url('/home/index') }}"><img src="/uploads/logo_img/{{ $val -> logo }}" width="300" height="84" /></a></div>
+  @endforeach 
+    <div class="rx"><img src="/home/images/000.jpg" width="400" height="100" /></div>
     <div class="top_nav">
-      <a class="btn btn-info" href="#"> 登录 </a>  <a class="btn btn-info" href="#"> 注册 </a>
+      <a style="padding:2px 2px;" class="btn btn-info" href="{{ url('/home/login') }}"> 登录 </a>  <a style="padding:2px 2px;" class="btn btn-info" href="{{ url('/home/regist') }}"> 注册 </a> <a style="padding:2px 2px;" class="btn btn-info" href="{{ url('/home/center') }}">  个人中心  </a>
     </div>
     <div class="clear"></div>
   </div>
@@ -74,6 +76,7 @@ scrollDoor.prototype = {
     </ul>
   </div>
 </div>
+<div class="header-placeholder"></div>
 
 <div class="banner">
   <div id="YFocus"> 
@@ -111,45 +114,6 @@ scrollDoor.prototype = {
         });
     });
 </script>
-
- 
- <div class="banner">
-   <div id="YFocus"> 
-   <div id="slider">
-    
-     <ul class="slides clearfix">
-     @foreach($carousel as $key => $val)
-         <li><img class="responsive" src="/uploads/carousel_img/{{ $val -> carousel_img }}"></li>
-     @endforeach
-     </ul>
-     
-     <ul class="controls">
-         <li><img src="images/prev.png" alt="previous"></li>
-         <li><img style="margin-right:30px;" src="images/next.png" alt="next"></li>
-     </ul>
-     <ul class="pagination">
-         <li class="active"></li>
-         <li></li>
-         <li></li>
-         <li></li>
-     </ul>
- </div>
- <script src="/home/js/jquery-2.1.1.min.js" type="text/javascript"></script>
- <script src="/home/dist/easySlider.js"></script>
- <script type="text/javascript">
-     $(function() {
-         $("#slider").easySlider( {
-             slideSpeed: 500,
-             paginationSpacing: "15px",
-             paginationDiameter: "12px",
-             paginationPositionFromBottom: "20px",
-             slidesClass: ".slides",
-             controlsClass: ".controls",
-             paginationClass: ".pagination"                  
-         });
-     });
- </script>
-  
    </div>
    
  </div>
@@ -157,30 +121,15 @@ scrollDoor.prototype = {
  
  <div class="contenter">
    <div class="left">
-     <div class="left_4 top10px" style="height:auto;">
-       <h2><a href="#">即将上映电影</a></h2>
-       <div class="inner">
-         @foreach($coming as $key => $val)
-         <dl class="anli_list">
-         <dt><a href="{{ url('/home/ticket/index') }}"><img src="/uploads/coming_img/{{ $val -> coming_img }}" width="150" height="100" /></a></dt>
-           <dd><a href="#">《{{ $val -> coming_name }}》</a>           
-             <p>
-               <input name="" type="button" class="dgbg02" value="马上购票" />
-             </p>
-           </dd>
-         </dl>
-        @endforeach
-         <div class="clear"></div>
-       </div>
-     </div>
-     <div class="left_4 top10px" style="height:auto;">
+    
+    <div class="left_4 top10px" style="height:auto;">
        <h2><a href="#">正在热播电影</a></h2>
        <div class="inner">
          @foreach($showing as $key => $val)
          <dl class="anli_list">
 
 
-           <dt><a href="{{ url('/home/movie/index') }}"><img src="/uploads/showing_img/{{ $val -> showing_img }}" width="150" height="100" /></a></dt>
+           <dt><a href="{{ url('/home/ticket/index1') }}/{{ $val -> id }}"><img src="/uploads/showing_img/{{ $val -> showing_img }}" width="150" height="100" /></a></dt>
            <dd><a href="#">《{{ $val -> showing_name }}》</a>           
              <p>
                <input name="" type="button" class="dgbg02" value="马上购票" />
@@ -191,6 +140,24 @@ scrollDoor.prototype = {
          <div class="clear"></div>
        </div>
      </div>
+
+     <div class="left_4 top10px" style="height:auto;">
+       <h2><a href="#">即将上映电影</a></h2>
+       <div class="inner">
+         @foreach($coming as $key => $val)
+         <dl class="anli_list">
+         <dt><a href=""><img src="/uploads/coming_img/{{ $val -> coming_img }}" width="150" height="100" /></a></dt>
+           <dd><a href="#">《{{ $val -> coming_name }}》</a>           
+             <p>
+               
+             </p>
+           </dd>
+         </dl>
+        @endforeach
+         <div class="clear"></div>
+       </div>
+     </div>
+     
      <div class="left_5">
        <h2><a href="#">影片预览</a></h2>
        <div class="inner">
@@ -202,7 +169,7 @@ scrollDoor.prototype = {
                    @foreach($movie as $key => $val)
                      <td align="center">
                         <dl class="anli_list">
-                         <dt><a href="#"><img src="/uploads/movie_img/{{ $val -> movie_img }}" width="150" height="100" /></a></dt>
+                         <dt><a href="{{ url('/home/ticket/index') }}/{{ $val -> id }}"><img src="/uploads/movie_img/{{ $val -> movie_img }}" width="150" height="100" /></a></dt>
                          <dd><a href="#">{{ $val -> movie_name }}</a></dd>
                        </dl>
                      </td>
@@ -234,86 +201,7 @@ scrollDoor.prototype = {
                  MyMar=setInterval(Marquee,speed);
              } )   
      </script> 
-  
-           
 
-<div class="contenter">
-  <div class="left">
-    <div class="left_4 top10px" style="height:auto;">
-      <h2><a href="#">即将上映电影</a></h2>
-      <div class="inner">
-        @foreach($coming as $key => $val)
-        <dl class="anli_list">
-          <dt><a href="{{ url('/home/ticket/index') }}"><img src="/uploads/coming_img/{{ $val -> coming_img }}" width="150" height="100" /></a></dt>
-          <dd><a href="#">《{{ $val -> coming_name }}》</a>           
-            <p>
-              <input name="" type="button" class="dgbg02" value="马上购票" />
-            </p>
-          </dd>
-        </dl>
-       @endforeach
-        <div class="clear"></div>
-      </div>
-    </div>
-    <div class="left_4 top10px" style="height:auto;">
-      <h2><a href="#">正在热播电影</a></h2>
-      <div class="inner">
-        @foreach($showing as $key => $val)
-        <dl class="anli_list">
-          <dt><a href="{{ url('/home/movie/index') }}"><img src="/uploads/showing_img/{{ $val -> showing_img }}" width="150" height="100" /></a></dt>
-          <dd><a href="#">《{{ $val -> showing_name }}》</a>           
-            <p>
-              <input name="" type="button" class="dgbg02" value="马上购票" />
-            </p>
-          </dd>
-        </dl>
-       @endforeach
-        <div class="clear"></div>
-      </div>
-    </div>
-    <div class="left_5">
-      <h2><a href="#">影片预览</a></h2>
-      <div class="inner">
-        <div id="demo" style="overflow:hidden; width:100%; margin:0 auto;">
-          <table border="0" align="center" cellpadding="5" cellspacing="0" cellspace="0" >
-            <tr>
-              <td id="demo1" valign="top"><table border="0"  cellpadding="0">
-                  <tr>
-                  @foreach($movie as $key => $val)
-                    <td align="center">
-                       <dl class="anli_list">
-                        <dt><a href="#"><img src="/uploads/movie_img/{{ $val -> movie_img }}" width="150" height="100" /></a></dt>
-                        <dd><a href="#">{{ $val -> movie_name }}</a></dd>
-                      </dl>
-                    </td>
-                   @endforeach
-                  </tr>
-                </table></td>
-              <td id="demo2" valign="top"></td>
-            </tr>
-          </table>
-        </div>
-        <script type="text/javascript">
-            var speed=30;
-            var demo = $("#demo");
-            var demo1 = $("#demo1");
-            var demo2 = $("#demo2");
-            demo2.html(demo1.html());
-            function Marquee(){ 
-                if(demo.scrollLeft()>=demo1.width())
-                    demo.scrollLeft(0); 
-                else{
-                    demo.scrollLeft(demo.scrollLeft()+1);
-                }
-            } 
-            var MyMar=setInterval(Marquee,speed) 
-            demo.mouseover(function() {
-                clearInterval(MyMar);
-            } )
-            demo.mouseout(function() {
-                MyMar=setInterval(Marquee,speed);
-            } )   
-    </script> 
          <div class="clear"></div>
        </div>
      </div>
@@ -321,15 +209,16 @@ scrollDoor.prototype = {
    </div>
    <div class="right">
      <div class="right_1">
-       <h2><span style="color:#000; font-size:14px;">7月18日</span>今日快速订票 </h2>
+       <h2><span style="color:#000; font-size:14px;">7月27日</span>今日快速订票 </h2>
        <div class="inner02">
          <dl style="border-bottom:0px #fff solid;">
            <dt><img src="images/fa1.gif" width="50" height="45" /></dt>
            <dd style=" padding-top:10px;">
              <select name="">             
-               <option selected="selected">郑州电影院</option>
-               <option>郑州电影院</option>
-               <option>郑州电影院</option>
+               <option selected="selected">选择</option>
+               @foreach($cinema as $key => $val )
+                            <option value="{{ $val -> cinema_name }}">{{ $val -> cinema_name }}</option>
+              @endforeach
              </select>
            </dd>
            <div class="clear"></div>
@@ -338,10 +227,10 @@ scrollDoor.prototype = {
            <dt><img src="images/fa2.gif" width="56" height="45" /></dt>
            <dd style=" padding-top:10px;">
              <select name="">
-               <option selected="selected">影片搜索</option>
-               <option>蝙蝠侠前传</option>
-               <option>淘金连环计</option>
-               <option>流离失所2</option>
+               <option selected="selected">影片</option>
+               @foreach($movie as $key => $val )
+               <option value="{{ $val -> movie_name }}">{{ $val -> movie_name }}</option>
+               @endforeach
              </select>
            </dd>
            <div class="clear"></div>
@@ -352,7 +241,9 @@ scrollDoor.prototype = {
              <select name="">
                <option selected="selected">请选择场次</option>
                
-               <option>1</option>
+               <option>上午</option>
+               <option>下午</option>
+               <option>午夜</option>
              
              </select>
            </dd>
@@ -374,7 +265,7 @@ scrollDoor.prototype = {
        @foreach($showing as $key => $val)
        <div class="inner01">
          <ul class="server_list">
-           <li><a href="{{ url('/home/movie/index') }}"><span>19888</span>{{ $val -> showing_name }}</a></li>
+           <li><a href="{{ url('/home/movie/index') }}"><span>推荐</span>{{ $val -> showing_name }}</a></li>
           
          </ul>
        </div>
@@ -435,7 +326,7 @@ scrollDoor.prototype = {
    <div class="clear"></div>
  
    <div class="bottom ">
-     <h2>友情链接 >></h2>
+     <h5>友情链接 >></h5>
      <div class="bottom_con">
          @foreach($frinedship as $key => $val)
  
@@ -445,10 +336,13 @@ scrollDoor.prototype = {
    </div>
  
    <div class="clear"></div>
- </div>
+ </div>  
+   @foreach($config as $key => $val)
  <div class="footer">  
    <p>您是66666 位访客  欢迎您的光临！<br />
-     lamp183 版权所有 京ICP备0123456789号</p>
+     {{$val -> copy}} 版权所有 京ICP备0123456789号</p>
  </div>
+ @endforeach
+
  </body>
  </html>

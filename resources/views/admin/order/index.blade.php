@@ -93,14 +93,15 @@
 						<th>ID</th>
 						<th>电影ID</th>
 						<th>电影名称</th>
-                                                                                                <th>价格</th>
+                        <th>价格</th>
 						<th>座位号</th>
 						<th>订单序列</th>
-                                                                                                <th>日期</th>
+                        <th>日期</th>
 						<th>时间</th>
 						<th>影城</th>
-                                                                                                <th>影厅</th>
-						<th>状态</th>
+                        <th>影厅</th>
+                        <th>状态</th>
+						<th>处理</th>
 					</tr>
 				</thead>
 
@@ -110,17 +111,21 @@
 						<td class="id">{{ $val -> id }}</td>
 						<td class="movie_name">{{ $val -> mid }}</td>
 						<td>{{ $val -> movie_name }}</td>
-                                                                                                <td>{{ $val -> price }}</td>     
-                                                                                                <td>{{ $val -> set }}</td>
-                                                                                                <td>{{ $val -> num }}</td>
-                                                                                                <td>{{ $val -> date }}</td>
-                                                                                                <td>{{ $val -> time }}</td>
-                                                                                                <td>{{ $val -> cinema_name }}</td>
-						<td>{{ $val -> hall_name }}</td>                           
-						<td>{{ $val -> status }}</td>									
+                        <td>{{ $val -> price }}</td>     
+                        <td>{{ $val -> set }}</td>
+                        <td>{{ $val -> num }}</td>
+                        <td>{{ $val -> date }}</td>
+                        <td>{{ $val -> time }}</td>
+                        <td>{{ $val -> cinema_name }}</td>
+						<td>{{ $val -> hall_name }}</td>
+                        @if($val -> status==1)
+						<td>未支付</td>
+                        @else
+                        <td>已支付</td>
+                        @endif
 						<td>                                       
-                                                                                                            <a href="{{ url('/admin/order/delete') }}/{{ $val->id }}">已处理订单</a>
-                                                                                                </td>
+                            <a href="{{ url('/admin/order/delete') }}/{{ $val->id }}">处理订单</a>
+                        </td>
 					</tr>
 					@endforeach
 				</tbody>

@@ -14,7 +14,8 @@ class TimeController extends Controller
     	$time = \DB::table('time') -> get();
     	$project = \DB::table('project') -> get();
     	$frinedship = \DB::table('frinedship') -> get();
+    	$config = \DB::table('config') -> get();
     	// dd($frinedship);
-    	return view('home.time.index',['title' => '电影时刻表','time'=>$time,'project'=>$project,'frinedship'=>$frinedship]);
+    	return view('home.time.index',['title' => '电影时刻表','config'=>$config,'time'=>$time,'project'=>$project,'frinedship'=>$frinedship]);
     }
 }
